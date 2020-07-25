@@ -65,6 +65,16 @@ Things you may want to cover:
 - belongs_to :product
 
 * How to run the test suite
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|path|text|null: false|
+|name|string|null: false|
+|ancestry|string||	
+### Association
+- has_many :brands
+- has_many :products
+- has_ancestry
 
 * Services (job queues, cache servers, search engines, etc.)
 
