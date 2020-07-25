@@ -17,13 +17,6 @@
 - has_many :products
 - has_many :orders
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
 ## productテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -45,7 +38,6 @@ Things you may want to cover:
 - has_one :order
 - has_many :product_images
 
-* Database creation
 ## orderテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -55,7 +47,6 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :product
 
-* Database initialization
 ## product_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -64,7 +55,6 @@ Things you may want to cover:
 ### Association
 - belongs_to :product
 
-* How to run the test suite
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -76,7 +66,6 @@ Things you may want to cover:
 - has_many :products
 - has_ancestry
 
-* Services (job queues, cache servers, search engines, etc.)
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -87,7 +76,6 @@ Things you may want to cover:
 - has_many :products
 - belongs_to :categories
 
-* Deployment instructions
 ## delivery_addressテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -105,7 +93,6 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
-* ...
 ## shippingテーブル
 |Column|Type|Options|
 |------|----|-------|
