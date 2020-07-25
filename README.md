@@ -20,10 +20,10 @@
 ## productテーブル
 |Column|Type|Options|
 |------|----|-------|
-|category_id|references|null: false, FK: true|
-|shipping_id|references|null: false, FK: true|
-|brand_id|references|null: false, FK: true|
-|seller_user_id|references|null: false, FK: true|
+|category_id|references|null: false, foreign_key: true|
+|shipping_id|references|null: false, foreign_key: true|
+|brand_id|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 |name|string|null: false|
 |text|text|null: false|
 |condition|integer|null: false|
@@ -41,8 +41,8 @@
 ## orderテーブル
 |Column|Type|Options|
 |------|----|-------|
-|buyer_user_id|references|null: false, FK: true|
-|product_id|references|null: false, FK: true|
+|user_id|references|null: false, foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :product
@@ -50,7 +50,7 @@
 ## product_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|product_id|references|null: false, FK: true|
+|product_id|references|null: false, foreign_key: true|
 |image_url|string|null: false|
 ### Association
 - belongs_to :product
@@ -79,7 +79,7 @@
 ## delivery_addressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, FK: true|
+|user_id|references|null: false, foreign_key: true|
 |family_name|string|null: false|
 |first_name|string|null: false|
 |family_name_kana|string|null: false|
