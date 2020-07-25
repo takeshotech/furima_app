@@ -16,6 +16,7 @@
 ### Association
 - has_many :products
 - has_many :orders
+- has_one :delivery_address
 
 ## productsテーブル
 |Column|Type|Options|
