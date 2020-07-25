@@ -102,3 +102,4 @@
 |handling_time|integer|null: false|
 ### Association
 - belongs_to :product
+aaa
