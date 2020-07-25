@@ -97,5 +97,6 @@
 |fee|integer|null: false|
 |type|string|null: false|
 |handling_time|integer|null: false|
+|product_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :product
