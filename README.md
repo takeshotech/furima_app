@@ -46,6 +46,14 @@ Things you may want to cover:
 - has_many :product_images
 
 * Database creation
+## orderテーブル
+|Column|Type|Options|
+|------|----|-------|
+|buyer_user_id|references|null: false, FK: true|
+|product_id|references|null: false, FK: true|
+### Association
+- belongs_to :user
+- belongs_to :product
 
 * Database initialization
 
