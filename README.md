@@ -88,5 +88,21 @@ Things you may want to cover:
 - belongs_to :categories
 
 * Deployment instructions
+## delivery_addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, FK: true|
+|family_name|string|null: false|
+|first_name|string|null: false|
+|family_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|zip_code|integer|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|address1|string|null: false|
+|address2|string|
+|telephone|string|unique: true|
+### Association
+- belongs_to :user
 
 * ...
