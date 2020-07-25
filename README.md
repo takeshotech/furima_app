@@ -17,7 +17,7 @@
 - has_many :products
 - has_many :orders
 
-## productテーブル
+## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |category_id|references|null: false, foreign_key: true|
@@ -38,7 +38,7 @@
 - has_one :order
 - has_many :product_images
 
-## orderテーブル
+## ordersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
