@@ -106,3 +106,12 @@ Things you may want to cover:
 - belongs_to :user
 
 * ...
+## shippingテーブル
+|Column|Type|Options|
+|------|----|-------|
+|area|string|null: false|
+|fee|integer|null: false|
+|type|string|null: false|
+|handling_time|integer|null: false|
+### Association
+- belongs_to :product
