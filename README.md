@@ -69,12 +69,9 @@
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|category_id|references|null: false, FK: true|
-|brand_id|references|null: false, FK: true|
 |name|string|null: false|
 ### Association
 - has_many :products
-- belongs_to :categories
 
 ## delivery_addressテーブル
 |Column|Type|Options|
