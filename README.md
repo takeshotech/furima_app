@@ -56,6 +56,13 @@ Things you may want to cover:
 - belongs_to :product
 
 * Database initialization
+## product_imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|product_id|references|null: false, FK: true|
+|image_url|string|null: false|
+### Association
+- belongs_to :product
 
 * How to run the test suite
 
