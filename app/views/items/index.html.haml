@@ -1,2 +1,188 @@
-%h1 Items#index
-%p Find me in app/views/items/index.html.erb
+.wrapper
+  .header
+    .header_up
+      .header_logo
+        = image_tag("http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg")
+      .header_search
+        .form
+          %input{type: "text", placeholder:"キーワードから探す"}
+          %button{type: "submit", class:'search_btn'}
+            =icon('fas', 'fa-search', class: 'search_btn')
+
+    .header_under
+      %li
+        カテゴリ
+      %li
+        ブランド
+      %li
+        ログイン
+      %li
+        新規会員登録
+  .first_banner
+    .catch_copy
+      %p.text_big
+        人生を変えるフリマアプリ
+      %p.text_small
+        FURIMAはだれでもかんたんに出品・購入できる
+        %br
+        フリマアプリです
+    .download_btn
+      = link_to image_tag('https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png', class: 'btn_image'), '#'
+      = link_to image_tag('https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png', class: 'btn_image'), '#'
+  .choice_point
+    %p.title
+      FURIMAが選ばれる３つの理由
+    .points
+      .point
+        .point__number
+          1
+        .point__image
+        %p.point__title
+          ３分ですぐに出品
+        %p.point__text
+          スマホで入力するだけで簡単に出品できる！
+      .point
+        .point__number
+          2
+        .point__image
+        %p.point__title
+          シンプルで使いやすい
+        %p.point__text
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+      .point
+        .point__number
+          3
+        .point__image
+        %p.point__title
+          手数料 業界最安
+        %p.point__text
+          最大3%でお得に出品&購入！   
+
+  .second_banner
+    .catch_copy
+      %p.text_big
+        会員数日本一位
+      %p.text_small
+        FURIMAは、フリマアプリで最も人気。
+        %br
+        出品・購入回数も業界最多です！
+        %br
+        ほしかったあの商品に出会えるかもしれません。
+      .download_btn
+      = link_to image_tag('https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png'), '#'
+      = link_to image_tag('https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png'), '#'
+  .furima_feature
+    %p.title
+      FURIMAの特徴
+    .features
+      .feature
+        .feature__image
+          = image_tag("http://furima.tokyo/assets/icon-01-7f6abf70ea7deaed9ab5d8b6d5cb796250e3e292b9ecdc559ebe6492c31fdab8.svg")
+        %p.feature__title
+          簡単に売り買いできる
+        %p.feature__text
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      .feature
+        .feature__image
+          = image_tag("http://furima.tokyo/assets/icon-03-9c0d78266a316fec7b738dcf5c68dd987afb9655b13fd2cd5d30bcf09e827694.svg")
+        %p.feature__title
+          売上金は即日振込みに対応
+        %p.feature__text
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+      .feature
+        .feature__image
+          = image_tag("http://furima.tokyo/assets/icon-04-c4052f85cd6e1f62ea8cac8c55277d7fa4bda971d924f8a2afe72eea6558fa85.svg")
+        %p.feature__title
+          様々な支払いに対応
+        %p.feature__text
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+  .pickup
+    .items_block
+      %p.title
+        ピックアップカテゴリー
+      %p.title_sub
+        新規投稿商品
+      .items
+        .item
+          .item__image
+          = image_tag("https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png")
+          .item__description
+            %p.item_name
+              サンプル商品
+            .item_detail
+              %p.item_detail__name
+                1000円
+              %p.item_detail__like
+                ★0
+            %p.item_tax
+              (税込)
+        .item
+          .item__image
+          = image_tag("https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png")
+          .item__description
+            %p.item_name
+              サンプル商品
+            .item_detail
+              %p.item_detail__name
+                1000円
+              %p.item_detail__like
+                ★0
+            %p.item_tax
+              (税込)
+        .item
+          .item__image
+          = image_tag("https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png")
+          .item__description
+            %p.item_name
+              サンプル商品
+            .item_detail
+              %p.item_detail__name
+                1000円
+              %p.item_detail__like
+                ★0
+            %p.item_tax
+              (税込)
+
+  .third_banner
+    .catch_copy
+      %p.text_small
+        だれでもかんたん、人生を変えるフリマアプリ
+      %p.text_big
+        今すぐ無料ダウンロード！
+    .download_btn
+      = link_to image_tag('https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png'), '#'
+      = link_to image_tag('https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png'), '#'  
+
+  .footer
+    .footer__contents
+      .content
+        %p.content__title
+          FURIMAについて
+        %li
+          会社概要（運営会社）
+        %li
+          プライバシーポリシー
+        %li
+          FURIMA利用規約
+        %li
+          ポイントに関する特約
+      .content
+        %p.content__title
+          FURIMAを見る
+        %li
+          カテゴリ一覧
+        %li
+          ブランド一覧
+      .content
+        %p.content__title
+          ヘルプ＆ガイド
+        %li
+          FURIMAガイド
+        %li
+          FURIMAロゴ利用ガイドライン
+        %li
+          お知らせ
+    .footer__logo
+      = image_tag("http://furima.tokyo/assets/logo-white-f61961ed5170064c5f33dd4524bdceeb5a5df2c83eb76fba31143f63fbab2c5e.svg")
+      %p.footer__copylight 
+        © FURIMA
