@@ -2,7 +2,7 @@
   .header
     .header_up
       .header_logo
-        = image_tag("http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg")
+        = image_tag("logo.svg")
       .header_search
         .form
           %input{type: "text", placeholder:"キーワードから探す"}
@@ -27,14 +27,15 @@
         %br
         フリマアプリです
     .download_btn
-      = link_to image_tag('https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png', class: 'btn_image'), '#'
-      = link_to image_tag('https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png', class: 'btn_image'), '#'
+      = link_to image_tag('https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png', class:'btn_image'), '#'
+      = link_to image_tag('https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png', class:'btn_image'), '#'
   .choice_point
     %p.title
       FURIMAが選ばれる３つの理由
     .points
       .point
         .point__image
+          = image_tag("pict-reason-01.jpg", class:'point__image')
           .point__image__number
             1
         .point__description
@@ -44,8 +45,9 @@
             スマホで入力するだけで簡単に出品できる！
       .point
         .point__image
+          = image_tag("pict-reason-02.jpg", class:'point__image')
           .point__image__number
-            3
+            2
         .point__description
           %p.description_title
             シンプルで使いやすい
@@ -53,8 +55,9 @@
             めんどくさい入力は必要なく、検索も購入もスムーズ！
       .point
         .point__image
+          = image_tag("pict-reason-03.jpg", class:'point__image')
           .point__image__number
-            3
+            3  
         .point__description
           %p.description_title
             手数料 業界最安
@@ -72,28 +75,28 @@
         %br
         ほしかったあの商品に出会えるかもしれません。
     .download_btn
-      = link_to image_tag('https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png', class: 'btn_image'), '#'
-      = link_to image_tag('https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png', class: 'btn_image'), '#'
+      = link_to image_tag('https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png', class:'btn_image'), '#'
+      = link_to image_tag('https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png', class:'btn_image'), '#'
   .furima_feature
     %p.title
       FURIMAの特徴
     .features
       .feature
-        = image_tag("http://furima.tokyo/assets/icon-01-7f6abf70ea7deaed9ab5d8b6d5cb796250e3e292b9ecdc559ebe6492c31fdab8.svg", class:'feature__image')
+        = image_tag("icon-01.svg", class:'feature__image')
         .feature__description
           %p.description_title
             簡単に売り買いできる
           %p.description_text
             スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
       .feature
-        = image_tag("http://furima.tokyo/assets/icon-03-9c0d78266a316fec7b738dcf5c68dd987afb9655b13fd2cd5d30bcf09e827694.svg", class:'feature__image')
+        = image_tag("icon-02.svg", class:'feature__image')
         .feature__description
           %p.description_title
             売上金は即日振込みに対応
           %p.descripition_text
             午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
       .feature
-        = image_tag("http://furima.tokyo/assets/icon-04-c4052f85cd6e1f62ea8cac8c55277d7fa4bda971d924f8a2afe72eea6558fa85.svg", class:'feature__image')
+        = image_tag("icon-03.svg", class:'feature__image')
         .feature__description  
           %p.description_title
             様々な支払いに対応
@@ -161,8 +164,8 @@
       %p.text_big
         今すぐ無料ダウンロード！
     .download_btn
-      = link_to image_tag('https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png'), '#'
-      = link_to image_tag('https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png'), '#'  
+      = link_to image_tag('https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png', class:'btn_image'), '#'
+      = link_to image_tag('https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png', class:'btn_image'), '#'
 
   .footer
     .footer__contents
@@ -194,6 +197,6 @@
         %li
           お知らせ
     .footer__logo
-      = image_tag("http://furima.tokyo/assets/logo-white-f61961ed5170064c5f33dd4524bdceeb5a5df2c83eb76fba31143f63fbab2c5e.svg")
+      = image_tag("logo-white.svg")
       %p.footer__copylight 
         © FURIMA
