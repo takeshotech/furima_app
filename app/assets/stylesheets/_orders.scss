@@ -61,3 +61,14 @@
           .content{
             margin-bottom: 10px;
           }
+          .prices{
+            .product-price{
+              display: flex;
+              justify-content: space-between;
+              .title{
+                margin-left: 120px;
+              }
+              .price{
+                font-weight: 600;
+              }
+            }
