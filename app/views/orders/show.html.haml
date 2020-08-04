@@ -2,7 +2,6 @@
   %header
     .logo_frame
       = link_to image_tag("/assets/logo/logo.png", class: "furima-logo"), "/"
-
   .main
     .main__frame
       .main__box
@@ -49,3 +48,13 @@
             出品者が発送作業を開始した後は受取場所の変更ができませんので、早めに変更を行ってください。
           %button{type: "submit", onclick: "location.href=''", class: "purchase-btn"}
             .text 購入する
+    %footer
+      .logo_frame
+        %ul.policies
+          %li= link_to "プライバシーポリシー", ""
+          %li= link_to "FURIMA利用規約", ""
+          %li= link_to "特定商取引に関する表記", ""
+        = link_to image_tag(src= "/assets/logo/logo.png", class: "furima-logo"), "/"
+        %p.copyright
+          = icon("far", "copyright", class: "copyright-mark")
+          %small.name FURIMA
