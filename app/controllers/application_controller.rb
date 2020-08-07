@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
-
-  private
+  
+  protected
 
   def basic_auth
     authenticate_or_request_with_http_basic do |username, password|
@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
       password == Rails.application.credentials[:basic_auth][:pass]
     end
   end
+
   def production?
     Rails.env.production?
   end

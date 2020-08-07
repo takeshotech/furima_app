@@ -1,0 +1,154 @@
+
+a {
+  text-decoration: none;
+  color: white;
+  margin: 5px;
+}
+
+.header {
+
+  &__right {
+    font-size: 40px;
+    color: lightseagreen;
+    float: right;
+    font-family: monospace;
+    margin-right: 600px;
+    
+    
+   }
+
+  &__left {
+   padding-top: 50px;
+   margin-left: 550px;
+   margin-bottom: 100px;
+  }
+
+}
+
+.user-information {
+
+background-color:#EEE;
+text-align: center;
+padding: 50px;
+margin-left: 300px;
+margin-right: 300px;
+margin-top: 200px;
+margin-bottom: 200px;
+
+
+
+
+  &__nickname {
+    font-family: monospace;
+    font-size: 20px;
+  }
+  .label-1 {
+    float: left;
+    background-color: red;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 350px;
+    margin-right: 350px;
+    padding: 4px 8px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+  }
+
+
+  &__nickname--form {
+    height: 40px;
+
+  }
+
+  &__realname {
+    font-family: monospace;
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  &__realname--form {
+    height: 30px;
+  }
+
+  &__realname_kana {
+    font-family: monospace;
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  &__realname_kana--form {
+    height: 30px;
+  }
+
+  &__birthday {
+    font-family: monospace;
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  &__birthday--form {
+
+  height: 30px;
+  }
+
+  &__password {
+    font-family: monospace;
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  &__password--form {
+    height: 30px;
+  }
+
+  &__mail {
+    font-family: monospace;
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  &__mail--form {
+   height: 30px;
+ }
+
+  &__submit {
+    font-family: monospace;
+    background-color: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    margin-top: 100px;
+    margin-left: 193px;
+    display: block;
+    width: 350px;
+    line-height: 50px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    -webkit-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    text-align: center;
+  }
+
+}
+
+
+.footer {
+  background-color: #272727;
+  height: 200px;
+  
+  &__info {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding-top: 30px;
+  }
+
+  &__logo {
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    padding-top: 30px;
+  }
+}
