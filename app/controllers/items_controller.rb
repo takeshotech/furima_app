@@ -3,5 +3,6 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @product = 
   end
 end
