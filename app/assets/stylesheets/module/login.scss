@@ -5,6 +5,7 @@
 a {
   text-decoration: none;
   color: white;
+  margin: 5px;
 }
 
 
@@ -24,35 +25,35 @@ a {
 
   height: 100%;
   background-color: #EEE;
-  margin-top: 300px;
-  margin-left: 500px;
-  margin-right: 500px;
-  margin-bottom: 300px;
-  padding-bottom: 300px;
+  margin-top: 100px;
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-bottom: 200px;
+  padding-bottom: 200px;
 
   &__text {
     color: lightseagreen;
-    font-size: 100px;
+    font-size: 40px;
     font-family: monospace;
-    padding-top: 150px;
+    padding-top: 70px;
     padding-left: 50px;
-    padding-bottom: 100px;;
+    padding-bottom: 50px;;
     text-align: center;
     border-bottom: 1px solid white;
   }
 
   &__mail {
     font-family: monospace;
-    font-size: 50px;
+    font-size: 25px;
     text-align: center;
-    margin: 300px;
+    margin: 150px;
   }
 
   &__password {
     font-family: monospace;
-    font-size: 50px;
+    font-size: 25px;
     text-align: center;
-    margin: 300px;
+    margin: 100px;
   }
 
   &__submit {
@@ -60,14 +61,13 @@ a {
     background-color: #ea352d;
     border: 1px solid #ea352d;
     color: #fff;
-    margin-top: 300px;
-    margin-left: 550px;
+    margin-top: 150px;
+    margin-left: 250px;
     display: block;
-    width: 800px;
-    height: 100px;
-    line-height: 80px;
-    font-size: 50px;
-    border-radius: 10px;
+    width: 350px;
+    line-height: 50px;
+    font-size: 15px;
+    border-radius: 5px;
     border: 1px solid transparent;
     -webkit-transition: all ease-out .5s;
     transition: all ease-out .5s;
