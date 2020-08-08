@@ -118,60 +118,89 @@
     }
   }
 }
-.first_banner{
+.first-banner{
   background-image: url("bg-mainVisual.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
   width: 100%;
   height: 560px;
-  .catch_copy{
-    color: #f8f8f8;
-    text-shadow: 0 0 5px rgba(0,0,0,0.4);
-    .text_big{
-      font-size: 60px;
-    }
-    .text_small{
+  position: relative;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+
+  &__content{
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 35px 0 0 0;
+
+    .catch_copy{
+      color: #f8f8f8;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+
+      .text_big{
+        font-size: 60px;
+        line-height: 1.2;
+      }
+
+      .text_small{
       font-size: 18px;
+      line-height: 1.77778;
+      margin: 16px 0 0 0;
+      }
     }
-  }
-  .download_btn{
-    width: 500px;
-    height:190px;
-    display: flex;
-    justify-content: start;
-    .btn_image{
-      height: 100px;
-      width: auto;
-      padding: 10px;
+    .download_btn{
+      width: 500px;
+      height:190px;
+      display: flex;
+      justify-content: start;
+
+      .btn_image{
+        height: 100px;
+        width: auto;
+        padding: 10px;
+      }
     }
   }
 }
 .choice_point{
-height: 600px;
-width: 100%;
+  padding: 60px 20px;
+
   .title{
-    size: 20px;
+    font-size: 26px;
     font-weight: bold;
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 25px;
+    padding: 0 0 15px 0;
+    position: relative;
   }
   .text{
 
   }
   .points{
-    height: 100%;
-    width: 100%;
-    padding: 30px 50px;
+    text-align: center;
     display: flex;
-    justify-content: space-between;
+    max-width: 1020px;
+    margin: 0 auto;
+    width: 100%;
+
     .point{
-      height: 100%;
-      width: 33.3333%;
-      margin: 5px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      margin: 16px 5% 0 0;
+      width: 30%;
+      align-items: center;
+
       &__image{
         height: 300px;
         width: 300px;
         margin: auto;
         position: relative;
+
         &__number{
           font-size: 30px;
           color: #f8f8f8;
@@ -182,21 +211,25 @@ width: 100%;
           z-index: 1;
         }
       }
+
       &__description{
-        height: calc(100% - 200px);
-        width: 200px;
-        margin: auto;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 50px;
+        margin: 0 0 0 2px;
         
         .description_title{
-          font-size: 18px;
-          margin: auto;
+          span{
+            color: #3CCACE;
+          }
         }
         .description_text{
-          margin: auto;
+          font-size: 18px;
+          line-height: 1.5;
+          margin: 16px 0 0;
         }
       }  
     }
-  
   }
 }
 .second_banner{
@@ -206,10 +239,13 @@ width: 100%;
   background-position: bottom right;
   width: 100%;
   height: 400px;
+
   .catch_copy{
+
     .text_big{
       font-size: 25px;
     }
+
     .text_small{
       font-size: 12px;
     }
@@ -219,6 +255,7 @@ width: 100%;
     height:190px;
     display: flex;
     justify-content: start;
+
     .btn_image{
       height: 100px;
       width: auto;
@@ -229,25 +266,30 @@ width: 100%;
 .furima_feature{
   height: 400px;
   width: 100%;
+
   .title{
     font-size: 18px;
     font-weight: bold;  
   }
+
   .features{
     height:100%;
     width: 100%;
     display: flex;
     justify-content: space-around;
+
     .feature{
       height: 100%;
       width: 33.33333%;
       margin-right: 5px;
+
       &__image{
         height: 60%;
         width: 100%;
         margin: auto;
         
       }
+
       &__description{
         height:40%;
         width: 100%;
@@ -268,16 +310,19 @@ width: 100%;
   height: 500px;
   width: 100%;
   background-color:#f8f8f8;
+
   .items_block{
     .title{
       font-size: 18px;
       font-weight: bold;
     }
+
     .title_sub{
       font-size: 17px;
       font-weight: bold;
       color: #3CCACE;
     }
+
     .items{
       height: 300px;
       width: 1000px;
@@ -285,6 +330,7 @@ width: 100%;
       margin: auto;
       display: flex;
       justify-content: space-between;
+
       .item{
         height: 100%;
         width: 25%;
@@ -312,7 +358,9 @@ width: 100%;
   background-position: center;
   width: 100%;
   height: 400px;
+
   .catch_copy{
+
     .text_big{
       font-size: 25px;
     }
@@ -325,6 +373,7 @@ width: 100%;
     height:190px;
     display: flex;
     justify-content: start;
+
     .btn_image{
       height: 100px;
       width: auto;
@@ -333,18 +382,59 @@ width: 100%;
   }
 }
 .footer{
-  height: 400px;
-  width: 100%;
+  padding: 60px 0;
+  text-align: center;
   background-color: #272727;
-  color: #f8f8f8;
-  .footer__contents{
+  color: #fff;
+
+  &__contents{
     display: flex;
-    justify-content: space-between;
+    margin: auto;
+    max-width: 840px;
+
+    .content{
+      display: flex;
+      flex-direction: column;
+      width: calc(1 / 3 * 100%);
+      margin: 0 2% 0 0;
+
+      &__title{
+        margin: 0 0 20px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      ul{
+        list-style: none;
+
+        a{
+          color: #fff;
+          text-decoration: none;
+          font-size: 12px;
+          line-height: 32px;
+        }
+      }
+    }
+  }
+
+  &__logo{
+    max-width: 160px;
+    width: 100%;
+    margin: 0 auto;
+
+    a{
+      img{
+        width: 100%;
+        vertical-align: bottom;
+      }
+    }
+    .footer__copylight{
+      font-size: 14px;
+    }
   }
 }
 
 a{
-  
   .camera-btn{
     width: 120px;
     background: #3CCACE;

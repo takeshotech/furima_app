@@ -26,17 +26,19 @@
         %li.right-side__item
           %a#new-btn{:href => "#"}新規会員登録
 
-  .first_banner
-    .catch_copy
-      %p.text_big
-        人生を変えるフリマアプリ
-      %p.text_small
-        FURIMAはだれでもかんたんに出品・購入できる
-        %br
-        フリマアプリです
-    .download_btn
-      = link_to image_tag('https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png', class:'btn_image'), '#'
-      = link_to image_tag('https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png', class:'btn_image'), '#'
+  .first-banner
+    .first-banner__content
+      .catch_copy
+        %p.text_big
+          人生を変えるフリマアプリ
+        %p.text_small
+          FURIMAはだれでもかんたんに出品・購入できる
+          %br
+          フリマアプリです
+      .download_btn
+        = link_to image_tag('https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png', class:'btn_image'), '#'
+        = link_to image_tag('https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png', class:'btn_image'), '#'
+        
   .choice_point
     %p.title
       FURIMAが選ばれる３つの理由
@@ -48,7 +50,8 @@
           = image_tag("pict-reason-01.jpg", class:'point__image')
         .point__description
           %p.description_title
-            ３分ですぐに出品
+            %span３分
+            ですぐに出品
           %p.description_text
             スマホで入力するだけで簡単に出品できる！
       .point
@@ -58,7 +61,8 @@
           = image_tag("pict-reason-02.jpg", class:'point__image')
         .point__description
           %p.description_title
-            シンプルで使いやすい
+            %spanシンプル
+            で使いやすい
           %p.description_text
             めんどくさい入力は必要なく、検索も購入もスムーズ！
       .point
@@ -69,7 +73,8 @@
  
         .point__description
           %p.description_title
-            手数料 業界最安
+            %span手数料
+            業界最安
           %p.description_text
             最大3%でお得に出品&購入！   
 
@@ -179,34 +184,38 @@
   .footer
     .footer__contents
       .content
-        %p.content__title
+        %h2.content__title
           FURIMAについて
-        %li
-          会社概要（運営会社）
-        %li
-          プライバシーポリシー
-        %li
-          FURIMA利用規約
-        %li
-          ポイントに関する特約
+        %ul
+          %li
+            %a{:href => "#"}会社概要 (運営会社) 
+          %li
+            %a{:href => "#"}プライバシーポリシー
+          %li
+            %a{:href => "#"}FURIMA利用規約
+          %li
+            %a{:href => "#"}ポイントに関する特約
       .content
-        %p.content__title
+        %h2.content__title
           FURIMAを見る
-        %li
-          カテゴリ一覧
-        %li
-          ブランド一覧
+        %ul
+          %li
+            %a{:href => "#"}カテゴリ一覧
+          %li
+            %a{:href => "#"}ブランド一覧
       .content
-        %p.content__title
+        %h2.content__title
           ヘルプ＆ガイド
-        %li
-          FURIMAガイド
-        %li
-          FURIMAロゴ利用ガイドライン
-        %li
-          お知らせ
+        %ul
+          %li
+            %a{:href => "#"}FURIMAガイド
+          %li
+            %a{:href => "#"}FURIMAロゴ利用ガイドライン
+          %li
+            %a{:href => "#"}お知らせ
     .footer__logo
-      = image_tag("logo-white.svg")
+      %a{:href => "/"}
+        %img{:src => "/assets/logo-white.svg"}/
       %p.footer__copylight 
         © FURIMA
   %a{:href => "#"}
