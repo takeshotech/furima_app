@@ -1,0 +1,31 @@
+#login
+
+.header 
+  .header__logo
+    = link_to image_tag("/assets/logo/logo.png",class: "furima-logo",:size =>'800x250'), "/"
+
+.login-form
+
+  .login-form__text
+
+    ログイン
+
+  .login-form__mail
+    MAIL : 
+    <input type="メールアドレス" name="e-mail" placeholder="メールアドレス" class="input-default has-error" aria-describedby="e-mail-error" aria-invalid="true">
+
+  .login-form__password
+    PASS :
+    <input type="パスワード" name="password" placeholder="パスワード" class="input-default has-error" aria-describedby="password-error" aria-invalid="true">
+
+  .login-form__submit
+    <a href="#">ログイン</a>
+
+.footer
+  .footer__info
+    <a href="#">プライバシーポリシー</a>
+    <a href="#">フリマ利用規約</a>
+    <a href="#">特定商取引に関する表記</a>
+  .footer__logo
+    = link_to image_tag("/assets/logo/logo-white.png", class: "furima-white-logo",:size =>'200x50'), "/"
+    <p>© FURIMA</p>
