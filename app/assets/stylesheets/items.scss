@@ -1,3 +1,26 @@
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  box-sizing: border-box;
+}
+.wrapper{
+  height: 100%;
+  width: 100%;
+  background-color: lightgray;
+}
+.newitem_header{
+  height: 100px;
+  width: 100%;
+  background-color:lightgray;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  .header_logo{
+    height: 49px;
+    width: 185px;
+  }
+}
+
+.newitem_image{
+  height: 300px;
+  min-width: 75%;
+  background-color:lightcyan;
+}
