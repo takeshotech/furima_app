@@ -5,22 +5,22 @@ a {
   margin: 5px;
 }
 
+
+
 .header {
 
-  &__right {
+  &__text {
     font-size: 40px;
     color: lightseagreen;
-    float: right;
     font-family: monospace;
-    margin-right: 600px;
-    
+    text-align: center;
     
    }
 
-  &__left {
+  &__logo {
    padding-top: 50px;
-   margin-left: 550px;
    margin-bottom: 100px;
+  text-align: center;
   }
 
 }
@@ -29,12 +29,11 @@ a {
 
 background-color:#EEE;
 text-align: center;
+width: 600px;
 padding: 50px;
-margin-left: 300px;
-margin-right: 300px;
-margin-top: 200px;
+margin: auto;
+margin-top: 100px;
 margin-bottom: 200px;
-
 
 
 
@@ -43,16 +42,15 @@ margin-bottom: 200px;
     font-size: 20px;
   }
   .label-1 {
-    float: left;
+    width: 30px;
     background-color: red;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 350px;
-    margin-right: 350px;
     padding: 4px 8px;
     border-radius: 2px;
     color: #fff;
     font-size: 12px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
   }
 
 
@@ -117,18 +115,15 @@ margin-bottom: 200px;
     background-color: #ea352d;
     border: 1px solid #ea352d;
     color: #fff;
-    margin-top: 100px;
-    margin-left: 193px;
     display: block;
     width: 350px;
     line-height: 50px;
     font-size: 15px;
     border-radius: 5px;
     border: 1px solid transparent;
-    -webkit-transition: all ease-out .3s;
-    transition: all ease-out .3s;
-    cursor: pointer;
     text-align: center;
+    margin: auto ;
+    margin-top: 100px;
   }
 
 }
