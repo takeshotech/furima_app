@@ -2,7 +2,7 @@
 
 .header 
   .header__logo
-    = link_to image_tag("/assets/logo/logo.png",class: "furima-logo",:size =>'300x100'), "/"
+    = link_to image_tag("/assets/logo/logo.png",class: "furima-logo",size:'300x100'), "/"
 
 .login-form
 
@@ -12,20 +12,20 @@
 
   .login-form__mail
     MAIL : 
-    %input.user-information-text{:name => " e-mail", :placeholder => "メールアドレス", :type => "text", :value => ""}/
+    %input.user-information-text{name: " e-mail", placeholder: "メールアドレス", type:"text", value:""}
 
   .login-form__password
     PASS :
-    %input.user-information-text{:name => "password", :placeholder => "８文字以上の半角英数字", :type => "text", :value => ""}/
+    %input.user-information-text{name: "password", placeholder: "８文字以上の半角英数字", type: "text", value: ""}
 
   .login-form__submit
-    %a{href: '#' } 登録ログイン
+    = link_to 'ログイン',''
 
 .footer
   .footer__info
-    %a{href: '#' } プライバシーポリシー
-    %a{href: '#' } フリマ利用規約
-    %a{href: '#' } 特定商取引に関する表記
+    = link_to 'プライバシーポリシー',''
+    = link_to 'フリマ利用規約',''
+    = link_to '特定商取引に関する表記',''
   .footer__logo
-    = link_to image_tag("/assets/logo/logo-white.png", class: "furima-white-logo",:size =>'200x50'), "/"
-    %span © FURIMA
+    = link_to image_tag("/assets/logo/logo-white.png", class: "furima-white-logo",size:'200x50'), root_path
+    %p © FURIMA
