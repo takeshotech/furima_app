@@ -12,20 +12,20 @@
 
   .login-form__mail
     MAIL : 
-    <input type="メールアドレス" name="e-mail" placeholder="メールアドレス" class="input-default has-error" aria-describedby="e-mail-error" aria-invalid="true">
+    %input.user-information-text{:name => " e-mail", :placeholder => "メールアドレス", :type => "text", :value => ""}/
 
   .login-form__password
     PASS :
-    <input type="パスワード" name="password" placeholder="パスワード" class="input-default has-error" aria-describedby="password-error" aria-invalid="true">
+    %input.user-information-text{:name => "password", :placeholder => "８文字以上の半角英数字", :type => "text", :value => ""}/
 
   .login-form__submit
-    <a href="#">ログイン</a>
+    %a{href: '#' } 登録ログイン
 
 .footer
   .footer__info
-    <a href="#">プライバシーポリシー</a>
-    <a href="#">フリマ利用規約</a>
-    <a href="#">特定商取引に関する表記</a>
+    %a{href: '#' } プライバシーポリシー
+    %a{href: '#' } フリマ利用規約
+    %a{href: '#' } 特定商取引に関する表記
   .footer__logo
     = link_to image_tag("/assets/logo/logo-white.png", class: "furima-white-logo",:size =>'200x50'), "/"
-    <p>© FURIMA</p>
+    %span © FURIMA
