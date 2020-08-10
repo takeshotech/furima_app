@@ -30,30 +30,33 @@ a {
   margin-right: 300px;
   margin-bottom: 200px;
   padding-bottom: 200px;
+  
 
   &__text {
     color: lightseagreen;
     font-size: 40px;
     font-family: monospace;
     padding-top: 70px;
-    padding-left: 50px;
     padding-bottom: 50px;;
     text-align: center;
     border-bottom: 1px solid white;
+    margin: auto;
   }
 
   &__mail {
     font-family: monospace;
     font-size: 25px;
     text-align: center;
-    margin: 150px;
+    margin-top: 150px;
   }
 
   &__password {
     font-family: monospace;
     font-size: 25px;
     text-align: center;
-    margin: 100px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    
   }
 
   &__submit {
@@ -62,7 +65,8 @@ a {
     border: 1px solid #ea352d;
     color: #fff;
     margin-top: 150px;
-    margin-left: 250px;
+    margin-left: 150px;
+    margin: auto;
     display: block;
     width: 350px;
     line-height: 50px;
