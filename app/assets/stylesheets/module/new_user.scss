@@ -14,13 +14,13 @@ a {
     color: lightseagreen;
     font-family: monospace;
     text-align: center;
-    
+    padding-top: 100px;
    }
 
   &__logo {
-   padding-top: 50px;
+   padding-top: 100px;
    margin-bottom: 100px;
-  text-align: center;
+   text-align: center;
   }
 
 }
@@ -32,7 +32,7 @@ text-align: center;
 width: 600px;
 padding: 50px;
 margin: auto;
-margin-top: 100px;
+margin-top: 300px;
 margin-bottom: 200px;
 
 
@@ -42,7 +42,7 @@ margin-bottom: 200px;
     font-size: 20px;
   }
   .label-1 {
-    width: 30px;
+    width: 40px;
     background-color: red;
     padding: 4px 8px;
     border-radius: 2px;
