@@ -23,7 +23,7 @@
 |------|----|-------|
 |category_id|references|null: false, foreign_key: true|
 |shipping_id|references|null: false, foreign_key: true|
-|brand_id|references|null: false, foreign_key: true|
+|brand_id|references|foreign_key: true|
 |user_id|references|null: false, foreign_key: true|
 |name|string|null: false|
 |text|text|null: false|
