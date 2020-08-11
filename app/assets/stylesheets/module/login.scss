@@ -11,7 +11,6 @@ a {
 
 .header {
 
-  height: 200px;
 
   &__logo {
     padding-top: 100px;
@@ -23,7 +22,6 @@ a {
 
 .login-form {
 
-  height: 100%;
   width: 600px;
   background-color: #EEE;
   margin: auto;
@@ -55,7 +53,7 @@ a {
     font-size: 25px;
     text-align: center;
     margin-top: 150px;
-    margin-bottom: 150px;
+    margin-bottom: 200px;
     
   }
 
@@ -64,8 +62,6 @@ a {
     background-color: #ea352d;
     border: 1px solid #ea352d;
     color: #fff;
-    margin-top: 150px;
-    margin-left: 150px;
     margin: auto;
     display: block;
     width: 350px;
@@ -85,7 +81,6 @@ a {
   .footer {
 
     background-color: #272727;
-    height: 200px;
     
     &__info {
       text-align: center;

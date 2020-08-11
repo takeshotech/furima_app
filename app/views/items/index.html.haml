@@ -15,9 +15,10 @@
       %li
         ブランド
       %li
-        ログイン
+        = link_to 'ログイン' , new_user_session_path
       %li
-        新規会員登録
+        = link_to '新規会員登録' , new_user_registration_path
+
   .first_banner
     .catch_copy
       %p.text_big
