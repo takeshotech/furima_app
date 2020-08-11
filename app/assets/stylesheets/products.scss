@@ -6,7 +6,7 @@
   width: 100%;
   background-color: lightgray;
 }
-.newitem_header{
+.product_header{
   height: 100px;
   width: 100%;
   background-color:lightgray;
@@ -19,8 +19,11 @@
   }
 }
 
-.newitem_image{
+.product_image{
   height: 300px;
   min-width: 75%;
   background-color:lightcyan;
+  .label{
+
+  }
 }

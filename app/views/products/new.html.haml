@@ -1,17 +1,106 @@
 .wrapper
-  .newitem_header
+  .product_header
     =link_to image_tag("logo.png", class:'header_logo'), root_path
-  .newitem_image
-    .form
-  .newitem_name
+  .product_image
+    .label
+      商品画像
+    .description
+      最大10枚までアップロードできます  
+    .image_upload
+      %form
+        %label{class: "imge_upload__btn"}
+          =image_tag('icon_camera.png', size:'20x18')
+          %input{type: "file", class:"file"}
+      
+  .product_name
+    .label
+      商品名
+    %form
+      %input{type: "text", class: "name_input", placeholder:"40字まで"}
+    .label
+      商品の説明
+    %form
+      %input{type: "textarea", class: "description_input", placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。 "}
+    
 
-  .newitem_detail
+  .product_detail
+    .label--gray
+      商品の詳細
+    .label
+      カテゴリー
+    .category_select
+      = select_tag 'note[point]', options_for_select(["レディース", "メンズ", "ベビー・キッズ", "住まい・インテリア", "おもちゃ・ホビー"])
+    .label
+      ブランド
+    %form
+      %input{type: "text", class: "brand_input", placeholder:"例）シャネル"}
+    .label
+      商品の状態
+    .condition_select
+      = select_tag 'note[point]', options_for_select(["新品・未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり"])
+  .product_delivery
+    .label--gray
+      配送について
+    .label
+      配送料の負担
+    .select_fee
+      = select_tag 'note[point]', options_for_select(["送料込み（出品者負担）",  "着払い（購入者負担）"])
+    .label
+      発送元の地域
+    .select_area
+      = select_tag 'note[point]', options_for_select(["北海道", "青森県", "岩手県", "宮城県", "秋田県"])
+    .label
+      発送までの日数
+    .select_handing_time
+      = select_tag 'note[point]', options_for_select(["1〜2日で発送", "2〜3日で発送", "4〜7日で発送"])
+    .label
+      配送方法
+    .select_type
+      = select_tag 'note[point]', options_for_select(["らくらくフリマ便", "ゆうゆうフリマ便", "その他"])
 
-  .newitem_delivery
 
-  .newitem_price
+  .product_price
+    .label--gray
+      価格（¥300〜9,999,999）
+    .input_price
+      .label
+        販売価格
+      .input_box
+        .input_box_currency
+          ¥
+        %form
+      %input{type: "text", class: "input_box_price", placeholder:"0"}
+    .calculation_box
+      .sales_fee
+        .sales_fee__text
+          販売手数料（10%）
+        .sales_fee__result
+          ¥50
+      .sales_profit
+        .sales_profit__text
+          販売利益
+        .sales_profit__result
+          ￥450
+  .buttons
+    .listing_button
+      %input{type: "submit", value: "出品する", class: "listing_button"}
+    .draft_button
+      %input{type: "submit", value: "下書きに保存", class: "draft_button"}
+    = link_to root_path, class:"text_link" do
+      もどる
+    .attention
+      禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+  .product_footer
+    .footer_items
+      = link_to "#", class:"footer_item" do
+        プライバシーポリシー
+      = link_to "#", class:"footer_item" do
+        フリマ利用規約
+      = link_to "#", class:"footer_item" do
+        特定商取引に関する表記
 
-  .listing_button
+    .footer_logo
+      =link_to image_tag("logo-white.png", class:'header_logo'), root_path
+    .footer_copyright
+      © Furima, Inc.
 
-
-  .newitem_footer
