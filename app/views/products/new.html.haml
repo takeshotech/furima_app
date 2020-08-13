@@ -3,59 +3,89 @@
     =link_to image_tag("logo.png", class:'header_logo'), root_path
   .listing_forms  
     .product_image
-      .label
-        商品画像
-      .description
+      %form
+      .labels
+        %p.label
+          商品画像
+        %p.label__required
+          必須
+      %p
         最大10枚までアップロードできます  
       .image_upload
-        %form
-          %label{class: "imge_upload__btn"}
-            =image_tag('icon_camera.png', size:'20x18')
+        %label{class: "image_upload__btn"}
+          .btn_contents
+            =icon('fas', 'camera fa-2x')
             %input{type: "file", class:"file"}
-        
+            %p.text
+              ドラックアンドドロップ
+              %br
+              またはクリックしてファイルをアップロード    
     .product_name
-      .label
-        商品名
-      %form
-        %input{type: "text", class: "name_input", placeholder:"40字まで"}
-      .label
-        商品の説明
-      %form
-        %input{type: "textarea", class: "description_input", placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。 "}
-      
+      .labels
+        %p.label
+          商品名
+        %p.label__required
+          必須
+      %input{type: "text", class: "name_input", placeholder:"40字まで"}
+      .labels
+        %p.label
+          商品の説明
+        %p.label__required
+          必須
+      %textarea{class: "description_input", placeholder: description_input_placeholder}
 
     .product_detail
       .label--gray
         商品の詳細
-      .label
-        カテゴリー
+      .labels
+        %p.label
+          カテゴリー
+        %p.label__required
+          必須  
       .category_select
         = select_tag 'note[point]', options_for_select(["レディース", "メンズ", "ベビー・キッズ", "住まい・インテリア", "おもちゃ・ホビー"])
-      .label
-        ブランド
-      %form
-        %input{type: "text", class: "brand_input", placeholder:"例）シャネル"}
-      .label
-        商品の状態
+      .labels
+        %p.label
+          ブランド
+        %p.label__optional
+          任意
+      %input{type: "text", class: "brand_input", placeholder:"例）シャネル"}
+      .labels
+        %p.label
+          商品の状態
+        %p.label__required
+          必須  
       .condition_select
         = select_tag 'note[point]', options_for_select(["新品・未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり"])
     .product_delivery
       .label--gray
         配送について
-      .label
-        配送料の負担
+      .labels
+        %p.label
+          配送料の負担
+        %p.label__required
+          必須  
       .select_fee
         = select_tag 'note[point]', options_for_select(["送料込み（出品者負担）",  "着払い（購入者負担）"])
-      .label
-        発送元の地域
+      .labels
+        %p.label
+          発送元の地域
+        %p.label__required
+          必須  
       .select_area
         = select_tag 'note[point]', options_for_select(["北海道", "青森県", "岩手県", "宮城県", "秋田県"])
-      .label
-        発送までの日数
+      .labels
+        %p.label
+          発送までの日数
+        %p.label__required
+          必須  
       .select_handing_time
         = select_tag 'note[point]', options_for_select(["1〜2日で発送", "2〜3日で発送", "4〜7日で発送"])
-      .label
-        配送方法
+      .labels
+        %p.label
+          配送方法
+        %p.label__required
+          必須  
       .select_type
         = select_tag 'note[point]', options_for_select(["らくらくフリマ便", "ゆうゆうフリマ便", "その他"])
 
@@ -64,13 +94,15 @@
       .label--gray
         価格（¥300〜9,999,999）
       .input_price
-        .label
-          販売価格
+        .labels
+          %p.label
+            販売価格
+          %p.label__required
+            必須  
         .input_box
           .input_box_currency
             ¥
-          %form
-        %input{type: "text", class: "input_box_price", placeholder:"0"}
+          %input{type: "text", class: "input_box_price", placeholder:"0"}
       .calculation_box
         .sales_fee
           .sales_fee__text
