@@ -6,132 +6,146 @@ a {
 }
 
 
+.header_logo {
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+  
+}
 
-.header {
 
-  &__text {
-    font-size: 40px;
-    color: lightseagreen;
-    font-family: monospace;
-    text-align: center;
-    padding-top: 100px;
-   }
+.header_text {
 
-  &__logo {
-   padding-top: 100px;
-   margin-bottom: 100px;
-   text-align: center;
-  }
+  font-size: 40px;
+  color: lightseagreen;
+  font-family: monospace;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.label-1 {
+  width: 40px;
+  background-color: red;
+  padding: 4px 8px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  margin: auto;
+  // margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.field {
+
+font-size: 20px;
+font-family: monospace;
+background-color:#EEE;
+width: 700px;
+padding: 30px;
+margin-bottom: 200px;
+}
+
+.field1 {
+
+  width: 500px;
+  // margin: auto;
+  font-size: 20px;
+  font-family: monospace;
+  background-color:#EEE;
+  // text-align: center;
+  // padding: 20px;
+  
+}
+
+.field2 {
+
+  width: 600px;
+  font-size: 20px;
+  font-family: monospace;
+  background-color:#EEE;
+  text-align: center;
+  padding: 30px;
 
 }
 
-.user-information {
+.field22 {
 
-background-color:#EEE;
-text-align: center;
-width: 600px;
-padding: 50px;
-margin: auto;
-margin-top: 300px;
-margin-bottom: 200px;
+  font-size: 20px;
+  font-family: monospace;
+  background-color:#EEE;
+  text-align: center;
+  width: 550px;
+  padding: 30px;
+  margin: auto;
+}
+
+.field3 {
+
+  font-size: 20px;
+  font-family: monospace;
+  background-color:#EEE;
+  text-align: center;
+  width: 500px;
+  padding: 30px;
+  margin: auto;
+}
+
+.field4 {
+
+  font-size: 20px;
+  font-family: monospace;
+  background-color:#EEE;
+  text-align: center;
+  width: 500px;
+  padding: 30px;
+  margin: auto;
+}
+
+.field5 {
+
+  font-size: 20px;
+  font-family: monospace;
+  background-color:#EEE;
+  text-align: center;
+  width: 500px;
+  padding: 30px;
+  margin: auto;
+}
+
+.field6 {
+
+  font-size: 20px;
+  font-family: monospace;
+  background-color:#EEE;
+  text-align: center;
+  width: 500px;
+  padding: 30px;
+  margin: auto;
+  margin-bottom: 200px;
+}
 
 
-
-  &__nickname {
-    font-family: monospace;
-    font-size: 20px;
-  }
-  .label-1 {
-    width: 40px;
-    background-color: red;
-    padding: 4px 8px;
-    border-radius: 2px;
-    color: #fff;
-    font-size: 12px;
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 20px;
-  }
-
-
-  &__nickname--form {
-    height: 40px;
-
-  }
-
-  &__realname {
-    font-family: monospace;
-    font-size: 20px;
-    margin-top: 30px;
-  }
-
-  &__realname--form {
-    height: 30px;
-  }
-
-  &__realname_kana {
-    font-family: monospace;
-    font-size: 20px;
-    margin-top: 30px;
-  }
-
-  &__realname_kana--form {
-    height: 30px;
-  }
-
-  &__birthday {
-    font-family: monospace;
-    font-size: 20px;
-    margin-top: 30px;
-  }
-
-  &__birthday--form {
-
-  height: 30px;
-  }
-
-  &__password {
-    font-family: monospace;
-    font-size: 20px;
-    margin-top: 30px;
-  }
-
-  &__password--form {
-    height: 30px;
-  }
-
-  &__mail {
-    font-family: monospace;
-    font-size: 20px;
-    margin-top: 30px;
-  }
-
-  &__mail--form {
-   height: 30px;
- }
-
-  &__submit {
-    font-family: monospace;
-    background-color: #ea352d;
-    border: 1px solid #ea352d;
-    color: #fff;
-    display: block;
-    width: 350px;
-    line-height: 50px;
-    font-size: 15px;
-    border-radius: 5px;
-    border: 1px solid transparent;
-    text-align: center;
-    margin: auto ;
-    margin-top: 100px;
-  }
-
+.button {
+  font-family: monospace;
+  display: inline-block;
+  border-radius: 5%;
+  font-size: 22pt;
+  text-align: center;
+  cursor: pointer;
+  padding: 13px 100px;
+  background: #ff0000;
+  color: #ffffff;
+  line-height: 1em; 
+  transition: .3s;
+  border: 2px solid #ff0000;
+  margin-bottom: 100px;
 }
 
 
 .footer {
   background-color: #272727;
-  height: 200px;
+  // height: 200px;
   
   &__info {
     text-align: center;
