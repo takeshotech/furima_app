@@ -44,8 +44,7 @@
           カテゴリー
         %p.label__required
           必須  
-      .category_select
-        = select_tag 'note[point]', options_for_select(["レディース", "メンズ", "ベビー・キッズ", "住まい・インテリア", "おもちゃ・ホビー"])
+      = select_tag 'note[point]', options_for_select(["選択してください", "レディース", "メンズ", "ベビー・キッズ", "住まい・インテリア", "おもちゃ・ホビー"]), class:'select_box'
       .labels
         %p.label
           ブランド
@@ -57,8 +56,7 @@
           商品の状態
         %p.label__required
           必須  
-      .condition_select
-        = select_tag 'note[point]', options_for_select(["新品・未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり"])
+      = select_tag 'note[point]', options_for_select(["新品・未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり"]), class: 'select_box'
     .product_delivery
       .label--gray
         配送について

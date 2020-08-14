@@ -2,6 +2,9 @@
   box-sizing: border-box;
   font-size: 14px;
 }
+body{
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-seri;
+}
 .wrapper{
   height: 100%;
   width: 100%;
@@ -48,12 +51,20 @@
   border-width: 0px 0px 2px 0px;
 }  
 
+@mixin select_box_style {
+  width: 100%;
+  height: 45px;    
+  padding: 0 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;  
+}
+
 .listing_forms{
   height: 100%;
   width: 100%;
 }
 .product_image{
-  height: 300px;
+  height: auto;
   width: 700px;
   margin: 0 auto;
   background-color:white;
@@ -99,7 +110,7 @@
   }
 
 .product_name{
-  height: 400px;
+  height: auto;
   width: 700px;
   margin: 0 auto;
   background-color:white;
@@ -134,30 +145,49 @@
 }
 
 .product_detail{
-  height: 300px;
+  height: auto;
   width: 700px;
   margin: 0 auto;
   background-color:white;
   padding: 40px;
+  @include section_line();
   .label--gray{
     @include label__gray();
   }
   .labels{
     @include labels();
+    margin-top: 30px;
     .label{
       @include label();
       &__required{
         @include label__required();
       }
+      &__optional{
+        background-color:#bfbfbf;
+        color:#ffff;
+        font-size: 12px;
+        padding: 0 4px;
+      }
     }
+  }
+  .select_box{
+    @include select_box_style();
+    
+  }
+  .brand_input{
+    height: 45px;
+    width: 100%;
+    @include input_style();
+    margin-bottom: 15px;
   }
 }
 .product_delivery{
-  height: 300px;
+  height: auto;
   width: 700px;
   margin: 0 auto;
   background-color:white;
   padding: 40px;
+  @include section_line();
   .label--gray{
     @include label__gray();
   }
