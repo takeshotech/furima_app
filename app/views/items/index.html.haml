@@ -1,20 +1,20 @@
 .wrapper
-  .header
-    .header__up
-      .header__logo
+  .t-header
+    .t-header__up
+      .t-header__logo
         %h1.icon
           = link_to "/" do
             = image_tag "logo.svg"
-        .header__search
+        .t-header__search
           .form
             %input{type: "text", placeholder:"キーワードから探す"}
             %button{type: "submit", class:'search_btn'}
-              .header__search-icon
+              .t-header__search-icon
                 =image_tag "icon-search 1.png"
 
 
 
-      .header__under
+      .t-header__under
         %ul.left-side
           %li.left-side__item.list-side__item-category
             = link_to "カテゴリー", "#", { :id => "category-btn"}
@@ -72,14 +72,14 @@
           = image_tag "google-play-badge.svg"
   .choice-point
     %h2.title
-      FURIMAが選ばれる３つの理由
+      FURIMAが選ばれる3つの理由
     %ul.points
       %li.point
         .point__image
           %span.number 1 
           = image_tag "pict-reason-01.jpg"    
         %h3.description-title
-          %span ３分
+          %span 3分
           ですぐに出品
         %p.description-text
           スマホで入力するだけで簡単に出品できる！
@@ -298,8 +298,8 @@
       = link_to "#" do
         = image_tag("google-play-badge.svg", class: 'g-btn')
         
-  .footer
-    .footer__contents
+  .t-footer
+    .t-footer__contents
       .content
         %h2.content__title
           FURIMAについて
@@ -330,10 +330,10 @@
             = link_to "FURIMAロゴ利用ガイドライン", "#"
           %li
             = link_to "お知らせ", "#"
-    .footer__logo
+    .t-footer__logo
       = link_to "#" do
         = image_tag "logo-white.svg"
-      %p.footer__copylight 
+      %p.t-footer__copylight 
         © FURIMA
   = link_to "#" do
     .camera-btn

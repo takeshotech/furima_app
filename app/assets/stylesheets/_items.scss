@@ -5,7 +5,7 @@
 body{
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-seri;
 }
-.header{
+.t-header{
   padding: 0 60px;
 
   &__up{
@@ -15,7 +15,7 @@ body{
     margin: 0 auto;
     padding: 15px 0 0;
     
-    .header__logo{
+    .t-header__logo{
       position: relative;
       display: flex;
       align-items: center;
@@ -38,7 +38,7 @@ body{
     } 
   }
 
-    .header__search{
+    .t-header__search{
       margin-left: auto;
       width: 100%;
 
@@ -60,7 +60,7 @@ body{
           background-color: #3CCACE;
           padding: 8px;
 
-          .header__search-icon{
+          .t-header__search-icon{
             img{
               width: 100%;
               vertical-align: bottom;
@@ -120,6 +120,7 @@ body{
 
             li{
               position: relative;
+              display: none;
             }
           }
         }
@@ -412,6 +413,7 @@ body{
   padding: 80px 0 0;
   background-color:#f8f8f8;
 
+
    .title{
      text-align: center;
      font-size: 28px;
@@ -522,6 +524,10 @@ body{
    }
 }
 
+.pickup:last-child{
+  padding-bottom: 80px;
+}
+
 
 .third-banner{
   background-image: url("bg-appBanner.jpg");
@@ -574,7 +580,7 @@ body{
   }
 }
 
-.footer{
+.t-footer{
   padding: 60px 0;
   text-align: center;
   background-color: #272727;
