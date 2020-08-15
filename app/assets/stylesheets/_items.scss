@@ -149,7 +149,7 @@ body{
 }
 
 .first-banner{
-  background-image: url("bg-mainVisual.jpg");
+  background-image: image-url("bg-mainVisual.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -296,7 +296,7 @@ body{
 }
 
 .second-banner{
-  background-image: url("/assets/bg-topMiddle.jpg");
+  background-image: image-url("bg-topMiddle.jpg");
   background-size: cover;
   background-position: bottom right;
   display: flex;
@@ -530,7 +530,7 @@ body{
 
 
 .third-banner{
-  background-image: url("bg-appBanner.jpg");
+  background-image: image-url("bg-appBanner.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
