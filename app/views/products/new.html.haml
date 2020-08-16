@@ -2,9 +2,9 @@
   .product_header
     =link_to image_tag("logo.png", class:'header_logo'), root_path
   .listing_forms  
-    .product_image
+    .from_section.section_line
       %form
-      .labels
+      .labels.mb_15
         %p.label
           商品画像
         %p.label__required
@@ -20,107 +20,104 @@
               ドラックアンドドロップ
               %br
               またはクリックしてファイルをアップロード    
-    .product_name
-      .labels
+    .from_section.section_line
+      .labels.mb_15
         %p.label
           商品名
         %p.label__required
           必須
-      %input{type: "text", class: "name_input", placeholder:"40字まで"}
-      .labels
+      %input{type: "text", class: "input_style input_size_45 mb_30", placeholder:"40字まで"}
+      .labels.mb_15
         %p.label
           商品の説明
         %p.label__required
           必須
-      %textarea{class: "description_input", placeholder: description_input_placeholder}
+      %textarea{class: "input_style input_size_150 mb_30", placeholder: description_input_placeholder}
       .text_counter
         %p
           0/1000
-    .product_detail
-      .label--gray
+    .from_section.section_line
+      .label--gray.mb_30
         商品の詳細
-      .labels
+      .labels.mb_15
         %p.label
           カテゴリー
         %p.label__required
           必須  
-      = select_tag 'note[point]', options_for_select(["選択してください", "レディース", "メンズ", "ベビー・キッズ", "住まい・インテリア", "おもちゃ・ホビー"]), class:'select_box'
-      .labels
+      = select_tag 'note[point]', options_for_select(["選択してください", "レディース", "メンズ", "ベビー・キッズ", "住まい・インテリア", "おもちゃ・ホビー"]), class:'selectbox_style mb_30'
+      .labels.mb_15
         %p.label
           ブランド
         %p.label__optional
           任意
-      %input{type: "text", class: "brand_input", placeholder:"例）シャネル"}
-      .labels
+      %input{type: "text", class: "input_style input_size_45 mb_30", placeholder:"例）シャネル"}
+      .labels.mb_15
         %p.label
           商品の状態
         %p.label__required
           必須  
-      = select_tag 'note[point]', options_for_select(["新品・未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり"]), class: 'select_box'
-    .product_delivery
-      .label--gray
+      = select_tag 'note[point]', options_for_select(["新品・未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり"]), class: 'selectbox_style'
+    .from_section.section_line
+      .label--gray.mb_30
         配送について
-      .labels
+      .labels.mb_15
         %p.label
           配送料の負担
         %p.label__required
-          必須  
-      .select_fee
-        = select_tag 'note[point]', options_for_select(["送料込み（出品者負担）",  "着払い（購入者負担）"])
-      .labels
+          必須
+      = select_tag 'note[point]', options_for_select(["送料込み（出品者負担）",  "着払い（購入者負担）"]), class: 'selectbox_style mb_30'
+      .labels.mb_15
         %p.label
           発送元の地域
         %p.label__required
           必須  
       .select_area
-        = select_tag 'note[point]', options_for_select(["北海道", "青森県", "岩手県", "宮城県", "秋田県"])
-      .labels
+        = select_tag 'note[point]', options_for_select(["北海道", "青森県", "岩手県", "宮城県", "秋田県"]), class: 'selectbox_style mb_30'
+      .labels.mb_15
         %p.label
           発送までの日数
         %p.label__required
           必須  
-      .select_handing_time
-        = select_tag 'note[point]', options_for_select(["1〜2日で発送", "2〜3日で発送", "4〜7日で発送"])
-      .labels
+      = select_tag 'note[point]', options_for_select(["1〜2日で発送", "2〜3日で発送", "4〜7日で発送"]), class: 'selectbox_style mb_30'
+      .labels.mb_15
         %p.label
           配送方法
         %p.label__required
           必須  
-      .select_type
-        = select_tag 'note[point]', options_for_select(["らくらくフリマ便", "ゆうゆうフリマ便", "その他"])
+      = select_tag 'note[point]', options_for_select(["らくらくフリマ便", "ゆうゆうフリマ便", "その他"]), class: 'selectbox_style'
 
 
-    .product_price
-      .label--gray
+    .from_section
+      .label--gray.mb_30
         価格（¥300〜9,999,999）
-      .input_price
+      .input_price.mb_30
         .labels
           %p.label
             販売価格
           %p.label__required
             必須  
         .input_box
-          .input_box_currency
+          %p.mr_5
             ¥
-          %input{type: "text", class: "input_box_price", placeholder:"0"}
+          %input{type: "text", class: "input_style input_size_45", placeholder:"0"}
+      .calculation_box.mb_30
+        %p
+          販売手数料（10%）
+        %p
+          ¥50
+      %hr.mb_30   
       .calculation_box
-        .sales_fee
-          .sales_fee__text
-            販売手数料（10%）
-          .sales_fee__result
-            ¥50
-        .sales_profit
-          .sales_profit__text
-            販売利益
-          .sales_profit__result
-            ￥450
-    .buttons
-      .listing_button
-        %input{type: "submit", value: "出品する", class: "listing_button"}
-      .draft_button
-        %input{type: "submit", value: "下書きに保存", class: "draft_button"}
-      = link_to root_path, class:"text_link" do
-        もどる
+        %p
+          販売利益
+        %p
+          ￥450
+    .from_section
+      .buttons.mb_30
+        %input{type: "submit", value: "出品する", class: "btn listing mb_15"}
+        %input{type: "submit", value: "下書きに保存", class: "btn draft"}
+      .text_link.mb_30
+        = link_to root_path do
+          もどる
       .attention
         禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
   .product_footer

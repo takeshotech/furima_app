@@ -5,6 +5,17 @@
 body{
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-seri;
 }
+
+hr {
+  border-top-color: #efefef;
+  border-left: 0 solid #efefef;
+  border-bottom: 0 solid #efefef;
+  border-right: 0 solid #efefef;
+  border-top-style: solid;
+  margin: 0;
+}
+
+
 .wrapper{
   height: 100%;
   width: 100%;
@@ -21,37 +32,41 @@ body{
     width: 185px;
   }
 }
-@mixin labels{
-  font-weight: 600;
-  display: flex;
-  justify-content: start;
-  margin-bottom: 15px;
-  }
-@mixin label{
-    margin-right: 4px;
-  }
-@mixin label__required{
-    background-color: red;
-    color: white;
-    font-size: 12px;
-    padding: 0 4px;
-  }
-@mixin label__gray {
-  font-weight: 600;
-  color: gray;
-  margin-bottom: 30px;
+
+.listing_forms{
+  height: 100%;
+  width: 100%;
 }
-@mixin input_style {
-  padding: 0 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;  
-}
-@mixin section_line {
+
+.from_section{
+  height: auto;
+  width: 700px;
+  margin: 0 auto;
+  background-color:white;
+  padding: 40px;
+  }
+
+.section_line {
   border:solid #f5f5f5 ;
   border-width: 0px 0px 2px 0px;
 }  
 
-@mixin select_box_style {
+.input_style {
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px; 
+}
+
+.input_size_45 {
+  height: 45px;
+  width: 100%;
+}
+.input_size_150 {
+  height: 150px;
+  width: 100%;
+}
+
+.selectbox_style {
   width: 100%;
   height: 45px;    
   padding: 0 16px;
@@ -59,174 +74,123 @@ body{
   border-radius: 4px;  
 }
 
-.listing_forms{
-  height: 100%;
-  width: 100%;
-}
-.product_image{
-  height: auto;
-  width: 700px;
-  margin: 0 auto;
-  background-color:white;
-  padding: 40px;
-  @include section_line();
-  .labels{
-    @include labels();
-    .label{
-      @include label();
-      &__required{
-        @include label__required();
-      }
-    }
-  }   
+.labels{
+  font-weight: 600;
+  display: flex;
+  justify-content: start;
   }
-  .image_upload{
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-    &__btn{
-      width: 620px;
-      height: 150px;
-      background-color: #f5f5f5;
-      border-style: dashed;
-      border-color: #ccc;
-      border-width: 1px;
-      text-align: center;
-      position: relative;
-      .btn_contents{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translateY(-50%) translateX(-50%);
-        padding: 20px;
-      }
-        .file{
-          display: none;
-        }
-        .text{
-          font-size: 12px;
-        }
-    }
+  
+.label{
+    margin-right: 4px;
   }
 
-.product_name{
-  height: auto;
-  width: 700px;
-  margin: 0 auto;
-  background-color:white;
-  padding: 40px;
-  @include section_line();
-  .labels{
-    @include labels();
-    .label{
-      @include label();
-      &__required{
-        @include label__required();
-      }
-    }
+  .label--gray {
+    font-weight: 600;
+    color: gray;
   }
-  .name_input{
-    height: 45px;
-    width: 100%;
-    @include input_style();
-    margin-bottom: 30px;
+
+.label__required{
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    padding: 0 4px;
   }
-  .description_input{
+
+.label__optional{
+    background-color:#bfbfbf;
+    color:#ffff;
+    font-size: 12px;
+    padding: 0 4px;
+  }
+
+.mb_30{
+  margin-bottom: 30px;
+}
+
+.mb_15 {
+  margin-bottom: 15px;
+}
+
+.mr_5 {
+  margin-right: 5px;
+}
+
+.image_upload{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  &__btn{
+    width: 620px;
     height: 150px;
-    width: 100%;
-    @include input_style();
-    padding-top: 16px;
+    background-color: #f5f5f5;
+    border-style: dashed;
+    border-color: #ccc;
+    border-width: 1px;
+    text-align: center;
+    position: relative;
+    .btn_contents{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      padding: 20px;
+    }
+      .file{
+        display: none;
+      }
+      .text{
+        font-size: 12px;
+      }
   }
-  .text_counter {
+}
+.text_counter {
     text-align: right;
     font-size: 12px;
     color: #888888;
   }
+
+.input_price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .input_box{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.calculation_box {
+  display: flex;
+  justify-content: space-between;
 }
 
-.product_detail{
-  height: auto;
-  width: 700px;
-  margin: 0 auto;
-  background-color:white;
-  padding: 40px;
-  @include section_line();
-  .label--gray{
-    @include label__gray();
+
+
+.buttons{
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 0 150px;
   }
-  .labels{
-    @include labels();
-    margin-top: 30px;
-    .label{
-      @include label();
-      &__required{
-        @include label__required();
-      }
-      &__optional{
-        background-color:#bfbfbf;
-        color:#ffff;
-        font-size: 12px;
-        padding: 0 4px;
-      }
-    }
-  }
-  .select_box{
-    @include select_box_style();
-    
-  }
-  .brand_input{
+  .btn{
     height: 45px;
     width: 100%;
-    @include input_style();
-    margin-bottom: 15px;
-  }
-}
-.product_delivery{
-  height: auto;
-  width: 700px;
-  margin: 0 auto;
-  background-color:white;
-  padding: 40px;
-  @include section_line();
-  .label--gray{
-    @include label__gray();
-  }
-  .labels{
-    @include labels();
-    .label{
-      @include label();
-      &__required{
-        @include label__required();
-      }
+    border: none;
+    border-radius: 4px;
+    &.listing{
+      background-color: red;
+      color: white;
+    }
+    &.draft{
+      background-color: #ccc;
     }
   }
-}
-.product_price{
-  height: 300px;
-  width: 700px;
-  margin: 0 auto;
-  background-color:white;
-  padding: 40px;
-  .label--gray{
-    @include label__gray();
+  .text_link {
+    text-align: center;
   }
-  .labels{
-    @include labels();
-    .label{
-      @include label();
-      &__required{
-        @include label__required();
-      }
-    }
-  }  
-}
-.buttons{
-  height: 300px;
-  width: 700px;
-  margin: 0 auto;
-  background-color:white;
-  padding: 40px;
-}
+
+
+
 .product_footer{
   width: 100%;
   text-align: center;
