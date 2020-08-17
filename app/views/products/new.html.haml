@@ -118,9 +118,20 @@
       .text_link.mb_30
         = link_to root_path do
           もどる
-      .attention
-        禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
-  .product_footer
+      
+      .attention.mb_30
+        禁止されている
+        %span>= link_to "行為", "#"
+        および
+        %span>= link_to "出品物", "#"
+        を必ずご確認ください。
+        %span>= link_to "偽ブランド品", "#"
+        や
+        %span>= link_to "盗品物", "#"
+        などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
+        %span>= link_to "加盟店規約", "#"
+        に同意したことになります。
+  .product_footer.mt_30
     .footer_items
       = link_to "#", class:"footer_item" do
         プライバシーポリシー
@@ -129,7 +140,7 @@
       = link_to "#", class:"footer_item" do
         特定商取引に関する表記
 
-    .footer_logo
+    .footer_logo.mt_30
       =link_to image_tag("logo-white.png", class:'footer_logo'), root_path
     .footer_copyright
       © Furima, Inc.
