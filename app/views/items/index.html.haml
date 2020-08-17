@@ -1,0 +1,342 @@
+.wrapper
+  .t-header
+    .t-header__up
+      .t-header__logo
+        %h1.icon
+          = link_to "/" do
+            = image_tag "logo.svg"
+        .t-header__search
+          .form
+            %input{type: "text", placeholder:"キーワードから探す"}
+            %button{type: "submit", class:'search_btn'}
+              .t-header__search-icon
+                =image_tag "icon-search 1.png"
+
+
+
+      .t-header__under
+        %ul.left-side
+          %li.left-side__item.list-side__item-category
+            = link_to "カテゴリー", "#", { :id => "category-btn"}
+
+            .tree
+              %ul.category-tree
+                %li.category-tree--item
+                  = link_to "レディース", "#", { :id => "1"}
+                %li.category-tree--item
+                  = link_to "メンズ", "#", { :id => "2"}
+                %li.category-tree--item
+                  = link_to "ベビー・キッズ", "#", { :id => "3"}
+                %li.category-tree--item
+                  = link_to "インテリア・住まい・小物", "#", { :id => "4"}
+                %li.category-tree--item
+                  = link_to "本・音楽・ゲーム", "#", { :id => "5"}
+                %li.category-tree--item
+                  = link_to "おもちゃ・ホビー・グッズ", "#", { :id => "6"}
+                %li.category-tree--item
+                  = link_to "コスメ・香水・美容", "#", { :id => "7"}
+                %li.category-tree--item
+                  = link_to "家電・スマホ・カメラ", "#", { :id => "8"}
+                %li.category-tree--item
+                  = link_to "スポーツ・レジャー", "#", { :id => "9"}
+                %li.category-tree--item
+                  = link_to "ハンドメイド", "#", { :id => "10"}
+                %li.category-tree--item
+                  = link_to "チケット", "#", { :id => "11"}
+                %li.category-tree--item
+                  = link_to "自動車・オートバイ", "#", { :id => "12"}
+                %li.category-tree--item
+                  = link_to "その他", "#", { :id => "13"}
+          %li.left-side__item
+            = link_to "ブランド", "#", { :id => "brand-btn"}
+        %ul.right-side
+          %li.right-side__item.right-side__item-login
+            = link_to "ログイン", "#", { :id => "login-btn"}
+          %li.right-side__item
+            = link_to "新規会員登録", "#", { :id => "new-btn"}
+            
+
+  .first-banner
+    .first-banner__content
+      %h2.catch-copy
+        %br
+          人生を変えるフリマアプリ
+        %p.text-small
+          FURIMAはだれでもかんたんに出品・購入できる
+          %br
+          フリマアプリです
+      .download-btn
+        = link_to "#", class: 'a-btn' do
+          = image_tag "apple.svg"
+        = link_to "#", class: 'g-btn' do
+          = image_tag "google-play-badge.svg"
+  .choice-point
+    %h2.title
+      FURIMAが選ばれる3つの理由
+    %ul.points
+      %li.point
+        .point__image
+          %span.number 1 
+          = image_tag "pict-reason-01.jpg"    
+        %h3.description-title
+          %span 3分
+          ですぐに出品
+        %p.description-text
+          スマホで入力するだけで簡単に出品できる！
+      %li.point
+        .point__image
+          %span.number 2
+          = image_tag "pict-reason-02.jpg" 
+        %h3.description-title
+          %span シンプル
+          で使いやすい
+        %p.description-text
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+      %li.point.point-last
+        .point__image
+          %span.number 3 
+          = image_tag "pict-reason-03.jpg" 
+        %h3.description-title
+          手数料
+          %span 業界最安
+        %p.description-text
+          最大3%でお得に出品&購入！   
+
+  .second-banner
+    .catch-copy
+      %h2.text-big 会員数日本一位
+      %p.text-small
+        FURIMAは、フリマアプリで最も人気。
+        %br
+        出品・購入回数も業界最多です！
+        %br
+        ほしかったあの商品に出会えるかもしれません。
+      .download-btn
+        = link_to "#" do
+          = image_tag("apple.svg", class: 'a-btn')
+        = link_to "#" do
+          = image_tag("google-play-badge.svg", class: 'g-btn')
+          
+
+  .furima-feature
+    %h2.title
+      FURIMAの特徴
+    .features
+      .feature
+        = image_tag("icon-01.svg", class: 'feature__image')
+        %h3.feature__description
+          簡単に売り買いできる
+        %p.description-text
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      .feature
+        = image_tag("icon-02.svg", class: 'feature__image')
+        %h3.feature__description
+          売上金は即日振込みに対応
+        %p.description-text
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+      .feature
+        = image_tag("icon-03.svg", class: 'feature__image')
+        %h3.feature__description  
+          様々な支払いに対応
+        %p.description-text
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+
+  .pickup
+    %h2.title ピックアップカテゴリー
+    .items
+      .items__head
+        = link_to "#" do
+          %h3.title-b 新規投稿商品
+      .item-lists
+        .item
+          = link_to "#" do
+            %figure.item-image
+              = image_tag "a004.png"
+            .item__description
+              %h3.item-name サンプル商品
+              .item-detail
+                %ul
+                  %li 1000円
+                  %li
+                    = icon("fas", "star", class: "link-icon")
+                    0
+                %p (税込)
+        .item
+          = link_to "#" do
+            %figure.item-image
+              = image_tag "a004.png"
+            .item__description
+              %h3.item-name サンプル商品
+              .item-detail
+                %ul
+                  %li 1000円
+                  %li
+                    = icon("fas", "star", class: "link-icon")
+                    0
+                %p (税込)
+        .item
+          = link_to "#" do
+            %figure.item-image
+              = image_tag "a004.png"
+            .item__description
+              %h3.item-name サンプル商品
+              .item-detail
+                %ul
+                  %li 1000円
+                  %li
+                    = icon("fas", "star", class: "link-icon")
+                    0
+                %p (税込)
+        .item
+          = link_to "#" do
+            %figure.item-image
+              = image_tag "a004.png"
+            .item__description
+              %h3.item-name サンプル商品
+              .item-detail
+                %ul
+                  %li 1000円
+                  %li
+                    = icon("fas", "star", class: "link-icon")
+                    0
+                %p (税込)
+        .item
+          = link_to "#" do
+            %figure.item-image
+              = image_tag "a004.png"
+            .item__description
+              %h3.item-name サンプル商品
+              .item-detail
+                %ul
+                  %li 1000円
+                  %li
+                    = icon("fas", "star", class: "link-icon")
+                    0
+                %p (税込)
+  .pickup
+    %h2.title ピックアップブランド
+    .items
+      .items__head
+        = link_to "#" do
+          %h3.title-b アーカイバ
+      .item-lists
+        .item
+          = link_to "#" do
+            %figure.item-image
+              = image_tag "a004.png"
+            .item__description
+              %h3.item-name サンプル商品
+              .item-detail
+                %ul
+                  %li 1000円
+                  %li
+                    = icon('fas', 'star', class: "link-icon")
+                    0
+                %p (税込)
+        .item
+          = link_to "#" do
+            %figure.item-image
+              = image_tag "a004.png"
+            .item__description
+              %h3.item-name サンプル商品
+              .item-detail
+                %ul
+                  %li 1000円
+                  %li
+                    = icon('fas', 'star', class: "link-icon")
+                    0
+                %p (税込)
+        .item
+          = link_to "#" do
+            %figure.item-image
+              = image_tag "a004.png"
+            .item__description
+              %h3.item-name サンプル商品
+              .item-detail
+                %ul
+                  %li 1000円
+                  %li
+                    = icon('fas', 'star', class: "link-icon")
+                    0
+                %p (税込)
+        .item
+          = link_to "#" do
+            %figure.item-image
+              = image_tag "a004.png"
+            .item__description
+              %h3.item-name サンプル商品
+              .item-detail
+                %ul
+                  %li 1000円
+                  %li
+                    = icon('fas', 'star', class: "link-icon")
+                    0
+                %p (税込)
+        .item
+          = link_to "#" do
+            %figure.item-image
+              = image_tag "a004.png"
+            .item__description
+              %h3.item-name サンプル商品
+              .item-detail
+                %ul
+                  %li 1000円
+                  %li
+                    = icon('fas', 'star', class: "link-icon")
+                    0
+                %p (税込)
+
+  .third-banner
+    .catch-copy
+      %p.text-small
+        だれでもかんたん、人生を変えるフリマアプリ
+      %p.text-big
+        今すぐ無料ダウンロード！
+    .download-btn
+      = link_to "#" do
+        = image_tag("apple.svg", class: 'a-btn')
+      = link_to "#" do
+        = image_tag("google-play-badge.svg", class: 'g-btn')
+        
+  .t-footer
+    .t-footer__contents
+      .content
+        %h2.content__title
+          FURIMAについて
+        %ul
+          %li
+            = link_to "会社概要 （運営会社）", "#"
+          %li
+            = link_to "プライバシーポリシー", "#"
+          %li
+            = link_to "FURIMA利用規約", "#"
+          %li
+            = link_to "ポイントに関する特約", "#"
+      .content
+        %h2.content__title
+          FURIMAを見る
+        %ul
+          %li
+            = link_to "カテゴリ一覧", "#"
+          %li
+            = link_to "ブランド一覧", "#"
+      .content
+        %h2.content__title
+          ヘルプ＆ガイド
+        %ul
+          %li
+            = link_to "FURIMAガイド", "#"
+          %li
+            = link_to "FURIMAロゴ利用ガイドライン", "#"
+          %li
+            = link_to "お知らせ", "#"
+    .t-footer__logo
+      = link_to "#" do
+        = image_tag "logo-white.svg"
+      %p.t-footer__copylight 
+        © FURIMA
+  = link_to "#" do
+    .camera-btn
+      %span.camera-btn__text 出品する
+      = image_tag("icon_camera.png", class: 'camera-btn__icon')
+      

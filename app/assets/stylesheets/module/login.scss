@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  margin: 5px;
+}
+
+
+.header {
+
+  height: 300px;
+
+  &__logo {
+    padding-top: 150px;
+    text-align: center;
+  }
+
+
+}
+
+.login-form {
+
+  height: 100%;
+  background-color: #EEE;
+  margin-top: 100px;
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-bottom: 200px;
+  padding-bottom: 200px;
+  
+
+  &__text {
+    color: lightseagreen;
+    font-size: 40px;
+    font-family: monospace;
+    padding-top: 70px;
+    padding-bottom: 50px;;
+    text-align: center;
+    border-bottom: 1px solid white;
+    margin: auto;
+  }
+
+  &__mail {
+    font-family: monospace;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 150px;
+  }
+
+  &__password {
+    font-family: monospace;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    
+  }
+
+  &__submit {
+    font-family: monospace;
+    background-color: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    margin-top: 150px;
+    margin-left: 150px;
+    margin: auto;
+    display: block;
+    width: 350px;
+    line-height: 50px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    -webkit-transition: all ease-out .5s;
+    transition: all ease-out .5s;
+    cursor: pointer;
+    text-align: center;
+  }
+
+}
+
+
+  .footer {
+
+    background-color: #272727;
+    height: 200px;
+    
+    &__info {
+      text-align: center;
+      color: white;
+      padding-top: 30px;
+    }
+  
+    &__logo {
+      text-align: center;
+      font-size: 15px;
+      color: white;
+      padding-top: 30px;
+    }
+  }
