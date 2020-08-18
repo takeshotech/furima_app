@@ -59,11 +59,9 @@
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|path|text|null: false|
 |name|string|null: false|
 |ancestry|string||	
 ### Association
-- has_many :brands
 - has_many :products
 - has_ancestry
 
