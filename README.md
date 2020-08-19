@@ -59,11 +59,9 @@
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|path|text|null: false|
 |name|string|null: false|
-|ancestry|string||	
+|ancestry|string||
 ### Association
-- has_many :brands
 - has_many :products
 - has_ancestry
 
@@ -86,7 +84,7 @@
 |prefecture|string|null: false|
 |city|string|null: false|
 |address1|string|null: false|
-|address2|string|
+|address2|string||
 |telephone|string|unique: true|
 ### Association
 - belongs_to :user
