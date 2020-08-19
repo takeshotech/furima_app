@@ -14,17 +14,17 @@ a {
 }
 
 
-.header_text {
+.header_text1 {
 
   font-size: 40px;
-  color: lightseagreen;
+  color: #3CCACE;
   font-family: monospace;
   text-align: center;
   padding-top: 100px;
   padding-bottom: 100px;
 }
 
-.label-1 {
+.label-must {
   width: 40px;
   background-color: red;
   padding: 4px 8px;
@@ -32,33 +32,35 @@ a {
   color: #fff;
   font-size: 12px;
   margin: auto;
-  // margin-bottom: 20px;
+  margin-bottom: 20px;
   margin-top: 30px;
 }
 
-.field {
+.field-all {
 
 font-size: 20px;
 font-family: monospace;
 background-color:#EEE;
+text-align: center;
 width: 700px;
 padding: 30px;
 margin-bottom: 200px;
+margin: auto;
 }
 
-.field1 {
+.field-nick {
 
   width: 500px;
-  // margin: auto;
+  margin: auto;
   font-size: 20px;
   font-family: monospace;
   background-color:#EEE;
-  // text-align: center;
-  // padding: 20px;
+  text-align: center;
+  padding: 20px;
   
 }
 
-.field2 {
+.field-name {
 
   width: 600px;
   font-size: 20px;
@@ -66,10 +68,11 @@ margin-bottom: 200px;
   background-color:#EEE;
   text-align: center;
   padding: 30px;
+  margin: auto;
 
 }
 
-.field22 {
+.field-kana {
 
   font-size: 20px;
   font-family: monospace;
@@ -80,7 +83,7 @@ margin-bottom: 200px;
   margin: auto;
 }
 
-.field3 {
+.field-email {
 
   font-size: 20px;
   font-family: monospace;
@@ -91,7 +94,7 @@ margin-bottom: 200px;
   margin: auto;
 }
 
-.field4 {
+.field-birth {
 
   font-size: 20px;
   font-family: monospace;
@@ -102,7 +105,7 @@ margin-bottom: 200px;
   margin: auto;
 }
 
-.field5 {
+.field-password {
 
   font-size: 20px;
   font-family: monospace;
@@ -113,7 +116,7 @@ margin-bottom: 200px;
   margin: auto;
 }
 
-.field6 {
+.field-pass2 {
 
   font-size: 20px;
   font-family: monospace;
@@ -126,7 +129,7 @@ margin-bottom: 200px;
 }
 
 
-.button {
+.button-regi { 
   font-family: monospace;
   display: inline-block;
   border-radius: 5%;
@@ -140,12 +143,13 @@ margin-bottom: 200px;
   transition: .3s;
   border: 2px solid #ff0000;
   margin-bottom: 100px;
+
+ 
 }
 
 
 .footer {
   background-color: #272727;
-  // height: 200px;
   
   &__info {
     text-align: center;

@@ -4,58 +4,62 @@
 .header_logo
   = link_to image_tag("/assets/logo/logo.png",class: "furima-logo",size:'300x100'), "/"
 
-.header_text 会員登録
+.header_text1 会員登録
 = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
   = render "devise/shared/error_messages", resource: resource
-  .field
-    .label-1 必須
-    .field1
+  .field-all
+    .label-must 必須
+    .field-nick
       = f.label 'ニックネーム'
-      = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
+      %br/
+      = f.text_field :nickname, autofocus: true, autocomplete: "nickname",size:"20x5"
 
     %br/
-    .label-1 必須
-    .field2
+    .label-must 必須
+    .field-name
       = f.label '姓'
       = f.text_field :family_name,autofocus: true, autocomplete: "family_name",size: "12x1"
       = f.label '名'
       = f.text_field :first_name,autofocus: true, autocomplete: "first_name",size: "12x1"
 
     %br/
-    .label-1 必須
-    .field22
+    .label-must 必須
+    .field-kana
       = f.label '姓（カナ）'
       = f.text_field :family_name_kana,autofocus: true, autocomplete: "family_name_kana",size: "12x1"
       = f.label '名（カナ）'
       = f.text_field :first_name_kana,autofocus: true, autocomplete: "first_name_kana",size: "12x1"
 
     %br/
-    .label-1 必須
-    .field3
+    .label-must 必須
+    .field-email
       = f.label 'メールアドレス'
-      = f.email_field :email, autofocus: true, autocomplete: "email"
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email",size:"40x5"
 
     %br/
-    .label-1 必須
-    .field4
+    .label-must 必須
+    .field-birth
       = f.label '生年月日（西暦から数字8桁）'
-      = f.text_field :birth, autofocus: true, autocomplete: "birth"
+      %br/
+      = f.text_field :birth, autofocus: true, autocomplete: "birth",size:"20x5"
 
 
     %br/
-    .label-1 必須
-    .field5
+    .label-must 必須
+    .field-password
       = f.label 'パスワード（７文字以上）'
-    
-      = f.password_field :password, autocomplete: "new-password"
+      %br/
+      = f.password_field :password, autocomplete: "new-password",size:"20x5"
 
     %br/
-    .label-1 必須
-    .field6
+    .label-must 必須
+    .field-pass2
       = f.label 'パスワード（確認）'
-      = f.password_field :password_confirmation, autocomplete: "new-password"
+      %br/
+      = f.password_field :password_confirmation, autocomplete: "new-password",size:"20x5"
     .actions
-      = f.submit "登録" , class: "button"
+      = f.submit "登録" , class: "button-regi"
 = render "devise/shared/links"
 
 .footer

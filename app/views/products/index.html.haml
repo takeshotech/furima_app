@@ -50,10 +50,14 @@
           %li.left-side__item
             = link_to "ブランド", "#", { :id => "brand-btn"}
         %ul.right-side
-          %li.right-side__item.right-side__item-login
-            = link_to "ログイン", "#", { :id => "login-btn"}
-          %li.right-side__item
-            = link_to "新規会員登録", "#", { :id => "new-btn"}
+        -if user_signed_in?
+          .right-side__item.right-side__item-login
+            = link_to 'ログアウト' ,destroy_user_session_path, method: :delete
+        -else
+          .right-side__item.right-side__item-login
+            = link_to "ログイン",new_user_session_path, { :id => "login-btn"}
+          .right-side__item
+            = link_to "新規会員登録",new_user_registration_path, { :id => "new-btn"}
             
 
   .first-banner

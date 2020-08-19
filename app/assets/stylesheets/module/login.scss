@@ -5,7 +5,6 @@
 a {
   text-decoration: none;
   color: white;
-  // margin: 5px;
 }
 
 
@@ -19,7 +18,7 @@ a {
 }
 
 .login-form__text {
-  color: lightseagreen;
+  color: #3CCACE;
   font-size: 40px;
   font-family: monospace;
   padding-top: 70px;
@@ -29,9 +28,9 @@ a {
 
 }
 
-.field {
+.field-sessions {
 
-  font-size: 30px;
+  font-size: 100px;
   font-family: monospace;
   background-color:#EEE;
   text-align: center;
@@ -42,9 +41,9 @@ a {
 
 }
   
-  .field1 {
+  .field-mail {
   
-    font-size: 20px;
+    font-size: 40px;
     font-family: monospace;
     background-color:#EEE;
     text-align: center;
@@ -56,9 +55,9 @@ a {
     
   }
   
-  .field2 {
+  .field-pass {
 
-    font-size: 20px;
+    // font-size: 20px;
     font-family: monospace;
     background-color:#EEE;
     text-align: center;
@@ -70,7 +69,7 @@ a {
 
 
 
-  .btn {
+  .btn-log {
 
     font-family: monospace;
     display: inline-block;
@@ -86,6 +85,11 @@ a {
     border: 2px solid #ff0000;
     margin-bottom: 100px;
 
+  }
+  .pass-forgot {
+  a {
+    color:  #3CCACE;
+  }
   }
 
 

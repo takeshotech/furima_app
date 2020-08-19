@@ -6,6 +6,15 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+    attributes:
+      user:
+        nickname: ニックネーム
+        family_name: 姓
+        first_name: 名
+        family_name_kana: 姓（カナ）
+        first_name_kana: 名（カナ）
+        birth: 生年月日
+
   date:
     abbr_day_names:
     - 日
@@ -133,7 +142,7 @@ ja:
       taken: はすでに存在します
       too_long: は%{count}文字以内で入力してください
       too_short: は%{count}文字以上で入力してください
-      wrong_length: は%{count}文字で入力してください
+      wrong_length: は数字%{count}桁で入力してください
     template:
       body: 次の項目を確認してください
       header:
