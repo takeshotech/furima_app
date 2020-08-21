@@ -2,10 +2,7 @@
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-  color: white;
-}
+
 
 
 .header1 {
@@ -98,6 +95,12 @@ a {
 .footer {
   background-color: #272727;
   height: 200px;
+
+  a {
+    text-decoration: none;
+    color: white;
+    margin: 5px;
+  }
   
   &__info {
     text-align: center;

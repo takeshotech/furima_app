@@ -60,7 +60,7 @@
       = f.password_field :password_confirmation, autocomplete: "new-password",size:"20x5"
     .actions
       = f.submit "登録" , class: "button-regi"
-= render "devise/shared/links"
+
 
 .footer
   .footer__info
@@ -68,5 +68,5 @@
     = link_to 'フリマ利用規約',''
     = link_to '特定商取引に関する表記',''
   .footer__logo
-    = link_to image_tag("/assets/logo/logo-white.png", class: "furima-white-logo",size:'200x50'), root_path
+    = link_to image_tag("logo-white.png", class: "furima-white-logo",size:'200x50'), root_path
     %p © FURIMA

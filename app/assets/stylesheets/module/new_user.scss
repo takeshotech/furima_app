@@ -1,9 +1,5 @@
 
-a {
-  text-decoration: none;
-  color: white;
-  margin: 5px;
-}
+
 
 
 .header_logo {
@@ -46,6 +42,7 @@ width: 700px;
 padding: 30px;
 margin-bottom: 200px;
 margin: auto;
+margin-bottom: 200px;
 }
 
 .field-nick {
@@ -150,6 +147,11 @@ margin: auto;
 
 .footer {
   background-color: #272727;
+  a {
+  text-decoration: none;
+  color: white;
+  margin: 5px;
+  }
   
   &__info {
     text-align: center;
