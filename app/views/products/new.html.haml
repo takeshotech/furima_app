@@ -51,7 +51,7 @@
             ブランド
           %p.label__optional
             任意
-        = f.fields_for :brands do |b|
+        = f.fields_for :brand do |b|
           = b.text_field :name, class: "input_style input_size_45 mb_30", placeholder:"例）シャネル"
         .labels.mb_15
           %p.label
