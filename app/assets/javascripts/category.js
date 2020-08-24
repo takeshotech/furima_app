@@ -52,3 +52,10 @@ $(function(){
       .fail(function(){
         alert('カテゴリー取得に失敗しました');
       })
+    }else{
+      // 親カテゴリーが初期値になった時、子以下を削除する
+      $('#children_wrapper').remove();
+      $('#grandchildren_wrapper').remove();
+    }
+  });
+
