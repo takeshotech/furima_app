@@ -60,7 +60,7 @@
             必須  
         = f.select :condition, [["新品・未使用", "1"], ["未使用に近い", "2"], ["目立った傷や汚れなし","3"], ["やや傷や汚れあり", "4"], ["傷や汚れあり", "5"]]
       .from_section.section_line
-        = fields_for :shippings do |s|
+        = f.fields_for :shipping do |s|
           .label--gray.mb_30
             配送について
           .labels.mb_15
@@ -146,4 +146,5 @@
         =link_to image_tag("logo-white.png", class:'footer_logo'), root_path
       .footer_copyright
         © Furima, Inc.
+
 

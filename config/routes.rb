@@ -5,7 +5,6 @@ Rails.application.routes.draw do
       resources :shippings, only: [:new, :create]
       resources :brands, only: [:new, :create]
   end
-  resources :brands, only: [:new, :create]
   resources :orders, only: :show
 
 end
