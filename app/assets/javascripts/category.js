@@ -49,3 +49,6 @@ $(function(){
         });
         appendChidrenBox(insertHTML);
       })
+      .fail(function(){
+        alert('カテゴリー取得に失敗しました');
+      })
