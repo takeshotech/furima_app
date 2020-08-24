@@ -6,10 +6,10 @@ class ProductsController < ApplicationController
     @product = Product.new
     @product.build_brand
     @product.product_images.build
+    @product.build_shipping
   end
 
   def create
-    binding.pry
     @product = Product.create(product_params)
   end
   
