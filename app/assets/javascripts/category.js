@@ -27,3 +27,15 @@ $(function(){
                       </div>`;
     $('.append__category').append(grandchildHtml);
   }
+
+  // 親カテゴリー選択後のイベント
+  $('#parent__category').on('change', function(){
+    // 親ボックスのidを取得してAjax通信でコントローラーへ送る
+    var parent__category_id = document.getElementById('parent__category').value;
+    if (parent__category_id != ""){
+      $.ajax({
+        url: '/products/get_category_children',
+        type: 'GET',
+        data: { parent_id: parent__category_id },
+        dataType: 'json'
+      })
