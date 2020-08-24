@@ -39,3 +39,13 @@ $(function(){
         data: { parent_id: parent__category_id },
         dataType: 'json'
       })
+      // 親が変更された時、子以下を削除する
+      .done(function(children){
+        $('#children_wrapper').remove();
+        $('#grandchildren_wrapper').remove();
+        var insertHTML = '';
+        children.forEach(function(child){
+          insertHTML += appendOption(child);
+        });
+        appendChidrenBox(insertHTML);
+      })
