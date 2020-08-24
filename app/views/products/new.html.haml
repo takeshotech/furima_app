@@ -1,9 +1,9 @@
 .wrapper
   .product_header
     =link_to image_tag("logo.png", class:'header_logo'), root_path
-  .listing_forms  
+  .listing_forms
+  = form_with(model: @product, local: true) do |form|
     .from_section.section_line
-      %form
       .labels.mb_15
         %p.label
           商品画像
