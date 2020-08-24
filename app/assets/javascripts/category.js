@@ -59,3 +59,29 @@ $(function(){
     }
   });
 
+  // 子カテゴリー選択後のイベント
+  $('.append__category').on('change', '#child__category', function(){
+    var child__category_id = document.getElementById('child__category').value;
+    if (child__category_id != ""){
+      $.ajax({
+        url: '/products/get_category_grandchildren',
+        type: 'GET',
+        data: { child_id: child__category_id },
+        dataType: 'json'
+      })
+      .done(function(grandchildren){
+        $('#grandchildren_wrapper').remove();
+        var insertHTML = '';
+        grandchildren.forEach(function(grandchild){
+          insertHTML += appendOption(grandchild);
+        });
+        appendGrandchidrenBox(insertHTML);
+      })
+      .fail(function(){
+        alert('カテゴリー取得に失敗しました');
+      })
+    }else{
+      $('#grandchildren_wrapper').remove();
+    }
+  });
+});
