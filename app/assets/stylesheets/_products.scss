@@ -97,19 +97,19 @@ a {
   @include selectbox_mb15();
 }
 
-#shippings_fee{
+#product_shipping_attributes_fee{
   @include selectbox_mb30();
 }
 
-#shippings_area {
+#product_shipping_attributes_area {
   @include selectbox_mb30();
 }
 
-#shippings_handing_time {
+#product_shipping_attributes_handing_time {
   @include selectbox_mb30();
 }
 
-#shippings_type {
+#product_shipping_attributes_type {
   @include selectbox_mb15();
 }
 
