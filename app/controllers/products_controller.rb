@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.create(product_params)
+    
   end
   
   private
