@@ -86,7 +86,7 @@
               配送方法
             %p.label__required
               必須  
-          = s.select :type, [["らくらくフリマ便", "0"], ["ゆうゆうフリマ便", "1"], ["未定","2"]]
+          = s.select :shipping_type, [["らくらくフリマ便", "0"], ["ゆうゆうフリマ便", "1"], ["未定","2"]]
 
 
       .from_section
@@ -146,5 +146,3 @@
         =link_to image_tag("logo-white.png", class:'footer_logo'), root_path
       .footer_copyright
         © Furima, Inc.
-
-
