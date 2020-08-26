@@ -19,7 +19,7 @@ $(document).on('turbolinks:load', ()=> {
   });
 
   $('.image_upload').on('click', '.remove_image', function() {
-    $(this).parent().remove();
+    $(this).parents('.image_upload__btn').remove();
     if ($('.file').length == 0) $('.image_upload').append(buildFileField(fileIndex[0]));
   });
 });
