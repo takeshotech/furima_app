@@ -32,12 +32,14 @@ ActiveRecord::Schema.define(version: 2020_08_18_184010) do
     t.integer "price", null: false
     t.integer "trading_status", null: false
     t.datetime "completed_at"
+    t.bigint "category_id", null: false
     t.bigint "shipping_id", null: false
     t.bigint "brand_id"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_products_on_brand_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["shipping_id"], name: "index_products_on_shipping_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
@@ -68,6 +70,7 @@ ActiveRecord::Schema.define(version: 2020_08_18_184010) do
   end
 
   add_foreign_key "products", "brands"
+  add_foreign_key "products", "categories"
   add_foreign_key "products", "shippings"
   add_foreign_key "products", "users"
 end
