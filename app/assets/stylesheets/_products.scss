@@ -29,13 +29,13 @@ a {
 .product_header{
   height: 128px;
   width: 100%;
-  align-items: center;
   display: flex;
   justify-content: center;
-  .header_logo{
-    height: 49px;
+  align-items: center;
+  &__logo{
+    height: auto;
     width: 185px;
-  }
+   }
 }
 
 .listing_forms{
@@ -89,7 +89,7 @@ a {
   margin-bottom: 15px;
 }
 
-#product_category_id {
+#parent__category {
   @include selectbox_mb30();
 }
 
