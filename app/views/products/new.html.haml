@@ -1,8 +1,8 @@
 .wrapper
   .product_header
-    =link_to image_tag("logo.png", class:'header_logo'), root_path
+    =link_to image_tag("logo.png", class:'product_header__logo'), root_path
   .listing_forms 
-    = form_for @product do |f|  
+    = form_with(model: @product, local: true) do |f| 
       .from_section.section_line
         .labels.mb_15
           %p.label
@@ -40,12 +40,13 @@
       .from_section.section_line
         .label--gray.mb_30
           商品の詳細
-        .labels.mb_15
-          %p.label
-            カテゴリー
-          %p.label__required
-            必須  
-        = f.select :category_id, [["選択してください",], ["レディース", "1"], ["メンズ", "2"],["おもちゃ・ゲーム", "3"]]
+        .append__category
+          .labels.mb_15
+            %p.label
+              カテゴリー
+            %p.label__required
+              必須  
+          = f.collection_select :category_id, @category_parent, :id, :name, {include_blank: '---'}, {id: 'parent__category', class:'selectbox_style mb_30'}
         .labels.mb_15
           %p.label
             ブランド
@@ -87,8 +88,6 @@
             %p.label__required
               必須  
           = s.select :shipping_type, [["らくらくフリマ便", "0"], ["ゆうゆうフリマ便", "1"], ["未定","2"]]
-
-
       .from_section
         .label--gray.mb_30
           価格（¥300〜9,999,999）
@@ -120,7 +119,7 @@
         -# .text_link.mb_30
         -#   = link_to root_path do
         -#     もどる
-        
+     
         .attention.mb_30
           禁止されている
           %span>= link_to "行為", "#"
@@ -145,4 +144,5 @@
       .footer_logo.mt_30
         =link_to image_tag("logo-white.png", class:'footer_logo'), root_path
       .footer_copyright
-        © Furima, Inc.
+        © FURIMA, Inc.
+
