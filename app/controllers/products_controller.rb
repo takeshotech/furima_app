@@ -31,7 +31,13 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.create(product_params)
-    
+    if @product.save
+      flash[:alert] = '出品が完了しました'
+      redirect_to new_product_path 
+      
+    else
+      flash[:alert] = '出品に失敗しました'
+    end  
   end
   
   private
