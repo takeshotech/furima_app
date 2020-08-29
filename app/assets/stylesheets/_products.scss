@@ -90,6 +90,13 @@ a {
 }
 
 #parent__category {
+  @include selectbox_mb15();
+}
+#child__category {
+  @include selectbox_mb15();
+}
+
+#grandchild__category {
   @include selectbox_mb30();
 }
 
