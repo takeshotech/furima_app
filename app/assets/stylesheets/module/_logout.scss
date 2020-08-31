@@ -1,0 +1,40 @@
+.main-content{
+  width: 700px;
+  margin: 24px auto 0;
+  padding: 0 0 40px;
+
+  .logout{
+    width: 700px;
+    float: none;
+
+    .logout-content{
+      margin: 40px 0 0;
+      background: #FFF;
+     
+
+      .logout-home{
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        border-top: 1px solid #f5f5f5;
+        padding: 40px;
+        justify-content: center;
+        margin: 0 auto;
+
+        .inside{
+          max-width: 320px;
+          margin: 0 auto;
+
+          button{
+            line-height: 48px;
+            width: 320px;
+            background: #3ccace;
+            border: 1px solid #3ccace;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+  }
+}
