@@ -30,6 +30,7 @@ class ProductsController < ApplicationController
   end
 
   def create
+    @category_parent = Category.where(ancestry: nil)
     @product = Product.create(product_params)
     if @product.save
       flash[:alert] = '出品が完了しました'
@@ -37,6 +38,7 @@ class ProductsController < ApplicationController
       
     else
       flash[:alert] = '出品に失敗しました'
+        render 'new'
     end  
   end
   

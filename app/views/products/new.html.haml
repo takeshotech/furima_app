@@ -4,6 +4,11 @@
   .listing_forms 
     = form_with(model: @product, local: true) do |f| 
       .from_section.section_line
+        - if @product.errors.any?
+          %ul
+            - @product.errors.full_messages.each do |msg|
+              %li
+                = msg
         .labels.mb_15
           %p.label
             商品画像
@@ -20,7 +25,7 @@
                   %p.text
                     ドラックアンドドロップ
                     %br
-                    またはクリックしてファイルをアップロード    
+                    またはクリックしてファイルをアップロード   
       .from_section.section_line
         .labels.mb_15
           %p.label
