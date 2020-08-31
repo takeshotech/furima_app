@@ -38,7 +38,8 @@ class ProductsController < ApplicationController
       
     else
       flash[:alert] = '出品に失敗しました'
-        render 'new'
+      @product.product_images.new
+      render :new
     end  
   end
   
