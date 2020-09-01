@@ -2,9 +2,9 @@
   %header
     .header-lnner
       .main-header
-        %a.link{:href => "/"}
+        = link_to "#" do
           = image_tag 'logo.png', alt: 'logo', height: '40.55', width: '140px', class: 'icon'
-        %input.searchbox{:name=>"key",:placeholder => "キーワードから探す",:type =>"text"}
+        %input.searchbox{name: "key",placeholder: "キーワードから探す",type: "text"}
         %button{type: "submit"}
           .search-box__icon
             = image_tag 'icon serch.svg', alt: 'seach', height: '19.77px', width: '19.77', class: 'image'
