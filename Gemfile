@@ -82,4 +82,5 @@ gem 'jquery-rails'
 gem 'rails-i18n'
 gem 'jquery-rails'
 gem 'rspec-rails'
+gem 'factory_bot_rails'
 
