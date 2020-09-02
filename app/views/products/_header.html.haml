@@ -51,7 +51,7 @@
       %ul.right-side
       -if user_signed_in?
         .right-side__item.right-side__item-login
-          = link_to "マイページ",new_user_session_path, { :id => "mypage-btn"}
+          = link_to "マイページ",products_mypage_path, { :id => "mypage-btn"}
         .right-side__item
           = link_to 'ログアウト' ,destroy_user_session_path, method: :delete
       -else
