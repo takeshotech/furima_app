@@ -3,9 +3,9 @@ window.addEventListener('DOMContentLoaded', function(){
   //id名が"payment_card_submit-button"というボタンが押されたら取得
   let submit = document.getElementById("payment_card_submit-button");
 
-  Payjp.setPublicKey('pk_test_###'); //公開鍵の記述(ご自身の公開鍵コードを記述しよう！)
+  Payjp.setPublicKey('pk_test_5ef47dbae89fcfc8309d0276'); //公開鍵の記述(ご自身の公開鍵コードを記述しよう！)
 
-    submit.addEventListener('click', function(e){ //ボタンが押されたらトークン作成開始。
+    submit.addEventListener('click', function(e){ 
 
     e.preventDefault(); //ボタンを1度無効化
 
