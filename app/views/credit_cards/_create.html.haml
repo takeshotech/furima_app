@@ -1,4 +1,4 @@
-= render "products/header"
+= render "home/header"
 .create
   .create__frame
     .create__frame__message
@@ -9,7 +9,7 @@
       %li.credit_cards_index_link
         = link_to "登録カード一覧", credit_card_path(current_user.id), class: "credit_cards_index_link__btn"
 
-= render "products/main"
-= render "products/third-banner"
-= render "products/footer"
-= render "products/camera-btn"  
+= render "home/main"
+= render "home/third-banner"
+= render "home/footer"
+= render "home/camera-btn"  

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users, only: [:index, :edit, :update]
-  root 'products#index'
+  resources :users, only: [:index, :edit, :update, :show]
+  root 'home#index'
   get 'products/mypage'
   get 'products/logout'
   resources :products, only: [:index, :new, :create, :show] do
