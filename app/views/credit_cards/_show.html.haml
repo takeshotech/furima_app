@@ -1,3 +1,4 @@
+= render "products/header"
 .show
   .show__frame
     .show__frame__title
@@ -8,7 +9,7 @@
       .credit_card__list__frame
         .credit_card_info
           .credit_card_info__brand
-            = image_tag "cards/#{@card_src}", class: "credit_card_info__brand__img", alt: @card_brand
+            = image_tag "#{@card_src}", class: "credit_card_info__brand__img", alt: @card_brand
           .credit_card_info__numbers
             .number
               = "**** **** **** " + @customer_card.last4
@@ -23,3 +24,8 @@
               削除する
       .payment-details
         = link_to "支払い方法について >", "", class: "payment-details__btn"
+
+= render "products/main"
+= render "products/third-banner"
+= render "products/footer"
+= render "products/camera-btn"  
