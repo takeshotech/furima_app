@@ -1,5 +1,6 @@
 class CreditCardsController < ApplicationController
   require "payjp" 
+  before_action :find_card
 
   def new
     @card = CreditCard.where(user_id: current_user.id)
@@ -26,9 +27,8 @@ class CreditCardsController < ApplicationController
   end
 
   def show
-    @card = CreditCard.find_by(user_id: current_user.id)
     if @card.blank?
-      redirect_to action: "new" 
+      redirect_to action: "new"
     else
       Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
       customer = Payjp::Customer.retrieve(@card.customer_id)
@@ -55,7 +55,6 @@ class CreditCardsController < ApplicationController
   end
 
   def destroy
-    @card = CreditCard.find_by(user_id: current_user.id)
     if @card.blank?
       redirect_to action: "new"
     else
@@ -72,5 +71,8 @@ class CreditCardsController < ApplicationController
     end
   end
 
+  def find_card
+    @card = CreditCard.find_by(user_id: current_user.id)
+  end
 end
 
