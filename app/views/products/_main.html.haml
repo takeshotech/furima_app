@@ -2,7 +2,7 @@
   %nav.my-page-nav
     %ul.my-page-nav-list
       %li
-        = link_to("マイページ", "#", {class: "my-page-nav-list-item active"})
+        = link_to("マイページ", products_mypage_path, {class: "my-page-nav-list-item active"})
       %li
         = link_to("お知らせ", "#", {class: "my-page-nav-list-item"})
       %li
@@ -16,7 +16,7 @@
       %li
         = link_to("出品した商品-出品中", "#", {class: "my-page-nav-list-item"})
       %li
-        = link_to("マイページ", "#", {class: "my-page-nav-list-item"})
+        = link_to("マイページ", products_mypage_path, {class: "my-page-nav-list-item"})
       %li
         = link_to("購入した商品-取引中", "#", {class: "my-page-nav-list-item"})
       %li

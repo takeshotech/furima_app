@@ -1,0 +1,64 @@
+.show{
+  display: block;
+  width: 700px;
+  padding: 24px 0px;
+  margin: 0px auto;
+  background: rgb(255, 255, 255);
+
+  &__frame{
+
+    &__title{
+      text-align: center;
+      font-size: 24px;
+      line-height: 34px;
+      padding: 24px 16px;
+    }
+
+    .credit_card__list{
+      max-width: 375px;
+      margin:0px auto ;
+
+      &__title{
+        text-align: center;
+        font-size: 16px;
+        line-height: 34px;
+        padding: 24px 16px;
+      }
+
+      &__frame{
+        margin-top: 32px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .credit_card_info{
+          margin: 0px 16px;
+        }
+
+        .destroy__function{
+          &__link{
+            background-color: #3ccace;
+            border: 1px solid #3ccace;
+            border-radius: 4px;
+            padding: 6px 12px;
+            
+
+            &__btn{
+              color: white;
+            }
+          }
+
+        }
+      }
+
+      .payment-details{
+        padding: 48px 0px 56px 0px;
+        text-align: right;
+
+        &__btn{
+          color: #000;
+        }
+      }
+    }
+  }
+}
