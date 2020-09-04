@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users, only: [:index, :edit, :update, :show] do
-  end
+  resources :users, only: [:index, :edit, :update, :show]
   root 'home#index'
   resources :products, only: [:index, :new, :create, :show] do
     collection do
@@ -10,6 +9,5 @@ Rails.application.routes.draw do
     end
   end
   resources :orders, only: :show
-  resources :credit_cards, only: [:new, :create, :show, :destroy] do
-  end
+  resources :credit_cards, only: [:new, :create, :show, :destroy] 
 end
