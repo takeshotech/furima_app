@@ -20,7 +20,7 @@ class CreditCardsController < ApplicationController
       @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
       else
-        redirect_to action: "create"
+        redirect_to action: "new"
       end
     end
   end
