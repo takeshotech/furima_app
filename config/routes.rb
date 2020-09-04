@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users, only: [:index, :edit, :update, :show]
+  resources :users, only: [:index, :edit, :update, :show] do
+  end
   root 'home#index'
-  get 'products/mypage'
-  get 'products/logout'
   resources :products, only: [:index, :new, :create, :show] do
     collection do
       get 'get_category_children', to: 'products#get_category_children', defaults: { format: 'json' }
