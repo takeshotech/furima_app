@@ -5,30 +5,25 @@
 body{
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-seri;
 }
+
 .t-header{
   padding: 0 60px;
-
   &__up{
     max-width: 1040px;
     width: 100%;
-    min-height: 82px;
     margin: 0 auto;
     padding: 15px 0 0;
-    
     .t-header__logo{
       position: relative;
       display: flex;
       align-items: center;
-
       .icon{
         margin-bottom: 10px;
         margin-right: 30px;
         border-radius: 4px;
-
         a{
           width: 140px;
           display: block;
-
           img{
             width: 100%;
             vertical-align: bottom;
@@ -37,112 +32,56 @@ body{
       }
     } 
   }
-
-    .t-header__search{
-      margin-left: auto;
+  .t-header__search{
+    margin-left: auto;
+    width: 100%;
+    .form{
       width: 100%;
+      display: flex;
+      margin-bottom: 5px;
+      input{
+        width: calc(100% - 26px);
+        height: 36px;
+        padding: 0 0 0 5px;
+      }
+      button{
+        width: 36px;
+        border: 0;
+        cursor: pointer;
+        background-color: #3CCACE;
+        padding: 8px;
 
-      .form{
-        width: 100%;
-        display: flex;
-        margin-bottom: 5px;
-
-        input{
-          width: calc(100% - 26px);
-          height: 36px;
-          padding: 0 0 0 5px;
-        }
-
-        button{
-          width: 36px;
-          border: 0;
-          cursor: pointer;
-          background-color: #3CCACE;
-          padding: 8px;
-
-          .t-header__search-icon{
-            img{
-              width: 100%;
-              vertical-align: bottom;
-            }
+        .t-header__search-icon{
+          img{
+            width: 100%;
+            vertical-align: bottom;
           }
         }
       }
     }
-
-
-  &__under{
+  }
+    &__under{
     font-size: 14px;
     display: flex;
-    margin-bottom: 10px;
-
-    .left-side{
-      position: relative;
+    margin: 0 60px 10px;
+    a{
       display: flex;
-
-      .list-side__item-category{
-        text-decoration: none;
-        padding: 0;
-      }
-
-      &__item{
-        display: flex;
-        line-height: 30px;
-        padding: 0 0 0 16px;
-
-        a{
-          color: #333;
-          text-decoration: none;
-          line-height: 32px;
-          background-position: center right;
-          background-repeat: no-repeat;
-          background-size: 18px;
-          overflow: hidden;
-          padding-right: 30px;
-        }
-
-        .displayNone{
-          display: none;
-        }
-
-        .tree{
-          z-index: 2px;
-          position: absolute;
-          background-color: #fff;
-          width: 240px;
-          top: 40px;
-
-          .category-tree{
-            background-color: #fff;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-
-            li{
-              position: relative;
-              display: none;
-            }
-          }
-        }
+      align-items: center;
+      color: #333;
+      text-decoration: none;
+    }
+    .left-side{
+      display: flex;
+      text-decoration: none;
+      &__brand{
+        margin-left: 30px;
       }
     }
-
     .right-side{
       margin-left: auto;
       display: flex;
-
-      &__item{
-        color: #333;
-        line-height: 38px;
-        padding: 0 0 0 16px;
-
-        a{
-          display: flex;
-          align-items: center;
-          color: #333;
-          text-decoration: none;
-          line-height: 32px;
-        }
+      &__register{
+        margin-left: 30px;
       }
     }
   }
@@ -250,7 +189,6 @@ body{
       &__image{
         margin-bottom: 20px;
         position: relative;
-
         .number{
           display: inline-block;
           position: absolute;
@@ -264,31 +202,26 @@ body{
           background-color: #3CCACE;
           color: #fff;
         }
-
         img{
           width: 100%;
           vertical-align: bottom;
         }
       }
-        
       .description-title{
         font-weight: bold;
         font-size: 24px;
         line-height: 50px;
         margin: 0 0 0 2px;
-
         span{
           color: #3CCACE;
         }
       }
-
       .description-text{
-          font-size: 18px;
-          line-height: 1.5;
-          margin: 16px 0 0;
+        font-size: 18px;
+        line-height: 1.5;
+        margin: 16px 0 0;
       }
-  }  
-
+    }  
     .point-last{
       margin: 16px 0 0;
     }
@@ -389,7 +322,6 @@ body{
         line-height: 120px;
         width: 70%;
         margin: 0 auto;
-        
       }
 
       &__description{
@@ -413,23 +345,19 @@ body{
   padding: 80px 0 0;
   background-color:#f8f8f8;
 
-
    .title{
      text-align: center;
      font-size: 28px;
      line-height: 1.4;
      font-weight: bold;
    }
-
    .items{
      &__head{
        text-align: center;
-
        a{
          font-size: 24px;
          text-decoration: none;
          color: #3CCACE;
-
          h3{
            font-weight: bold;
          }
@@ -441,20 +369,17 @@ body{
        margin: 28px auto;
        display: flex;
        justify-content: space-around;
-
        a{
          text-decoration: none;
          position: relative;
        }
-
        .item{
          width: 220px;
          display: inline-block;
 
-         a{
-           background-color: #fff;
-           display: inline-block;
-
+        a{
+          background-color: #fff;
+          display: inline-block;
            .item-image{
              width: 220px;
              height: 150px;
@@ -462,7 +387,6 @@ body{
              overflow: hidden;
              margin: 0;
              z-index: auto;
-
              img{
                position: absolute;
                top: 0;
@@ -475,12 +399,10 @@ body{
                object-fit: cover;
              }
            }
-
            .item__description{
              background-color: white;
              color: #333;
              padding: 16px;
-
              .item-name{
                overflow: hidden;
                line-height: 1.5;
@@ -517,7 +439,6 @@ body{
                }
              }
            }
-
          }
        }
      }
@@ -527,7 +448,6 @@ body{
 .pickup:last-child{
   padding-bottom: 80px;
 }
-
 
 .third-banner{
   background-image: image-url("bg-appBanner.jpg");
@@ -539,12 +459,10 @@ body{
   .catch-copy{
     color: #fff;
     text-align: center;
-
     .text-big{
       font-size: 35px;
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
     }
-
     .text-small{
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
       font-size: 24px;
@@ -552,7 +470,6 @@ body{
       line-height: 1.4;
     }
   }
-
   .download-btn{
     width: 100%;
     display: flex;
@@ -562,17 +479,14 @@ body{
       img{
         vertical-align: bottom;
       }
-
       .a-btn{
         width: 180px;
         margin-right: 10px;
       }
-
       a{
         .g-btn{
           width: 180px;
         }
-
         img{
           vertical-align: bottom;
         }
