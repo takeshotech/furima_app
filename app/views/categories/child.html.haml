@@ -1,0 +1,5 @@
+= "#{@category.name}の商品一覧"
+- @products.each do |product| 
+- category = Category.find(product.category_id)
+  = product.name
+  = product.price
