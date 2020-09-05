@@ -11,3 +11,15 @@ $(function() {
     $('#' + id).addClass("selected-green");
     $(".child_category").remove();
     $(".grandchild_category").remove();
+    $.ajax({
+      type: 'GET',
+      url: '/categories/new',
+      data: {parent_id: id}, //どの親の要素かを送る
+      dataType: 'json'
+    }).done(function(children) {
+      children.forEach(function (child) { //帰ってきた子カテゴリー（配列）を
+        var html = buildChildHTML(child); //HTMLにして
+        $(".children_list").append(html); //リストに追加する
+      })
+    });
+  });
