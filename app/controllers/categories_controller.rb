@@ -24,4 +24,13 @@ class CategoriesController < ApplicationController
       end
     end
   end
+
+  def child
+    grandchildren = @category.children
+    @products = []
+    #子要素の孫要素という一つの配列の為、一度のeach文で孫要素のidを取得
+    grandchildren.each do |grandchild|
+      @products += Product.where(category_id: grandchild.id)
+    end
+  end
 end
