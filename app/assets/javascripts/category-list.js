@@ -23,3 +23,11 @@ $(function() {
       })
     });
   });
+
+  // 孫カテゴリを追加する処理
+  function buildGrandChildHTML(child){
+    var html =`<a class="grandchild_category" id="${child.id}"
+                href="/category/${child.id}">${child.name}</a>`;
+    return html;
+  }
+
