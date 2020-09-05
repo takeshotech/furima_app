@@ -31,3 +31,23 @@ $(function() {
     return html;
   }
 
+  $(document).on("mouseover", ".child_category", function () {
+    var id = this.id
+    $(".selected-green").removeClass(".selected-green");
+    $('#' + id).addClass(".selected-green");
+    $.ajax({
+      type: 'GET',
+      url: '/categories/new',
+      data: {parent_id: id},
+      dataType: 'json'
+    }).done(function(children) {
+      children.forEach(function (child) {
+        var html = buildGrandChildHTML(child);
+        $(".grandchildren_list").append(html);
+      })
+      $(document).on("mouseover", ".child_category", function () {
+        $(".grandchild_category").remove();
+      });
+    });
+  });  
+});
