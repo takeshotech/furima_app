@@ -33,4 +33,8 @@ class CategoriesController < ApplicationController
       @products += Product.where(category_id: grandchild.id)
     end
   end
+
+  def grandchild
+    @products = Product.where(category_id: params[:id])
+  end
 end
