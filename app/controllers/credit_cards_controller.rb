@@ -1,9 +1,9 @@
 class CreditCardsController < ApplicationController
   require "payjp" 
-  before_action :find_card
+  before_action :find_card, only:[:new, :show, :destroy]
 
   def new
-    redirect_to credit_card_path(current_user.id) if @card.exists?
+    redirect_to credit_card_path(current_user.id) unless @card.blank?
   end
 
   def create
