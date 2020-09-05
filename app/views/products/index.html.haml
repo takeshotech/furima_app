@@ -11,42 +11,14 @@
             %button{type: "submit", class:'search_btn'}
               .t-header__search-icon
                 =image_tag "icon-search 1.png"
-
-
-
       .t-header__under
         %ul.left-side
+          カテゴリー
           %li.left-side__item.list-side__item-category
-            = link_to "カテゴリー", "#", { :id => "category-btn"}
-
-            .tree
-              %ul.category-tree
-                %li.category-tree--item
-                  = link_to "レディース", "#", { :id => "1"}
-                %li.category-tree--item
-                  = link_to "メンズ", "#", { :id => "2"}
-                %li.category-tree--item
-                  = link_to "ベビー・キッズ", "#", { :id => "3"}
-                %li.category-tree--item
-                  = link_to "インテリア・住まい・小物", "#", { :id => "4"}
-                %li.category-tree--item
-                  = link_to "本・音楽・ゲーム", "#", { :id => "5"}
-                %li.category-tree--item
-                  = link_to "おもちゃ・ホビー・グッズ", "#", { :id => "6"}
-                %li.category-tree--item
-                  = link_to "コスメ・香水・美容", "#", { :id => "7"}
-                %li.category-tree--item
-                  = link_to "家電・スマホ・カメラ", "#", { :id => "8"}
-                %li.category-tree--item
-                  = link_to "スポーツ・レジャー", "#", { :id => "9"}
-                %li.category-tree--item
-                  = link_to "ハンドメイド", "#", { :id => "10"}
-                %li.category-tree--item
-                  = link_to "チケット", "#", { :id => "11"}
-                %li.category-tree--item
-                  = link_to "自動車・オートバイ", "#", { :id => "12"}
-                %li.category-tree--item
-                  = link_to "その他", "#", { :id => "13"}
+          - @parents.each do |parent|
+            = link_to "#{parent.name}", categories_path(parent), class: "parent_category", id: "#{parent.id}"
+          .children_list
+          .grand_children_list
           %li.left-side__item
             = link_to "ブランド", "#", { :id => "brand-btn"}
         %ul.right-side
@@ -54,7 +26,6 @@
             = link_to "ログイン", "#", { :id => "login-btn"}
           %li.right-side__item
             = link_to "新規会員登録", "#", { :id => "new-btn"}
-            
 
   .first-banner
     .first-banner__content
