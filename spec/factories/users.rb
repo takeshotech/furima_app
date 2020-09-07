@@ -1,12 +1,13 @@
 FactoryBot.define do
   factory :user do
     nickname {Faker::Games::Zelda.character}
-    family_name {Faker::Name.last_name}
-    first_name {Faker::Name.first_name}
-    family_name_kana
-    first_name_kana
-    birth
+    family_name {Gimei.last.kanji}
+    first_name {Gimei.first.kanji}
+    family_name_kana {Gimei.last.katakana}
+    first_name_kana {Gimei.last.katakana}
+    birth {Faker::Number.number(digits: 8)}
     email {Faker::Internet.free_email}
+    password = "Pass1234"
     password {password}
     password_confirmation {password}
   end
