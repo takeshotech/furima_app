@@ -31,6 +31,6 @@ class ProductsController < ApplicationController
   end
 
   private
-    def product_params
-    end
+  def product_params
+  end
 end

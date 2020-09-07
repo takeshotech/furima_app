@@ -1,0 +1,37 @@
+%body
+  =render "home/header"
+
+%main.main
+  .main__inside
+    %section.my-page-user-icon
+      = link_to "#" do
+        %figure
+          = image_tag "member_photo_noimage_thumb.png"
+        %h2.user-name ユーザーネーム
+        .number
+          .number__left
+            評価
+            %span.bold 0
+          .number__right
+            出品数
+            %span.bold 0
+    %section.my-page-bought
+      %h2.my-page-bought__top
+        購入した商品
+      %ul.my-page-bought__tabs
+        %li.active
+          %h3
+            = link_to "取引中", "#"
+        %li
+          %h3
+            = link_to "過去の取引", "#"
+      .contents
+        %ul#mypage-tab-now.my-page-item-list.tab-panel.active
+          %li.my-page-item-nothing.bold 取引中の商品はありません。
+        %ul#mypage-tab-old.my-page-item-list.tab-panel
+          %li.my-page-item-nothing.bold 過去に取引した商品がありません。
+        
+  = render "home/main"
+= render "home/third-banner"
+= render "home/footer"
+= render "home/camera-btn"
