@@ -1,0 +1,14 @@
+= render "home/header"
+%main.mypage-contents
+  .main-content
+    .logout
+      .logout-content
+        = link_to destroy_user_session_path, method: :delete, class:"logout-home" do
+          .inside
+            %button#logout_btn{type: "button"}
+              ログアウト
+
+  = render "home/main"
+  = render "home/third-banner"
+  = render "home/footer"
+  = render "home/camera-btn"  

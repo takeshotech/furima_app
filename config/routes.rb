@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users, only: [:index, :edit, :update]
-  root 'products#index'
-  resources :products, only: [:index, :new, :create, :show] do
+  resources :users, only: [:index, :edit, :update, :show]
+  root 'home#index'
+  resources :products, only: [:new, :create, :show] do
     resources :product_images, only: [:new, :create]
     resources :shippings, only: [:new, :create]
     resources :brands, only: [:new, :create]
@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   end
   resources :orders, only: :show
 
+  resources :credit_cards, only: [:new, :create, :show, :destroy] 
 end
   

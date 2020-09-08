@@ -1,0 +1,271 @@
+.card_add{
+  display: block;
+  width: 700px;
+  padding: 24px 0px;
+  margin: 0px auto;
+  background: rgb(255, 255, 255);
+
+  .title{
+    text-align: center;
+    font-size: 24px;
+    line-height: 34px;
+    padding: 24px 16px;
+    border-bottom: 1px solid rgb(245, 245, 245);
+  }
+
+  form{
+    display: block;
+  }
+
+  .details{
+    max-width: 343px;
+    margin: 0px auto;
+    padding: 24px 0px;
+
+    .number-details{
+      display: flex;
+      align-items: center;
+
+      .card-number{
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.4em;
+      }
+
+      span{
+        margin-left: 8px;
+      }
+
+      .must_check{
+        background-color: #3cacae;
+        color: white;
+        border-radius: 2px;
+        display: inline-block;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 1.4em;
+      }
+    }
+
+    .number{
+      align-items: center;
+      display: inline-flex;
+      width: 100%;
+      margin-top: 16px;
+
+      input{
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family: inherit;
+        font-size: inherit;
+        height: 48px;
+        margin: 0;
+        outline: none;
+        padding: 0 16px;
+        width: inherit;
+      }
+    }
+
+    .image{
+      max-height: 20px;
+      max-width: 44px;
+      margin: 5px;
+      display: flex;
+    }
+
+    img{
+      vertical-align: middle;
+    }
+
+    .expirationdate{
+      margin-top: 28px;
+
+      &__details{
+        align-items: center;
+        display: flex;
+
+        .date{
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 1.4em;
+        }
+
+        span{
+          margin-left: 8px;
+        }
+
+        .must_check{
+          background-color: #3cacae;
+          color: white;
+          border-radius: 2px;
+          display: inline-block;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 1.4em;
+        }
+      }
+
+      &__choice{
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        margin-top: 16px;
+        -webkit-box-align: center;
+
+        .month{
+          display: flex;
+          position: relative;
+          width: 100%;
+
+          .month-details{
+            width: 46px;
+            text-align: center;
+          }
+
+          select{
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: #222;
+            font-size: 16px;
+            height: 48px;
+            line-height: 1;
+            padding: 0 56px 0 16px;
+            width: 100%;
+          }
+
+          .card-default{
+            width: inherit;
+            flex: 1 1 0%;
+          }
+        }
+
+        .year{
+          display: flex;
+          position: relative;
+          width: 100%;
+
+          .year-details{
+            width: 30px;
+            text-align: right;
+          }
+
+
+          select{
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: #222;
+            font-size: 16px;
+            height: 48px;
+            line-height: 1;
+            padding: 0 56px 0 16px;
+            width: 100%;
+          }
+
+          .card-default{
+            width: inherit;
+            flex: 1 1 0%;
+          }
+        }
+      }
+    }
+
+    .securitycode{
+      max-width: 343px;
+      margin: 0px auto;
+      padding: 24px 0px;
+
+      &__details{
+        display: flex;
+        align-items: center;
+
+        .securitycode-details__title{
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 1.4em;
+        }
+
+        span{
+          margin-left: 8px;
+        }
+
+        .must_check{
+          background-color: #3cacae;
+          color: white;
+          border-radius: 2px;
+          display: inline-block;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 1.4em;
+        }
+      }
+
+      &__cardsecurity{
+        align-items: center;
+        display: inline-flex;
+        width: 100%;
+        margin-top: 16px;
+
+        input{
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          font-family: inherit;
+          font-size: inherit;
+          height: 48px;
+          margin: 0;
+          outline: none;
+          padding: 0 16px;
+          width: inherit;
+        }
+      }
+
+      .card-question{
+        position: relative;
+        margin-top: 8px;
+        text-align: right;
+        color: rgb(0, 149, 238);
+        cursor: pointer;
+      }
+    }
+
+
+    .add{
+      margin-top: 32px;
+      
+      input{
+        background-color: #3cacae;
+        color: white;
+        width: 100%;
+      }
+
+      &__btn{
+        font-size: 17px;
+        min-height: 48px;
+        padding: 0 24px;
+        -webkit-transition-duration: .1s;
+        transition-duration: .1s;
+        -webkit-transition-timing-function: ease-in-out;
+        transition-timing-function: ease-in-out;
+        border-radius: 4px;
+        border: 1px solid transparent;
+        box-sizing: border-box;
+        display: inline-block;
+        font-weight: 600;
+        line-height: 1;
+        overflow: hidden;
+        text-align: center;
+        text-decoration: none;
+        -webkit-transition-property: background-color,border-color,color;
+        transition-property: background-color,border-color,color;
+        vertical-align: middle;
+        white-space: nowrap;
+        word-break: break-word;
+      }
+    }
+  }
+}
