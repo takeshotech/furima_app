@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_02_022708) do
+ActiveRecord::Schema.define(version: 2020_08_25_055734) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -25,12 +25,12 @@ ActiveRecord::Schema.define(version: 2020_09_02_022708) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "customer_id", null: false
-    t.string "card_id", null: false
+  create_table "product_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image_url", null: false
+    t.bigint "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_images_on_product_id"
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_09_02_022708) do
     t.text "text", null: false
     t.integer "condition", null: false
     t.integer "price", null: false
-    t.integer "trading_status", null: false
+    t.integer "trading_status", default: 0, null: false
     t.datetime "completed_at"
     t.bigint "category_id", null: false
     t.bigint "shipping_id", null: false
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2020_09_02_022708) do
     t.integer "handing_time", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "shipping_type"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -77,6 +78,7 @@ ActiveRecord::Schema.define(version: 2020_09_02_022708) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "product_images", "products"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "shippings"
