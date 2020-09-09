@@ -1,7 +1,5 @@
 .wrapper
-  %header
-    .logo_frame
-      = link_to image_tag("logo.png", class: "furima-logo"), "/"
+  = render "share/product_header"
   .main
     .main__frame
       .main__box
@@ -27,7 +25,7 @@
         .main__box--creditcard
           .title
             %h3 支払い方法
-            = link_to "変更する >", "", class: "edit-link"
+            = link_to "変更する >", "credit_card_path(current_user.id)", class: "edit-link"
           .card-info
             %p クレジットカード
             .creditcard-num xxxx-xxxx-xxxx-xxxx
@@ -48,13 +46,4 @@
             出品者が発送作業を開始した後は受取場所の変更ができませんので、早めに変更を行ってください。
           %button{type: "submit", onclick: "location.href=''", class: "purchase-btn"}
             .text 購入する
-    %footer
-      .logo_frame
-        %ul.policies
-          %li= link_to "プライバシーポリシー", ""
-          %li= link_to "FURIMA利用規約", ""
-          %li= link_to "特定商取引に関する表記", ""
-        = link_to image_tag("logo.png", class: "furima-logo"), "/"
-        %p.copyright
-          = icon("far", "copyright", class: "copyright-mark")
-          %small.name FURIMA
+    = render "share/product_footer"

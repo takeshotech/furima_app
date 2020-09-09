@@ -1,6 +1,5 @@
 .wrapper
-  .product_header
-    =link_to image_tag("logo.png", class:'product_header__logo'), root_path
+  = render "share/product_header"
   .listing_forms 
     = form_with(model: @product, local: true) do |f| 
       - if @product.errors.any?
@@ -138,17 +137,5 @@
           などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
           %span>= link_to "加盟店規約", "#"
           に同意したことになります。
-    .product_footer.mt_30
-      .footer_items
-        = link_to "#", class:"footer_item" do
-          プライバシーポリシー
-        = link_to "#", class:"footer_item" do
-          フリマ利用規約
-        = link_to "#", class:"footer_item" do
-          特定商取引に関する表記
-
-      .footer_logo.mt_30
-        =link_to image_tag("logo-white.png", class:'footer_logo'), root_path
-      .footer_copyright
-        © FURIMA, Inc.
+    = render "share/product_footer"
 
