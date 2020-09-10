@@ -1,28 +1,29 @@
-%header
-  .header-lnner
-    .main-header
-      = link_to "#" do
-        = image_tag 'logo.png', alt: 'logo', height: '40.55', width: '140px', class: 'icon'
-      %input.searchbox{name: "key",placeholder: "キーワードから探す",type: "text"}
-      %button{type: "submit"}
-        .search-box__icon
-          = image_tag 'icon serch.svg', alt: 'seach', height: '19.77px', width: '19.77', class: 'image'
-    .nav
-      %ul.listsleft
-        %li.listsleft-first__item
-          .catBtn
-            = link_to  "カテゴリー", "#", { :id => "category-btn"}    
-        %li.listsleft-second__item
-          .brandBtn
+.wrapper
+  %header
+    .header-lnner
+      .main-header
+        = link_to "#" do
+          = image_tag 'logo.png', alt: 'logo', height: '40.55', width: '140px', class: 'icon'
+        %input.searchbox{name: "key",placeholder: "キーワードから探す",type: "text"}
+        %button{type: "submit"}
+          .search-box__icon
+            = image_tag 'icon serch.svg', alt: 'seach', height: '19.77px', width: '19.77', class: 'image'
+      .nav
+        %ul.listsleft
+          %li.listsleft-first__item
+            .catBtn
+              = link_to  "カテゴリー", "#", { :id => "category-btn"}    
+          %li.listsleft-second__item
+            .brandBtn
+              = link_to "#" do
+                ブランド
+        %ul.listsright
+          %li.listsright-first__item
             = link_to "#" do
-              ブランド
-      %ul.listsright
-        %li.listsright-first__item
-          = link_to "#" do
-            ログイン
-        %li.listsright-second__item
-          = link_to "#" do
-            新規登録
+              ログイン
+          %li.listsright-second__item
+            = link_to "#" do
+              新規登録
   %nav.breadCrumbs
     %ul.ul
       %li.li
@@ -64,9 +65,9 @@
               %tr 
                 %th カテゴリー
                 %td
-                  = link_to "#{@category_parent.name}","#"
-                  %br= link_to "#{@category_child.name}","#"
-                  = link_to "#{@category_grandchild.name}","#"
+                  -#= link_to "#{@category_parent.name}","#"
+                  -#%br= link_to "#{@category_child.name}","#"
+                  -#= link_to "#{@category_grandchild.name}","#"
             %table
               %tr
                 %th 
@@ -153,63 +154,56 @@
                       = icon('fa', 'star likeIcon',class: 'iii')
                       0
                   %p (税込)
-  .appBanner
-    .inner
-      %h2.inner__title
-        だれでもかんたん。人生を変えるフリマアプリ
-      %p.inner__text
-        今すぐ無料でダウンロード
-      .inner__icon
-        = link_to "#" do
-          = image_tag 'app icon2.png', alt: 'apple', height: '53.33px', width: '180px', class: 'aBtn'
-        = link_to "#" do
-          = image_tag 'gBtn.png', alt: '', height: '53.33px', width: '180px', class: 'gBtn'
-  %footer
-    %ul.contents
-      %li.content
-        %h2.content__head 
+  .third-banner
+    .catch-copy
+      %p.text-small
+        だれでもかんたん、人生を変えるフリマアプリ
+      %p.text-big
+        今すぐ無料ダウンロード！
+    .download-btn
+      = link_to "#" do
+        = image_tag("apple.svg", class: 'a-btn')
+      = link_to "#" do
+        = image_tag("google-play-badge.svg", class: 'g-btn')
+      
+  .t-footer
+    .t-footer__contents
+      .content
+        %h2.content__title
           FURIMAについて
         %ul
           %li
-            = link_to "#" do
-              会社概要（運営会社）
+            = link_to "会社概要 （運営会社）", "#"
           %li
-            = link_to "#" do
-              プライバシーポリシー
+            = link_to "プライバシーポリシー", "#"
           %li
-            = link_to "#" do
-              FURIMA利用規約
+            = link_to "FURIMA利用規約", "#"
           %li
-            = link_to "#" do
-              ポイントに関する特約
-      %li.content
-        %h2.content__head
+            = link_to "ポイントに関する特約", "#"
+      .content
+        %h2.content__title
           FURIMAを見る
         %ul
           %li
-            = link_to "#" do
-              カテゴリー一覧
+            = link_to "カテゴリ一覧", "#"
           %li
-            = link_to "#" do
-              ブランド一覧
-      %li.content
-        %h2.content__head
-          ヘルプ&ガイド
-        %ul.content__head
+            = link_to "ブランド一覧", "#"
+      .content
+        %h2.content__title
+          ヘルプ＆ガイド
+        %ul
           %li
-            = link_to "#" do
-              FURIMAガイド
+            = link_to "FURIMAガイド", "#"
           %li
-            = link_to "#" do
-              FURIMAロゴ利用ガイドライン
+            = link_to "FURIMAロゴ利用ガイドライン", "#"
           %li
-            = link_to "#" do
-              お知らせ
-    .footer__logo
+            = link_to "お知らせ", "#"
+    .t-footer__logo
       = link_to "#" do
-        = image_tag 'logo-w.svg', alt: 'logo', height: '40.55', width: '140px', class: 'flogo'
-      %p © FURIMA
-    .purchaseBtn
-      %spa.purchaseBtn__text
-        出品する
-      = image_tag 'imge-c', alt: 'c', height: '54px', width: '54px', class: 'c'  
+        = image_tag "logo-white.svg"
+      %p.t-footer__copylight 
+        © FURIMA
+  = link_to "#" do
+    .camera-btn
+      %span.camera-btn__text 出品する
+      = image_tag("icon_camera.png", class: 'camera-btn__icon')
