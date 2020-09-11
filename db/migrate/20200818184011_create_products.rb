@@ -7,10 +7,10 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer :price, null:false
       t.integer :trading_status, null:false
       t.datetime :completed_at
-      t.integer :category, null: false, foreign_key: true
-      t.integer :shipping, null: false, foreign_key: true
-      t.integer :brand, foreign_key:true
-      t.integer :user, null: false, foreign_key: true
+      t.references :category, null: false, foreign_key: true
+      t.references :shipping, null: false, foreign_key: true
+      t.references :brand, foreign_key:true
+      t.references :user, null: false, foreign_key: true
       t.timestamps
     end
   end
