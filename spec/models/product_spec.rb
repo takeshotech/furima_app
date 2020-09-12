@@ -29,7 +29,8 @@ describe Product, type: :model do
       end
 
       it 'category_idが空だと保存できないこと' do
-        product = build(:product, category_id: nil)
+        product = build(:product)
+        product.category_id = nil
         product.valid?
         expect(product.errors[:category]).to include("を入力してください")
       end
