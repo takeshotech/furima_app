@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :edit, :update, :show]
   root 'home#index'
   resources :products, only: [:new, :create, :show] do
-    resources :product_images, only: [:new, :create]
-    resources :shippings, only: [:new, :create]
-    resources :brands, only: [:new, :create]
+
     collection do
       get 'get_category_children', to: 'products#get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', to: 'products#get_category_grandchildren', defaults: { format: 'json' }
