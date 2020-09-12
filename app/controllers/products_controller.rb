@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
 
   def create
     @category_parent = Category.where(ancestry: nil)
-    @product = Product.create(product_params)
+    @product = Product.create(product_params)         
     if @product.save
       flash[:alert] = '出品が完了しました'
       redirect_to new_product_path 
@@ -39,7 +39,7 @@ class ProductsController < ApplicationController
       flash[:alert] = '出品に失敗しました'
       @product.product_images.new
       render :new
-    end  
+    end 
   end
   
   private
