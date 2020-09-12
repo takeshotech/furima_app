@@ -7,8 +7,7 @@ FactoryBot.define do
     first_name_kana {Gimei.last.katakana}
     birth {Faker::Number.number(digits: 8)}
     email {Faker::Internet.free_email}
-    password = "Pass1234"
-    password {password}
-    password_confirmation {password}
+    password {"Pass1234"}
+    password_confirmation {"Pass1234"}
   end
 end
