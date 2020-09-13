@@ -10,10 +10,7 @@ Rails.application.routes.draw do
     end
   end
   resources :orders, only: :show
-<<<<<<< HEAD
-=======
 
   resources :credit_cards, only: [:new, :create, :show, :destroy] 
->>>>>>> master
 end
   
