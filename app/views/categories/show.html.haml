@@ -1,0 +1,23 @@
+.wrapper
+  = render "home/header"
+  .main
+    .main__frame
+      .main__categoryframe
+        .main__categoryframe--title
+          %h1= "#{@category.name}の商品一覧"
+        %hr
+          .category__links
+            - @category_links.each do |category|
+              = link_to category.name, category_path(category), class: "link"
+          .category__products
+            - @products.each do |product|
+              - category = Category.find(product.category_id)
+              %button{type: "submit", onclick: "location.href=''", class: "category__product"}
+                .category__product--img
+                  - product.product_images.each do |image|
+                    = image_tag image.image_url, class: "img"
+                .category__product--details
+                  .product__name= product.name
+                  .product__price= "#{product.price}円"
+          = paginate @products
+  = render "home/footer"
