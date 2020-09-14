@@ -6,22 +6,20 @@
   width: 700px;
   margin: 0 auto;
   padding: 30px 0;
-
-  a:link{color: black;}
-  a:visited{color: black;}
-  a:hover{
-    text-decoration: underline;
-    color: #3CCACE;
-  }
-  a:active{color: black;} 
-  .link{
-    margin: 0 10px 10px 0;
-    display: inline-block;
-  }
-
   .category__links{
     text-align: center;
     margin: 30px auto;
+    a:link{color: black;}
+    a:visited{color: black;}
+    a:hover{
+      text-decoration: underline;
+      color: #3CCACE;
+    }
+    a:active{color: black;}   
+    .link{
+      margin: 0 10px 10px 0;
+      display: inline-block;
+    }  
   }
   hr {
     width: 600px;
@@ -33,7 +31,6 @@
     font-size: 24px;
     font-weight: 600;
   }
-
   &--title{
     text-align: center;
     margin-bottom: 30px;
@@ -41,14 +38,12 @@
 
   .category__products{
     width: 680px;
-    margin: 0 0 20px 15px;
-    .category__product:hover{opacity: 0.5;}
+    margin: 0 0 20px 30px;
 
     .category__product{
+      display: inline-block;
       margin: 0 10px 20px 0;
       border: none;
-      background-color: transparent;
-      cursor: pointer;
       border: 1px solid;
       border-color: gray;
       .category__product--img{
@@ -60,14 +55,49 @@
         }
       }
       .category__product--details{
-        padding-top: 5px;
-        height: 50px;
+        padding: 5px 20px;
         width: 200px;
+        ul{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          li{
+            .fa{
+              display: inline-block;
+              font: normal normal normal 14px/1 FontAwesome;
+              font-size: inherit;
+              text-rendering: auto;
+              -webkit-font-smoothing: antialiased;
+            }
+            .fa-star::before{
+              content: "\f005";
+            }
+          }
+        }
+
+        .product__price{
+          margin: 5px 0;
+        }
       }
     }
+    a:link{color: black;}
+    a:visited{color: black;}
+    a:active{color: black;}   
+    a:hover{opacity: 0.5;}
+    .p{
+      font-size: 12px;
+    }
   }
+
   .pagination{
     text-align: center;
+    a:link{color: black;}
+    a:visited{color: black;}
+    a:hover{
+      text-decoration: underline;
+      color: #3CCACE;
+    }
+    a:active{color: black;} 
     a{text-decoration: underline;}
     .page{
       margin: 0 5px;
