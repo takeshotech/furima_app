@@ -99,6 +99,15 @@
                   .sold__box
                     .sold__box--text
                       SOLD
+                .item__description
+                  %h3.item-name= product.name
+                  .item-detail
+                    %ul
+                      %li= "#{product.price}円"
+                      %li
+                        = icon("fas", "star", class: "link-icon")
+                        0
+                    %p (税込)
   .pickup
     %h2.title ピックアップブランド
     .items
