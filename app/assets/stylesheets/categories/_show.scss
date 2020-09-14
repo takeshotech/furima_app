@@ -39,7 +39,6 @@
   .category__products{
     width: 680px;
     margin: 0 0 20px 30px;
-
     .category__product{
       display: inline-block;
       margin: 0 10px 20px 0;
@@ -49,9 +48,27 @@
       .category__product--img{
         width: 200px;
         height: 200px;
+        position: relative;
         .img{
           width: 200px;
           height: 200px;
+        }
+        .sold__box{
+          width: 0;
+          height: 0;
+          border-top: 50px solid #3CCACE ;
+          border-right: 50px solid transparent;
+          border-bottom: 50px solid transparent;
+          border-left: 50px solid #3CCACE ;
+          position: absolute;
+          &--text{
+            transform: rotate(-45deg);
+            font-size: 24px;
+            margin: -20px 0px 0px -50px;
+            color: #fff;
+            letter-spacing: 2px;
+            font-weight: 600;
+          }
         }
       }
       .category__product--details{
