@@ -12,7 +12,7 @@
           .category__products
             - @products.each do |product|
               - category = Category.find(product.category_id)
-              %button{type: "submit", onclick: "location.href=''", class: "category__product"}
+              = link_to product_path(id: product.id), class: "category__product" do
                 .category__product--img
                   - product.product_images.each do |image|
                     = image_tag image.image_url, class: "img"
