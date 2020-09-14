@@ -11,11 +11,11 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
-    @category_id = @product.category_id
-    @category_parent = Category.find(@category_id)
-    @category_child = Category.find(@category_id).children
-    @category_grandchild = Category.find(@category_id).indirects
+    #@product = Product.find(params[:id])
+    #@category_id = @product.category_id
+    #@category_parent = Category.find(@category_id)
+    #@category_child = Category.find(@category_id).children
+    #@category_grandchild = Category.find(@category_id).indirects
   end
 
   # 親カテゴリーが選択された後に動くアクション

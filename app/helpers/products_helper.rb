@@ -1,4 +1,5 @@
 module ProductsHelper
+
   def description_input_placeholder
     <<~EOS
     商品の説明（必須 1,000文字以内）
