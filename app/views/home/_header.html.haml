@@ -18,9 +18,9 @@
           = link_to "ブランド", "#"
       %ul.right-side
       -if user_signed_in?
-        .right-side__item.right-side__item-login
+        .right-side__mypage
           = link_to "マイページ", users_path(current_user), id: "mypage-btn"
-        .right-side__item
+        .right-side__logout
           = link_to 'ログアウト', destroy_user_session_path, method: :delete
       -else
         .right-side__login
