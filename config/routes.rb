@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
+  root 'home#index'
   devise_for :users
   resources :users, only: [:index, :edit, :update, :show]
-  root 'home#index'
-  resources :products, only: [:new, :create, :show] do
-      collection do
+  resources :products, only: [:index, :new, :create, :show] do
+    resources :product_images, only: [:new, :create]
+    resources :shippings, only: [:new, :create]
+    resources :brands, only: [:new, :create]
+    collection do
       get 'get_category_children', to: 'products#get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', to: 'products#get_category_grandchildren', defaults: { format: 'json' }
     end
+    
   end
-  resources :orders, only: :show
+  resources :orders 
   resources :credit_cards, only: [:new, :create, :show, :destroy] 
-end
   
+end
