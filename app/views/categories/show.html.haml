@@ -18,6 +18,11 @@
                     = image_tag image.image_url, class: "img"
                 .category__product--details
                   .product__name= product.name
-                  .product__price= "#{product.price}円"
+                  %ul
+                    .product__price= "#{product.price}円"
+                    %li
+                      = icon("fas", "star", class: "link-icon")
+                      0
+                  .p (税込)
           = paginate @products
   = render "home/footer"
