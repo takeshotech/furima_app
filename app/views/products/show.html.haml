@@ -8,3 +8,6 @@
       = link_to "#{@category_parent.name}","#"
       %br= link_to "#{@category_child.name}","#"
       = link_to "#{@category_grandchild.name}","#"
+
+      .actions
+        = link_to '削除',"/products/#{@product.user_id}",method: :delete

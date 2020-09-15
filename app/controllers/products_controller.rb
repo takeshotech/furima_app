@@ -41,6 +41,13 @@ class ProductsController < ApplicationController
       render :new
     end  
   end
+
+    def destroy
+      product = Product.find(params[:id])
+      if product.user_id == product.id
+        product.destroy #destroyメソッドを使用し対象の商品を削除する。
+      end
+    end
   
   private
     def product_params
@@ -48,5 +55,7 @@ class ProductsController < ApplicationController
       shipping_attributes: [:id, :area, :fee, :handing_time, :shipping_type],
       brand_attributes: [:id, :name]).merge(user_id: current_user.id)
     end
+
+
   end
   

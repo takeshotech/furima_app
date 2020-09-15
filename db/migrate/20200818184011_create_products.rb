@@ -12,6 +12,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.references :brand, foreign_key:true
       t.references :user, null: false, foreign_key: true
       t.timestamps
+      add_index products, :number, unique: true
     end
   end
 end
