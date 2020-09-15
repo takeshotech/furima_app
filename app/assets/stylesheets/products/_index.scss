@@ -89,6 +89,20 @@ body{
             li{
               height: 30px;
               padding: 10px;
+              &:hover{
+                background-color: #3CCACE;
+                .left-side__category--child{
+                  background-color: #fff;
+                  display: block;
+                  position: absolute;
+                  top: 0;
+                  left: 100%;
+                  width: 120%;
+                  height: 500px;
+                }
+                li{
+                  height: 25px;
+                  padding: 5px;
       &__brand{
         margin-left: 30px;
       }
