@@ -8,6 +8,7 @@ class CategoriesController < ApplicationController
   def show
     @products = @category.set_products
     @products = @products.order("created_at DESC").page(params[:page]).per(9)
+    @parents = Category.where(ancestry: nil)
   end
 
   private
