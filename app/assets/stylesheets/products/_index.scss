@@ -77,6 +77,10 @@ body{
       #small-name{
         font-size: 12px;
       }
+      .left-side__category{
+        &--parent, &--child, &--grandchild{
+          display: none;
+        }
       &__brand{
         margin-left: 30px;
       }
