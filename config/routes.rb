@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', to: 'products#get_category_grandchildren', defaults: { format: 'json' }
     end
   end
-  resources :orders, only: :show
+  resources :orders, only: [:show, :create]
 
   resources :credit_cards, only: [:new, :create, :show, :destroy] 
 end
