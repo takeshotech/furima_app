@@ -70,9 +70,13 @@ body{
       color: #333;
       text-decoration: none;
     }
+
     .left-side{
       display: flex;
       text-decoration: none;
+      #small-name{
+        font-size: 12px;
+      }
       &__brand{
         margin-left: 30px;
       }
