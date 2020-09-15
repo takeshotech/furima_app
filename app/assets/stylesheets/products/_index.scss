@@ -103,6 +103,32 @@ body{
                 li{
                   height: 25px;
                   padding: 5px;
+                  &:hover{
+                    background-color: #3CCACE;
+                    .left-side__category--grandchild{
+                      background-color: #fff;
+                      display: block;
+                      position: absolute;
+                      top: 0;
+                      left: 100%;
+                      width: 120%;
+                      height: 750px;
+                      z-index: 1;
+                    }
+                    li{
+                      height: 25px;
+                      padding: 5px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+      }
+
+
       &__brand{
         margin-left: 30px;
       }
