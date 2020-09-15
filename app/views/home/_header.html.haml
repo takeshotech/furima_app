@@ -14,6 +14,21 @@
       %ul.left-side
         %li.left-side__category
           = link_to "カテゴリーから探す", categories_path
+          %ul.left-side__category--parent
+            - @parents.each do |parent|
+              %li
+                = link_to category_path(parent), class: "name" do
+                  = parent.name
+                %ul.left-side__category--child
+                  - parent.children.each do |child|
+                    %li
+                      = link_to category_path(child), class: "name", id: "small-name" do
+                        = child.name
+                      %ul.left-side__category--grandchild
+                        - child.children.each do |grandchild|
+                          %li
+                            = link_to category_path(grandchild), class: "name", id: "small-name" do
+                              = grandchild.name
         %li.left-side__brand
           = link_to "ブランド", "#"
       %ul.right-side
