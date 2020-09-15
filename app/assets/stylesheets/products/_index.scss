@@ -81,6 +81,14 @@ body{
         &--parent, &--child, &--grandchild{
           display: none;
         }
+        &:hover{
+          .left-side__category--parent{
+            background-color: #fff;
+            display: block;
+            position: absolute;
+            li{
+              height: 30px;
+              padding: 10px;
       &__brand{
         margin-left: 30px;
       }
