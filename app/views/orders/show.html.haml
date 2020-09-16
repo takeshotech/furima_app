@@ -25,11 +25,14 @@
         .main__box--creditcard
           .title
             %h3 支払い方法
-            = link_to "変更する >", "", class: "edit-link"
+            = link_to "変更する >", credit_card_path(current_user.id), class: "edit-link"
           .card-info
             %p クレジットカード
-            .creditcard-num xxxx-xxxx-xxxx-xxxx
-            .expire-date 有効期限 mm/yy
+            .creditcard-num 
+              = "xxxx-xxxx-xxxx" 
+            .expire-date 
+              .expire-date__title
+                有効期限 mm/yy
             .kind VISA
         %hr
         .main__box--shipping
