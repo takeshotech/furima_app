@@ -8,7 +8,16 @@
   a{
     text-decoration: none;
   }
- 
+  header{
+    .logo_frame{
+      text-align: center;
+      .furima-logo{
+        width: 140px;
+        vertical-align: middle;
+        margin: 30px auto 0;
+      }
+    }
+  }
   .main__frame{
     width: 800px;
     background-color: white;

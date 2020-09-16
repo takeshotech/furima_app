@@ -1,12 +1,15 @@
 
-@import "module/new_user";
 @import "reset";
-@import "products";
-@import "module/login";
-@import "items";
-@import "orders";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+@import "products/index";
+@import "orders/show";
+@import "categories/index";
+@import "categories/show";
+
+@import "module/new_user";
+@import "module/login";
 @import "module/flash";
 @import "module/mypage";
 @import "module/main";

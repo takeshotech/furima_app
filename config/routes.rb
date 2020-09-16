@@ -12,7 +12,8 @@ Rails.application.routes.draw do
     end
     
   end
-  resources :orders 
+  resources :categories, only: [:index, :new, :show]
+  resources :orders, only: :show
   resources :credit_cards, only: [:new, :create, :show, :destroy] 
   delete 'products/:id' => 'products#destroy'
   # upstream/product-viewes

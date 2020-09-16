@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
- 
-  
+  def index
+    @parents = Category.where(ancestry: nil)
+  end
+
   def new
     @product = Product.new
     @product.build_brand
