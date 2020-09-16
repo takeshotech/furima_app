@@ -13,11 +13,13 @@ class ProductsController < ApplicationController
   end
 
   def show
-    #@product = Product.find(params[:id])
-    #@category_id = @product.category_id
-    #@category_parent = Category.find(@category_id)
-    #@category_child = Category.find(@category_id).children
-    #@category_grandchild = Category.find(@category_id).indirects
+    @product = Product.find(params[:id])
+    @user_id = @product.user_id
+    @user = User.find(@user_id)
+    @category_id = @product.category_id
+    @category_parent = Category.find(@category_id)
+    @category_child = Category.find(@category_id).children
+    @category_grandchild = Category.find(@category_id).indirects
   end
 
   # 親カテゴリーが選択された後に動くアクション
@@ -54,8 +56,8 @@ class ProductsController < ApplicationController
   private
     def product_params
       params.require(:product).permit(:name, :text, :condition, :price, :trading_status, :category_id, product_images_attributes: [:image_url, :product_id],
-      shipping_attributes: [:id, :area, :fee, :handing_time, :shipping_type],
-      brand_attributes: [:id, :name]).merge(user_id: current_user.id)
+      shipping_attributes: [:area, :fee, :handing_time, :shipping_type],
+      brand_attributes: [:name]).merge(user_id: current_user.id)
     end
 
 
