@@ -1,16 +1,15 @@
-%table 
-  %tr 
-    %th 出品者
-    -# %td= @user.nickname
-  %tr 
-    %th カテゴリー
-    %td
-      = link_to "#{@category_parent.name}","#"
-      %br= link_to "#{@category_child.name}","#"
-      = link_to "#{@category_grandchild.name}","#"
+-# %table 
+-#   %tr 
+-#     %th 出品者
+-#     -# %td= @user.nickname
+-#   %tr 
+-#     %th カテゴリー
+-#     %td
+-#       = link_to "#{@category_parent.name}","#"
+-#       %br= link_to "#{@category_child.name}","#"
+-#       = link_to "#{@category_grandchild.name}","#"
 
-      .actions
-        = link_to '削除',"/products/#{@product.user_id}",method: :delete
+      
 .wrapper
   %header
     .header-lnner
@@ -167,6 +166,8 @@
                       = icon('fa', 'star likeIcon',class: 'iii')
                       0
                   %p (税込)
+                  .actions
+        -# = link_to '削除',"/products/#{@product.user_id}",method: :delete
   .third-banner
     .catch-copy
       %p.text-small

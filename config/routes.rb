@@ -16,6 +16,6 @@ Rails.application.routes.draw do
 
   resources :credit_cards, only: [:new, :create, :show, :destroy] 
   delete 'products/:id' => 'products#destroy'
-  upstream/product-viewes
+  # upstream/product-viewes
 end
   
