@@ -73,15 +73,20 @@
       }
     }
 
-    .item-buy__btn {
-      .item-buy {
-        margin-top: 16px;
-        text-align: center;
+    .item-buy_btn {
+      font-size: 24px;
+      font-family: sans-serif;
+      margin-top: 16px;
+      text-align: center;
+      color: #ffffff;
+      &__blue {
         background-color: #3ccace;
-        color: #ffffff;
-        font-size: 24px;
-        font-family: sans-serif;
       }
+      &__gray{
+        background-color: #aaaaaa;
+      }
+
+
     }
 
     .item-description__inner {

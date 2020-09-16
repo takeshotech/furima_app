@@ -58,9 +58,17 @@
         .item-price
           %span
           ¥
-          = @product.price 
-        .item-buy__btn
-          .item-buy
+          = @product.price
+      - if user_signed_in? && current_user.id == @product.user_id 
+        .item-buy_btn
+          .item-buy_btn__blue
+            商品の編集
+        .item-buy_btn
+          .item-buy_btn__gray
+            この商品を削除する
+      - else
+        .item-buy_btn
+          .item-buy_btn__blue
             購入手続きへ
       .item-description__inner
         %p こちらは、一年前に青山のバレンシアガで購入したので確実に本物です。正規店でのメンテナンスを受けられる確実に本物・正規品ですのでご安心ください。大切に使用していましが中古品なので神経質な方はご遠慮願います。状態などご不明な点がございましたらお気軽にお問い合わせください
