@@ -9,7 +9,7 @@ body{
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
     font-size: 14px;
     color: #333;
-    line-height: 1;
+    
 }
 .my-page-header{
   padding: 0 60px;
@@ -163,6 +163,7 @@ body{
   width: 700px;
   margin: 24px auto 0;
   padding: 0 0 40px;
+  line-height: 1;
 
   &__inside{
     float: none;
@@ -172,7 +173,7 @@ body{
       height: 200px;
       position: relative;
       padding: 20px;
-      background: url(/assets/pict-reason-01.jpg);
+      background-image: image-url("pict-reason-01.jpg");
       background-repeat: no-repeat;
       background-size: cover;
       text-align: center;
@@ -277,7 +278,7 @@ body{
 
           .my-page-item-nothing{
             padding: 160px 0 60px;
-            background: url(/assets/pict-reason-01.jpg);
+            background-image: image-url("pict-reason-01.jpg");
             text-align: center;
             font-size: 16px;
             color: #33ccaa;

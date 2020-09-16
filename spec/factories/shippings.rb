@@ -4,6 +4,5 @@ FactoryBot.define do
     fee {"0"}
     handing_time {"0"}
     shipping_type {"0"}
-
   end
 end

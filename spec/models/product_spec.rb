@@ -1,7 +1,6 @@
 require 'rails_helper'
 describe Product, type: :model do
 
-
   describe '#create' do
     context 'productを保存できる場合' do
       it '必須項目があれば保存できること' do 
@@ -10,30 +9,38 @@ describe Product, type: :model do
     end
 
     context 'productを保存できない場合' do
+      before do
+        @product = build(:product)
+      end
       it 'nameが空だと保存できないこと' do
-        product = build(:product, name: nil)
-        product.valid?
-        expect(product.errors[:name]).to include("を入力してください")
+        @product.name = nil
+        @product.valid?
+        expect(@product.errors[:name]).to include("を入力してください")
       end 
 
       it 'textが空だと保存できないこと' do
-        product = build(:product, text: nil)
-        product.valid?
-        expect(product.errors[:text]).to include("を入力してください")
+        @product.text = nil
+        @product.valid?
+        expect(@product.errors[:text]).to include("を入力してください")
       end
       
       it 'priceが空だと保存できないこと' do
-        product = build(:product, price: nil)
-        product.valid?
-        expect(product.errors[:price]).to include("を入力してください")
+        @product.price = nil
+        @product.valid?
+        expect(@product.errors[:price]).to include("を入力してください")
       end
 
       it 'category_idが空だと保存できないこと' do
-        product = build(:product, category_id: nil)
-        product.valid?
-        expect(product.errors[:category]).to include("を入力してください")
+        @product.category_id = nil
+        @product.valid?
+        expect(@product.errors[:category]).to include("を入力してください")
+      end
+
+      it 'image_urlが空だと保存できないこと' do
+        @product.product_images = []
+        @product.valid?
+        expect(@product.errors[:product_images]).to include("を入力してください")
       end
     end
-
   end
 end
