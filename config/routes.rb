@@ -7,9 +7,11 @@ Rails.application.routes.draw do
       collection do
       get 'get_category_children', to: 'products#get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', to: 'products#get_category_grandchildren', defaults: { format: 'json' }
+      
+      resources :orders, only: [:show, :create]
     end
   end
-  resources :orders, only: [:show, :create]
+  
 
   resources :credit_cards, only: [:new, :create, :show, :destroy] 
 end
