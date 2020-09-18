@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
     @category_parent = Category.find(@category_id)
     @category_child = Category.find(@category_id).children
     @category_grandchild = Category.find(@category_id).indirects
+    @parents = Category.where(ancestry: nil)
   end
 
   # 親カテゴリーが選択された後に動くアクション
