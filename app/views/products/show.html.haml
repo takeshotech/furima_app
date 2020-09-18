@@ -6,8 +6,6 @@
       .item-name__box  
         .item-name
           %h1= @product.name
-        -# .item-wording
-        -#   %p バレンシアガの財布の赤。機能性の高いミニ財布  
       .item-main  
 
         .item-img
@@ -28,17 +26,12 @@
                   %p
                   = link_to "＞#{@product.category.parent.name}","#"
                   %p
-                  = link_to "＞#{@product.category.name}","#"
-            
+                  = link_to "＞#{@product.category.name}","#"         
             %table
               %tr
                 %th ブランド
                 %td
                   = @product.brand.name   
-            -# %table
-            -#   %tr
-            -#     %th 商品のサイズ
-            -#     %td サイズ        
             %table
               %tr
                 %th 商品の状態
@@ -63,7 +56,6 @@
                     %p ゆうゆうフリマ便                  
                   - if @product.shipping.shipping_type == 2
                     %p 未定 
-                   
             %table
               %tr
                 %th 発送料の負担
