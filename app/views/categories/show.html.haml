@@ -15,7 +15,7 @@
               = link_to product_path(id: product.id), class: "category__product" do
                 .category__product--img
                   - product.product_images.each do |image|
-                    = image_tag image.image_url, class: "img"
+                    = image_tag image.image_url.url, class: "img"
                       - if product.order.present?
                       .sold__box
                         .sold__box--text
