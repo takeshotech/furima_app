@@ -23,9 +23,12 @@
               %tr 
                 %th カテゴリー
                 %td
-                  = link_to "#{@product.category.name}","#"
-                  %br= link_to "#{@category_child.name}","#"
-                  = link_to "#{@category_grandchild.name}","#"
+                  %p
+                  = link_to "#{@product.category.parent.parent.name}","#"
+                  %p
+                  = link_to "＞#{@product.category.parent.name}","#"
+                  %p
+                  = link_to "＞#{@product.category.name}","#"
             
             %table
               %tr
