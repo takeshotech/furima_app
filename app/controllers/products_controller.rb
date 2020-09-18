@@ -12,14 +12,11 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @user_id = @product.user_id
-    @user = User.find(@user_id)
     @category_id = @product.category_id
     @category_parent = Category.find(@category_id)
     @category_child = Category.find(@category_id).children
     @category_grandchild = Category.find(@category_id).indirects
-    @brand_id = @product.brand_id
-    @brand = Brand.find(@brand_id)
+    @images = ProductImage.where(product_id: @product.id)
   end
 
   # 親カテゴリーが選択された後に動くアクション
