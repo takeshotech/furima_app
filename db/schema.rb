@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2020_09_12_141105) do
     t.text "text", null: false
     t.integer "condition", null: false
     t.integer "price", null: false
-    t.integer "trading_status", null: false
+    t.integer "trading_status", default: 0, null: false
     t.datetime "completed_at"
     t.bigint "category_id", null: false
     t.bigint "shipping_id", null: false
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 2020_09_12_141105) do
     t.integer "handing_time", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "shipping_type"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

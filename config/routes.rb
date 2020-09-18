@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   root 'home#index'
   resources :users, only: [:index, :edit, :update, :show]
@@ -10,5 +11,7 @@ Rails.application.routes.draw do
   end
   resources :categories, only: [:index, :new, :show]
   resources :orders, only: :show
+
   resources :credit_cards, only: [:new, :create, :show, :destroy] 
 end
+  

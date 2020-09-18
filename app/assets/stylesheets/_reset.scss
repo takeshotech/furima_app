@@ -45,6 +45,7 @@ p,
 blockquote,
 th,
 td {
+
   margin:0;
   padding:0;
 }
@@ -58,6 +59,7 @@ img {
 }
 /*
   TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+>>>>>>> master
 */
 address,
 caption,
@@ -68,17 +70,20 @@ em,
 strong,
 th,
 var {
+
   font-style:normal;
   font-weight:normal;
 }
 
 ol,
 ul {
+
   list-style:none;
 }
 
 caption,
 th {
+
   text-align:left;
 }
 h1,
@@ -105,10 +110,12 @@ sup {
 }
 sub {
   vertical-align:text-bottom;
+
 }
 input,
 textarea,
 select {
+
   font-family:inherit;
   font-size:inherit;
   font-weight:inherit;

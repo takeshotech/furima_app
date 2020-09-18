@@ -4,6 +4,10 @@ class ProductsController < ApplicationController
   end
 
   def new
+    @product = Product.new
+    @product.build_brand
+    @product.product_images.new
+    @product.build_shipping
     # データベースから親カテゴリーのみ抽出し、配列化
     @category_parent = Category.where(ancestry: nil)
   end
@@ -27,10 +31,24 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.create(product_params)
+    @category_parent = Category.where(ancestry: nil)
+    @product = Product.new(product_params)         
+    if @product.save
+      flash[:alert] = '出品が完了しました'
+      redirect_to new_product_path 
+   
+    else
+      flash[:alert] = '出品に失敗しました'
+      @product.product_images.new
+      render :new
+    end 
   end
-
+  
   private
-  def product_params
+    def product_params
+      params.require(:product).permit(:name, :text, :condition, :price, :trading_status, :category_id, product_images_attributes: [:image_url, :product_id],
+      shipping_attributes: [:id, :area, :fee, :handing_time, :shipping_type],
+      brand_attributes: [:id, :name]).merge(user_id: current_user.id)
+    end
   end
-end
+  
