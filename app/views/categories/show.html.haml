@@ -1,0 +1,32 @@
+.wrapper
+  = render "home/header"
+  .main
+    .main__frame
+      .main__categoryframe
+        .main__categoryframe--title
+          %h1= "#{@category.name}の商品一覧"
+        %hr
+          .category__links
+            - @category_links.each do |category|
+              = link_to category.name, category_path(category), class: "link"
+          .category__products
+            - @products.each do |product|
+              - category = Category.find(product.category_id)
+              = link_to product_path(id: product.id), class: "category__product" do
+                .category__product--img
+                  - product.product_images.each do |image|
+                    = image_tag image.image_url.url, class: "img"
+                      - if product.order.present?
+                      .sold__box
+                        .sold__box--text
+                          SOLD
+                .category__product--details
+                  .product__name= product.name
+                  %ul
+                    .product__price= "#{product.price}円"
+                    %li
+                      = icon("fas", "star", class: "link-icon")
+                      0
+                  .p (税込)
+          = paginate @products
+  = render "home/footer"

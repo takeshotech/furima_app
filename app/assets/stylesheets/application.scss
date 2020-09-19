@@ -1,12 +1,19 @@
-
-@import "module/new_user";
 @import "reset";
-@import "products";
-@import "module/login";
-@import "items";
-@import "orders";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+@import "products/index";
+@import "products/new";
+@import "products/show";
+@import "products_header";
+@import "products_footer";
+
+@import "orders/show";
+@import "categories/index";
+@import "categories/show";
+
+@import "module/new_user";
+@import "module/login";
 @import "module/flash";
 @import "module/mypage";
 @import "module/main";
@@ -19,3 +26,4 @@
 @import "modules/products-show";
 @import "products_header";
 @import "products_footer";
+@import "module/show";

@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
- 
-  
+  def index
+    @parents = Category.where(ancestry: nil)
+  end
+
   def new
     @product = Product.new
     @product.build_brand
@@ -20,6 +22,7 @@ class ProductsController < ApplicationController
     @category_grandchild = Category.find(@category_id).indirects
     @brand_id = @product.brand_id
     @brand = Brand.find(@brand_id)
+    @parents = Category.where(ancestry: nil)
   end
 
   # 親カテゴリーが選択された後に動くアクション
