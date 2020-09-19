@@ -9,11 +9,13 @@ Rails.application.routes.draw do
     collection do
       get 'get_category_children', to: 'products#get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', to: 'products#get_category_grandchildren', defaults: { format: 'json' }
+      
+      resources :orders, only: [:create, :show] 
     end
-    
   end
   resources :categories, only: [:index, :new, :show]
   resources :orders, only: :show
+  
   resources :credit_cards, only: [:new, :create, :show, :destroy] 
   delete 'products/:id' => 'products#destroy'
   # upstream/product-viewes
