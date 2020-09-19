@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   require "payjp"
 
   def create
-    @orders = Order.new
+    @product = Product.find(params[:id])
 
     # 購入テーブル登録ずみ商品は２重で購入されないようにする
     # (２重で決済されることを防ぐ)
@@ -11,6 +11,7 @@ class OrdersController < ApplicationController
     else
       # 同時に2人が同時に購入し、二重で購入処理がされることを防ぐための記述
       @product.with_lock do
+        
         if current_user.credit_card.present?
           # ログインユーザーがクレジットカード登録済みの場合の処理
           # ログインユーザーのクレジットカード情報を引っ張ってきます。
@@ -24,6 +25,7 @@ class OrdersController < ApplicationController
           currency: 'jpy'
           )
         else
+          Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
           # ログインユーザーがクレジットカード登録されていない場合(Checkout機能による処理を行います)
           # APIの「Checkout」ライブラリによる決済処理の記述
           Payjp::Charge.create(
@@ -33,7 +35,7 @@ class OrdersController < ApplicationController
           )
         end
       #購入テーブルに登録処理
-      @order = Order.create(buyer_id: current_user.id, product_id: params[:product_id])
+      @order = Order.create(buyer_id: current_user.id, product_id: params[:id])
       end
     end
   end  
