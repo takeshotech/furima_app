@@ -1,0 +1,23 @@
+.new__page__header
+  = link_to image_tag("logo/logo.png", alt: "logo"), root_path
+= form_for @item do |f|
+  = render 'layouts/error_messages', model: f.object
+  .name__field#1
+    .form__label
+      .lavel__name
+        出品画像
+      .lavel__Required
+        [必須]
+  #image-box-1{class:"#{@images.last.id}"}
+    - @images.each do |img|
+      .item-image{id:img.id}
+        = image_tag(img.image.url,{width:"188",height:"180"})
+        .item-image__operetion
+          .item-image__operetion--edit__delete__hidden 削除
+    %label.img-label{for: "img-file"}
+      #image-box__container{class:"item-num-#{@images.length}"}
+        #append-js-edit
+          = f.fields_for :images do |image|
+            .js-file_group{"data-index" => "#{image.index}"}
+              = image.file_field :image, type: 'file', value:"#{image.object.id}",style: "",  id:"img-file", class:'js-file-edit',name: "item[images_attributes][#{@item.images.count}][image]", data:{index:""}
+        %i.fas.fa-camera

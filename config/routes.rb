@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       collection do
       get 'get_category_children', to: 'products#get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', to: 'products#get_category_grandchildren', defaults: { format: 'json' }
+      get 'update_done'
     end
   end
   resources :orders, only: :show
