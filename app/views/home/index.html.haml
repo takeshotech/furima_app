@@ -87,49 +87,49 @@
   .pickup
     %h2.title ピックアップカテゴリー
     %h3.title 新規投稿商品
-    .items
-      .items__list
-        .items__list--item
-          - @products.each do |product|
-            = link_to product_path(id: product.id) do
+    .category__products
+      .category__products--box
+        - @products.each do |product|
+          - category = Category.find(product.category_id)
+          = link_to product_path(id: product.id), class: "category__product" do
+            .category__product--img
               - product.product_images.each do |image|
-                = image_tag image.image_url.url, class: "item-image"
+                = image_tag image.image_url.url, class: "img"
                   - if product.order.present?
                   .sold__box
                     .sold__box--text
                       SOLD
-                .item__description
-                  %h3.item-name= product.name
-                  .item-detail
-                    %ul
-                      %li= "#{product.price}円"
-                      %li
-                        = icon("fas", "star", class: "link-icon")
-                        0
-                    %p (税込)
+            .category__product--details
+              .product__name= product.name
+              %ul
+                .product__price= "#{product.price}円"
+                %li
+                  = icon("fas", "star", class: "link-icon")
+                  0
+              .p (税込)
   .pickup
     %h2.title ピックアップブランド
     %h3.title アーカイバ
-    .items
-      .items__list
-        .items__list--item
-          - @products.each do |product|
-            = link_to product_path(id: product.id) do
+    .category__products
+      .category__products--box
+        - @products.each do |product|
+          - category = Category.find(product.category_id)
+          = link_to product_path(id: product.id), class: "category__product" do
+            .category__product--img
               - product.product_images.each do |image|
-                = image_tag image.image_url.url, class: "item-image"
+                = image_tag image.image_url.url, class: "img"
                   - if product.order.present?
                   .sold__box
                     .sold__box--text
                       SOLD
-                .item__description
-                  %h3.item-name= product.name
-                  .item-detail
-                    %ul
-                      %li= "#{product.price}円"
-                      %li
-                        = icon("fas", "star", class: "link-icon")
-                        0
-                    %p (税込)
+            .category__product--details
+              .product__name= product.name
+              %ul
+                .product__price= "#{product.price}円"
+                %li
+                  = icon("fas", "star", class: "link-icon")
+                  0
+              .p (税込)
 
   = render "third-banner"
   = render "footer"
