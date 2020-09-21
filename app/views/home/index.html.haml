@@ -1,6 +1,5 @@
 .wrapper
   = render "header"
-            
 
   .first-banner
     .first-banner__content
@@ -23,7 +22,7 @@
       %li.point
         .point__image
           %span.number 1 
-          = image_tag "pict-reason-01.jpg"    
+          = image_tag "pict-reason-01.jpg"
         %h3.description-title
           %span 3分
           ですぐに出品
@@ -61,7 +60,6 @@
           = image_tag("apple.svg", class: 'a-btn')
         = link_to "#" do
           = image_tag("google-play-badge.svg", class: 'g-btn')
-          
 
   .furima-feature
     %h2.title
@@ -88,150 +86,51 @@
 
   .pickup
     %h2.title ピックアップカテゴリー
-    .items
-      .items__head
-        = link_to "#" do
-          %h3.title-b 新規投稿商品
-      .item-lists
-        .item
-          = link_to "#" do
-            %figure.item-image
-              = image_tag "a004.png"
-            .item__description
-              %h3.item-name サンプル商品
-              .item-detail
-                %ul
-                  %li 1000円
-                  %li
-                    = icon("fas", "star", class: "link-icon")
-                    0
-                %p (税込)
-        .item
-          = link_to "#" do
-            %figure.item-image
-              = image_tag "a004.png"
-            .item__description
-              %h3.item-name サンプル商品
-              .item-detail
-                %ul
-                  %li 1000円
-                  %li
-                    = icon("fas", "star", class: "link-icon")
-                    0
-                %p (税込)
-        .item
-          = link_to "#" do
-            %figure.item-image
-              = image_tag "a004.png"
-            .item__description
-              %h3.item-name サンプル商品
-              .item-detail
-                %ul
-                  %li 1000円
-                  %li
-                    = icon("fas", "star", class: "link-icon")
-                    0
-                %p (税込)
-        .item
-          = link_to "#" do
-            %figure.item-image
-              = image_tag "a004.png"
-            .item__description
-              %h3.item-name サンプル商品
-              .item-detail
-                %ul
-                  %li 1000円
-                  %li
-                    = icon("fas", "star", class: "link-icon")
-                    0
-                %p (税込)
-        .item
-          = link_to "#" do
-            %figure.item-image
-              = image_tag "a004.png"
-            .item__description
-              %h3.item-name サンプル商品
-              .item-detail
-                %ul
-                  %li 1000円
-                  %li
-                    = icon("fas", "star", class: "link-icon")
-                    0
-                %p (税込)
+    %h3.title 新規投稿商品
+    .category__products
+      .category__products--box
+        - @products.each do |product|
+          - category = Category.find(product.category_id)
+          = link_to product_path(id: product.id), class: "category__product" do
+            .category__product--img
+              - product.product_images.each do |image|
+                = image_tag image.image_url.url, class: "img"
+                  - if product.order.present?
+                  .sold__box
+                    .sold__box--text
+                      SOLD
+            .category__product--details
+              .product__name= product.name
+              %ul
+                .product__price= "#{product.price}円"
+                %li
+                  = icon("fas", "star", class: "link-icon")
+                  0
+              .p (税込)
   .pickup
     %h2.title ピックアップブランド
-    .items
-      .items__head
-        = link_to "#" do
-          %h3.title-b アーカイバ
-      .item-lists
-        .item
-          = link_to "#" do
-            %figure.item-image
-              = image_tag "a004.png"
-            .item__description
-              %h3.item-name サンプル商品
-              .item-detail
-                %ul
-                  %li 1000円
-                  %li
-                    = icon('fas', 'star', class: "link-icon")
-                    0
-                %p (税込)
-        .item
-          = link_to "#" do
-            %figure.item-image
-              = image_tag "a004.png"
-            .item__description
-              %h3.item-name サンプル商品
-              .item-detail
-                %ul
-                  %li 1000円
-                  %li
-                    = icon('fas', 'star', class: "link-icon")
-                    0
-                %p (税込)
-        .item
-          = link_to "#" do
-            %figure.item-image
-              = image_tag "a004.png"
-            .item__description
-              %h3.item-name サンプル商品
-              .item-detail
-                %ul
-                  %li 1000円
-                  %li
-                    = icon('fas', 'star', class: "link-icon")
-                    0
-                %p (税込)
-        .item
-          = link_to "#" do
-            %figure.item-image
-              = image_tag "a004.png"
-            .item__description
-              %h3.item-name サンプル商品
-              .item-detail
-                %ul
-                  %li 1000円
-                  %li
-                    = icon('fas', 'star', class: "link-icon")
-                    0
-                %p (税込)
-        .item
-          = link_to "#" do
-            %figure.item-image
-              = image_tag "a004.png"
-            .item__description
-              %h3.item-name サンプル商品
-              .item-detail
-                %ul
-                  %li 1000円
-                  %li
-                    = icon('fas', 'star', class: "link-icon")
-                    0
-                %p (税込)
+    %h3.title アーカイバ
+    .category__products
+      .category__products--box
+        - @products.each do |product|
+          - category = Category.find(product.category_id)
+          = link_to product_path(id: product.id), class: "category__product" do
+            .category__product--img
+              - product.product_images.each do |image|
+                = image_tag image.image_url.url, class: "img"
+                  - if product.order.present?
+                  .sold__box
+                    .sold__box--text
+                      SOLD
+            .category__product--details
+              .product__name= product.name
+              %ul
+                .product__price= "#{product.price}円"
+                %li
+                  = icon("fas", "star", class: "link-icon")
+                  0
+              .p (税込)
 
   = render "third-banner"
   = render "footer"
   = render "camera-btn"
-      
