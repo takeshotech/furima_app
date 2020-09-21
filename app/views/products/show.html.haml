@@ -1,89 +1,88 @@
 .wrapper
   = render "home/header"
-
   .show-main
     .item-box
       .item-name__box  
         .item-name
           %h1= @product.name
-      .item-main  
+      .main_info
         .image_box
-          = image_tag 'a004.png', class:'img_main'
+          .main_image_box
+            = image_tag "#{@product.product_images[0].image_url}", alt: "#{@product.name}", class:'img_main'
           .sub_image_box
-            = image_tag 'a004.png', class:'img_small'
-            = image_tag 'a004.png', class:'img_small'
-        .item-table    
-          .table-box
-            %table 
-              %tr 
-                %th 出品者
-                %td= @product.user.nickname
-              %tr 
-                %th カテゴリー
-                %td
-                  %p
-                  = link_to "#{@product.category.parent.parent.name}","#"
-                  %p
-                  = link_to "＞#{@product.category.parent.name}","#"
-                  %p
-                  = link_to "＞#{@product.category.name}","#"         
-            %table
-              %tr
-                %th ブランド
-                %td
-                  = @product.brand.name   
-            %table
-              %tr
-                %th 商品の状態
-                %td 
-                  - if @product.condition == 1 
-                    %p 新品・未使用
-                  - if @product.condition == 2
-                    %p 未使用に近い
-                  - if @product.condition == 3
-                    %p 目立った傷や汚れなし
-                  - if @product.condition == 4
-                    %p やや傷や汚れあり
-                  - if @product.condition == 5
-                    %p 傷や汚れあり
-            %table
-              %tr
-                %th 配送方法
-                %td
-                  - if @product.shipping.shipping_type == 0 
-                    %p らくらくフリマ便
-                  - if @product.shipping.shipping_type == 1
-                    %p ゆうゆうフリマ便                  
-                  - if @product.shipping.shipping_type == 2
-                    %p 未定 
-            %table
-              %tr
-                %th 発送料の負担
-                %td
-                  - if @product.shipping.fee == 0 
-                    %p 送料込み（出品者負担）
-                  - if @product.shipping.fee == 1
-                    %p 着払い（購入者負担）
-            %table
-              %tr
-                %th 発送元地域
-                %td
-                  - if @product.shipping.area == "hokkaido" 
-                    %p 北海道
-                  - if @product.shipping.area == "aomori"
-                    %p 青森
-                  - if @product.shipping.area == "iwate"
-                    %p 岩手
-            %table
-              %tr
-                %th 発送日数
-                %td
-                  - if @product.shipping.handing_time == 0 
-                    %p 1〜2日で発送
-                  - if @product.shipping.handing_time == 1
-                    %p 2〜3日で発送      
-                  - if @product.shipping.handing_time == 2
-                    %p 4〜7日で発送                                 
+            - @images.each do |image|
+              = image_tag image.image_url.url, class:'img_small'
+        .table-box
+          %table 
+            %tr 
+              %th 出品者
+              %td= @product.user.nickname
+            %tr 
+              %th カテゴリー
+              %td
+                %p
+                = link_to "#{@product.category.parent.parent.name}","#"
+                %p
+                = link_to "＞#{@product.category.parent.name}","#"
+                %p
+                = link_to "＞#{@product.category.name}","#"         
+          %table
+            %tr
+              %th ブランド
+              %td
+                = @product.brand.name   
+          %table
+            %tr
+              %th 商品の状態
+              %td 
+                - if @product.condition == 1 
+                  %p 新品・未使用
+                - if @product.condition == 2
+                  %p 未使用に近い
+                - if @product.condition == 3
+                  %p 目立った傷や汚れなし
+                - if @product.condition == 4
+                  %p やや傷や汚れあり
+                - if @product.condition == 5
+                  %p 傷や汚れあり
+          %table
+            %tr
+              %th 配送方法
+              %td
+                - if @product.shipping.shipping_type == 0 
+                  %p らくらくフリマ便
+                - if @product.shipping.shipping_type == 1
+                  %p ゆうゆうフリマ便                  
+                - if @product.shipping.shipping_type == 2
+                  %p 未定 
+          %table
+            %tr
+              %th 発送料の負担
+              %td
+                - if @product.shipping.fee == 0 
+                  %p 送料込み（出品者負担）
+                - if @product.shipping.fee == 1
+                  %p 着払い（購入者負担）
+          %table
+            %tr
+              %th 発送元地域
+              %td
+                - if @product.shipping.area == "hokkaido" 
+                  %p 北海道
+                - if @product.shipping.area == "aomori"
+                  %p 青森
+                - if @product.shipping.area == "iwate"
+                  %p 岩手
+          %table
+            %tr
+              %th 発送日数
+              %td
+                - if @product.shipping.handing_time == 0 
+                  %p 1〜2日で発送
+                - if @product.shipping.handing_time == 1
+                  %p 2〜3日で発送      
+                - if @product.shipping.handing_time == 2
+                  %p 4〜7日で発送                                 
       .item-price__box
         .item-price
           %span

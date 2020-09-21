@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @images = ProductImage.where(product_id: @product.id)
+    @images = @product.product_images.drop(1)
   end
 
   # 親カテゴリーが選択された後に動くアクション
