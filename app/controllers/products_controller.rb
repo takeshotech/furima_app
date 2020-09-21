@@ -22,46 +22,20 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    grandchild = @product.category
-    child = grandchild.parent
-    if @category_id == 46 or @category_id == 74 or @category_id == 134 or @category_id == 142 or @category_id == 147 or @category_id == 150 or @category_id == 158
-    else
-     @parent_array = []
-     @parent_array << @product.category.parent.parent.name
-     @parent_array << @product.category.parent.parent.id 
-    end
-     @category_children_arry = Category.where(ancestry: grandchild.ancestry)
-     @grandchild_arry = []
-     @grandchild_array << grandchild.name
-     @grandchild_array << grandchild.id
+    @product = Product.find(params[:id])
 
 
   end
 
   def update
-    if product_params[:images_attributes].nill?
-      flash.now[:alert] = '更新できませんでした 【画像を１枚以上入れてください】'
-      render :edit
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      redirect_to show_product_path, notice: 'グループを更新しました'
     else
-      exit_ids = []
-      product_params[:images_attributes].each do |a,b|
-        exit_ids << product_params[:images_attributes].dig(:"#{a}",:id).to_i
-      end
-      ids = Image.where(item_id: params[:id]).map{|image| image.id }
-      delete__db = ids - exit_ids
-      Image.where(id:delete__db).destroy_all
-      @product.touch
-      if @product.update(product_params)
-        edirect_to  update_done_product_path
-      else
-        flash.now[:alert] = '更新できませんでした'
-        render :edit
-      end  
+      render :edit
     end
   end
-  def update_done
-    @product_update = Product.order("update_at DESC").first
-  end
+  
 
   # 親カテゴリーが選択された後に動くアクション
   def get_category_children
