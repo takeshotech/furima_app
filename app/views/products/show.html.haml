@@ -7,11 +7,11 @@
         .item-name
           %h1= @product.name
       .item-main  
-
-        .item-img
-        - @images.each do |image|
-          = image_tag "#{image.image_url}", alt: 'img', height: '360px', width: '360px'
-        
+        .image_box
+          = image_tag 'a004.png', class:'img_main'
+          .sub_image_box
+            = image_tag 'a004.png', class:'img_small'
+            = image_tag 'a004.png', class:'img_small'
         .item-table    
           .table-box
             %table 

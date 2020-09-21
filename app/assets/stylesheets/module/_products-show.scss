@@ -29,7 +29,22 @@
       margin-top: 16px;
       width: 620px;
       height: 520px;
-
+      .img_main {
+        height: 360px;
+        width: 360px;
+     
+      }
+      .sub_image_box {
+        margin-top: 15px;
+        display: flex;
+        justify-content: left;
+        .img_small {
+          margin-right: 10px;
+          height: 100px;
+          width: 100px;
+         }
+      }
+      
       .item-table {
         margin: 0 37.5px;
 
