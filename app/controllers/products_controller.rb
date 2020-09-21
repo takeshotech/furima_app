@@ -67,24 +67,5 @@ class ProductsController < ApplicationController
       shipping_attributes: [:id, :area, :fee, :handing_time, :shipping_type],
       brand_attributes: [:id, :name]).merge(user_id: current_user.id)
     end
-    def product_params
-      params.require(:product).permit(:name, :product_explanation, :category_id, :product_status, :auction_status, :delivery_fee, :shipping_origin, :exhibition_price,:brand_name, :days_until_shipping, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
-    end
-    def set_item
-      #@product = Product.find(params[:id])
-    end
-    def category_parent_array
-      @category_parent_array = Category.where(ancestry: nil)
-    end
-
-    def show_all_instance
-      @user = User.find(@product.user_id)
-      @image = Image.where(product_id: params[:id])
-      @image_first =Image.where(product_id: params[:id])
-      @category_id = @product.category_id
-      @category_parent = Category.find(@category_id).parent.parent 
-      @category_child = Category.find(@category_id).parent
-      @category_grandchild = Category.find(@category_id)
-    end
   end
   
