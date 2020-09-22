@@ -30,22 +30,12 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
-      redirect_to show_product_path, notice: 'グループを更新しました'
+      redirect_to show_product_path, notice: '更新しました'
     else
       render :edit
     end
   end
   
-
-  # 親カテゴリーが選択された後に動くアクション
-  def get_category_children
-    @category_children = Category.find(params[:parent_id]).children
-  end
-
-  # 子カテゴリーが選択された後に動くアクション
-  def get_category_grandchildren
-    @category_grandchildren = Category.find(params[:child_id]).children
-  end
 
   def create
     @category_parent = Category.where(ancestry: nil)
