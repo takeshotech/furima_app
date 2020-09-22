@@ -11,7 +11,7 @@
             = image_tag "#{@product.product_images[0].image_url}", alt: "#{@product.name}", class:'img_main'
           .sub_image_box
             - @images.each do |image|
-              = image_tag image.image_url.url, class:'img_small'
+              = image_tag image.image_url.url, alt: "#{@product.name}", class:'img_small'
         .table-box
           %table 
             %tr 
