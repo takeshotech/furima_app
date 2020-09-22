@@ -51,7 +51,7 @@
           .purchase-notice
             出品者が発送作業を開始した後は受取場所の変更ができませんので、早めに変更を行ってください。
           .purchase-btn
-            = link_to "購入する", orders_path, method: :post, class: "buy-btn"
+            = link_to "購入する", product_orders_path, method: :post, class: "buy-btn"
       - else 
         .purchase_none_btn
           = form_tag(action: :create, method: :post) do

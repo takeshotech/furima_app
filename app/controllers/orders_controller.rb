@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
           )
         end
       #購入テーブルに登録処理
-      @order = Order.create(user_id: current_user.id, product_id: params[:id])
+      @order = Order.create(user_id: current_user.id, product_id: params[:product_id])
       end
     end
   end  
@@ -84,6 +84,6 @@ class OrdersController < ApplicationController
   end
 
   def find_product
-    @product = Product.find(params[:id])
+    @product = Product.find(params[:product_id])
   end
 end
