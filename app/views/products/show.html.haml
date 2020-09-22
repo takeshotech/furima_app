@@ -18,7 +18,7 @@
       .item-name__box  
         .item-name
           %h1= @product.name
-        -# .item-wording
+        .item-wording
         -# %p バレンシアガの財布の赤。機能性の高いミニ財布  
       .item-main    
         .item-img
@@ -85,7 +85,7 @@
               商品の編集
           .item-buy_btn
             .item-buy_btn__gray
-              この商品を削除する
+              = link_to 'この商品を削除する', "/products/#{@product.user_id}", method: :delete
       - else
         .item-buy_btn
           .item-buy_btn__blue
