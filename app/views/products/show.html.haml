@@ -95,10 +95,14 @@
         .item-buy_btn
           .item-buy_btn__gray       
             この商品を削除する
-      - else
+      - elsif user_signed_in? && current_user.id != @product.user_id
         .item-buy_btn
           .item-buy_btn__blue
             = link_to "購入手続きへ", order_path 
+      - else 
+        .item-buy_btn
+          .item-buy_btn__nologin
+            ログイン後、購入が可能です
       .item-description__inner
         %p 
           = @product.text

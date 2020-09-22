@@ -45,7 +45,7 @@
         margin-top: 15px;
         display: flex;
         justify-content: left;
-        
+
         .img_small {
           margin-right: 10px;
           height: 55px;
@@ -110,7 +110,9 @@
       &__gray{
         background-color: #aaaaaa;
       }
-
+      &__nologin{
+        background-color: dimgrey;
+      }
 
     }
 
