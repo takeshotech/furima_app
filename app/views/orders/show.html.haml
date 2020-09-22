@@ -23,7 +23,7 @@
           %h2.total-amount 
             = "¥" + "#{@product.price}"
         %hr
-      - if @user.credit_card.present?
+      - if current_user.credit_card.present?
         .main__box--creditcard
           .title
             %h3 支払い方法
