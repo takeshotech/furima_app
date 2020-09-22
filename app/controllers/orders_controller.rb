@@ -41,8 +41,6 @@ class OrdersController < ApplicationController
   end  
 
   def show
-    if user_signed_in?
-      current_user
       # クレジットカードが登録されているか確認
       if current_user.credit_card.present?
         Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
@@ -77,7 +75,6 @@ class OrdersController < ApplicationController
         @exp_month = @customer_card.exp_month.to_s
         ## 有効期限'年'を定義
         @exp_year = @customer_card.exp_year.to_s.slice(2,3)
-      else
       end
     else
       # ログインしていなければ、商品の購入ができずに、ログイン画面に移動します。
