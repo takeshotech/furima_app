@@ -1,8 +1,8 @@
 class OrdersController < ApplicationController
   require "payjp"
+  before_action :find_product, only:[:create, :show]
 
   def create
-    @product = Product.find(params[:id])
     @parents = Category.where(ancestry: nil)
     # 購入テーブル登録ずみ商品は２重で購入されないようにする
     # (２重で決済されることを防ぐ)
@@ -41,13 +41,10 @@ class OrdersController < ApplicationController
   end  
 
   def show
-    @product = Product.find(params[:id])
-    
-
     if user_signed_in?
-      @user = current_user
+      current_user
       # クレジットカードが登録されているか確認
-      if @user.credit_card.present?
+      if current_user.credit_card.present?
         Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
         # ログインユーザーのクレジットカード情報を引っ張ってきます。
         @card = CreditCard.find_by(user_id: current_user.id)
@@ -86,5 +83,9 @@ class OrdersController < ApplicationController
       # ログインしていなければ、商品の購入ができずに、ログイン画面に移動します。
       redirect_to user_session_path, alert: "ログインしてください"
     end
+  end
+
+  def find_product
+    @product = Product.find(params[:id])
   end
 end
