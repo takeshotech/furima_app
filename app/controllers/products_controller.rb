@@ -22,18 +22,25 @@ class ProductsController < ApplicationController
     @category_grandchild = Category.find(@category_id).indirects
     @brand_id = @product.brand_id
     @brand = Brand.find(@brand_id)
+    @images = @product.product_images.drop(1)
     @parents = Category.where(ancestry: nil)
   end
 
-  # 親カテゴリーが選択された後に動くアクション
-  def get_category_children
-    @category_children = Category.find(params[:parent_id]).children
+  def edit
+    @product = Product.find(params[:id])
+
+
   end
 
-  # 子カテゴリーが選択された後に動くアクション
-  def get_category_grandchildren
-    @category_grandchildren = Category.find(params[:child_id]).children
+  def update
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      redirect_to show_product_path, notice: '更新しました'
+    else
+      render :edit
+    end
   end
+  
 
   def create
     @category_parent = Category.where(ancestry: nil)

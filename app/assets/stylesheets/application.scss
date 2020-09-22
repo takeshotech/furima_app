@@ -5,8 +5,8 @@
 @import "products/index";
 @import "products/new";
 @import "products/show";
-@import "products_header";
-@import "products_footer";
+@import "products/header";
+@import "products/footer";
 
 @import "orders/show";
 @import "categories/index";
@@ -22,7 +22,5 @@
 @import "module/create";
 @import "module/destroy";
 @import "module/show";
-@import "pay";
-@import "module/show";
-@import "products_header";
-@import "products_footer";
+
+
