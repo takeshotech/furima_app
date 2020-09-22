@@ -20,8 +20,10 @@
         %hr
         .main__box--price
           %h2 支払い金額
-          %h2.total-amount ¥9,999,999
+          %h2.total-amount 
+            = "¥" + "#{@product.price}"
         %hr
+      - if current_user.credit_card.present?
         .main__box--creditcard
           .title
             %h3 支払い方法
@@ -29,11 +31,12 @@
           .card-info
             %p クレジットカード
             .creditcard-num 
-              = "xxxx-xxxx-xxxx" 
-            .expire-date 
+              = "xxxx-xxxx-xxxx" + @customer_card.last4
+            .expire-date
               .expire-date__title
-                有効期限 mm/yy
-            .kind VISA
+                = "有効期限" + @exp_month + " / " + @exp_year 
+            .kind 
+              = image_tag "#{@card_src}", class: "credit_card_info__brand__img", alt: @card_brand
         %hr
         .main__box--shipping
           .title
@@ -47,6 +50,10 @@
         .main__box--purchase
           .purchase-notice
             出品者が発送作業を開始した後は受取場所の変更ができませんので、早めに変更を行ってください。
-          %button{type: "submit", onclick: "location.href=''", class: "purchase-btn"}
-            .text 購入する
+          .purchase-btn
+            = link_to "購入する", product_orders_path, method: :post, class: "buy-btn"
+      - else 
+        .purchase_none_btn
+          = form_tag(action: :create, method: :post) do
+            %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" ,"data-text": "購入する" ,"data-key": "pk_test_5ef47dbae89fcfc8309d0276",}
     = render "share/products_footer"
