@@ -1,14 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
 .show-main {
   padding: 40px;
   height: 1700px;
-  margin: 0 auto;
+
 
   .item-box {
     background-color: #ffffff;
     padding: 24px 40px 40px;
     width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    
 
     .item-name__box {
       margin-top: 16px;
@@ -23,46 +27,67 @@
         margin: 8px 0px 0px;
       }
     }
-
-    .item-main {
+    .main_info {
+      width: 100%;
+      padding-top: 15px;
       display: flex;
-      margin-top: 16px;
-      width: 620px;
-      height: 520px;
+    }
+  
+    .image_box {
+      width: calc(700px - 360px);
+      .main_image_box {
+       .img_main {
+          height: 300px;
+          width: 300px;
+         }
+      }
+      .sub_image_box {
+        margin-top: 15px;
+        display: flex;
+        justify-content: left;
 
-      .item-table {
-        margin: 0 37.5px;
+        .img_small {
+          margin-right: 10px;
+          height: 55px;
+          width: 55px;
+         }
+      }
+    }
+
 
         .table-box {
           font-size: 14px;
-          float: right;           
-          margin: 0 auto;
+          max-width: 360px;
           border-collapse: collapse;
           border: 1px solid #f5f5f5;
           border-spacing: 0;
+
+          
+          th {
+            padding: 8px;
+            width: 117px;
+            height: 41px;
+            text-align: left;
+            font-weight: 400;
+            background-color: #eeeeee;
+          }
+            
+          td {
+            padding: 8px;
+            width: 61%;
+            background-color: #ffffff;
+          }
+                  
+          td a {
+            text-decoration: none;
+            color: #3ccace;
+          }
+
         }
 
-        th {
-          padding: 8px;
-          width: 117px;
-          height: 41px;
-          text-align: left;
-          font-weight: 400;
-          background-color: #eeeeee;
-        }
-          
-        td {
-          padding: 8px;
-          width: 61%;
-          background-color: #ffffff;
-        }
-                
-        td a {
-          text-decoration: none;
-          color: #3ccace;
-        }
-      }
-    }
+        
+    
+    
 
     .item-price__box {
       margin-top: 24px;
@@ -73,22 +98,29 @@
       }
     }
 
-    .item-buy__btn {
-      .item-buy {
-        margin-top: 16px;
-        text-align: center;
+    .item-buy_btn {
+      font-size: 24px;
+      font-family: sans-serif;
+      margin-top: 16px;
+      text-align: center;
+      color: #ffffff;
+      &__blue {
         background-color: #3ccace;
-        color: #ffffff;
-        font-size: 24px;
-        font-family: sans-serif;
       }
+      &__gray{
+        background-color: #aaaaaa;
+      }
+      &__nologin{
+        background-color: dimgrey;
+      }
+
     }
 
     .item-description__inner {
       padding-top: 32px;
     } 
-  }
 
+    }
   .commentBox {
     text-align: center;
     background-color: #ffffff;

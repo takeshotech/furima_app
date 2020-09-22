@@ -1,74 +1,111 @@
 .wrapper
   = render "home/header"
-
   .show-main
     .item-box
       .item-name__box  
         .item-name
-          %h1 バレンシアガ財布
-        .item-wording
-          %p バレンシアガの財布の赤。機能性の高いミニ財布  
-      .item-main    
-        .item-img
-          = image_tag 'IMG_2664.jpg', alt: 'img', height: '360px', width: '360px'
-        .item-table    
-          .table-box
-            %table 
-              %tr 
-                %th 出品者
-                 %td= @user.nickname
-              %tr 
-                %th カテゴリー
-                %td
-                  = link_to "#{@category_parent.name}","#"
-                  %br= link_to "#{@category_child.name}","#"
-                  = link_to "#{@category_grandchild.name}","#"
-            %table
-              %tr
-                %th 
-                  カテゴリー
-                  %td 
-                    = link_to '#' do
-                      商品のカテゴリー
-            %table
-              %tr
-                %th 
-                  ブランド
-                  %td 
-                    = link_to '#' do
-                      商品のブランド    
-            %table
-              %tr
-                %th 商品のサイズ
-                %td サイズ        
-            %table
-              %tr
-                %th 商品の状態
-                %td 状態
-            %table
-              %tr
-                %th 発送の方法
-                %td 方法    
-            %table
-              %tr
-                %th 発送料の負担
-                %td 負担者
-            %table
-              %tr
-                %th 発送元地域
-                %td 発送元
-            %table
-              %tr
-                %th 発送日数
-                %td 日数
+          %h1= @product.name
+      .main_info
+        .image_box
+          .main_image_box
+            = image_tag "#{@product.product_images[0].image_url}", alt: "#{@product.name}", class:'img_main'
+          .sub_image_box
+            - @images.each do |image|
+              = image_tag image.image_url.url, alt: "#{@product.name}", class:'img_small'
+        .table-box
+          %table 
+            %tr 
+              %th 出品者
+              %td= @product.user.nickname
+            %tr 
+              %th カテゴリー
+              %td
+                %p
+                = link_to "#{@product.category.parent.parent.name}","#"
+                %p
+                = link_to "＞#{@product.category.parent.name}","#"
+                %p
+                = link_to "＞#{@product.category.name}","#"         
+          %table
+            %tr
+              %th ブランド
+              %td
+                = @product.brand.name   
+          %table
+            %tr
+              %th 商品の状態
+              %td 
+                - if @product.condition == 1 
+                  %p 新品・未使用
+                - if @product.condition == 2
+                  %p 未使用に近い
+                - if @product.condition == 3
+                  %p 目立った傷や汚れなし
+                - if @product.condition == 4
+                  %p やや傷や汚れあり
+                - if @product.condition == 5
+                  %p 傷や汚れあり
+          %table
+            %tr
+              %th 配送方法
+              %td
+                - if @product.shipping.shipping_type == 0 
+                  %p らくらくフリマ便
+                - if @product.shipping.shipping_type == 1
+                  %p ゆうゆうフリマ便                  
+                - if @product.shipping.shipping_type == 2
+                  %p 未定 
+          %table
+            %tr
+              %th 発送料の負担
+              %td
+                - if @product.shipping.fee == 0 
+                  %p 送料込み（出品者負担）
+                - if @product.shipping.fee == 1
+                  %p 着払い（購入者負担）
+          %table
+            %tr
+              %th 発送元地域
+              %td
+                - if @product.shipping.area == "hokkaido" 
+                  %p 北海道
+                - if @product.shipping.area == "aomori"
+                  %p 青森
+                - if @product.shipping.area == "iwate"
+                  %p 岩手
+          %table
+            %tr
+              %th 発送日数
+              %td
+                - if @product.shipping.handing_time == 0 
+                  %p 1〜2日で発送
+                - if @product.shipping.handing_time == 1
+                  %p 2〜3日で発送      
+                - if @product.shipping.handing_time == 2
+                  %p 4〜7日で発送                                 
       .item-price__box
         .item-price
-          %span ¥40000     
-        .item-buy__btn
-          .item-buy
-            購入画面
+          %span
+          ¥
+          = @product.price
+      - if user_signed_in? && current_user.id == @product.user_id 
+        .item-buy_btn
+          .item-buy_btn__blue
+            商品の編集
+        .item-buy_btn
+          .item-buy_btn__gray       
+            この商品を削除する
+      - elsif user_signed_in? && current_user.id != @product.user_id
+        .item-buy_btn
+          .item-buy_btn__blue
+            = link_to "購入手続きへ", order_path 
+      - else 
+        .item-buy_btn
+          .item-buy_btn__nologin
+            ログイン後、購入が可能です
       .item-description__inner
-        %p こちらは、一年前に青山のバレンシアガで購入したので確実に本物です。正規店でのメンテナンスを受けられる確実に本物・正規品ですのでご安心ください。大切に使用していましが中古品なので神経質な方はご遠慮願います。状態などご不明な点がございましたらお気軽にお問い合わせください
+        %p 
+          = @product.text
     .commentBox
       .comment-body
         %textarea
