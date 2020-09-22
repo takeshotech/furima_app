@@ -8,6 +8,7 @@ class CreditCardsController < ApplicationController
 
   def create
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
+    @parents = Category.where(ancestry: nil)
 
     if params["payjp_token"].blank?
       redirect_to action: "new", alert: "クレジットカードを登録できませんでした。"
@@ -26,6 +27,7 @@ class CreditCardsController < ApplicationController
   end
 
   def show
+    @parents = Category.where(ancestry: nil)
     if @card.blank?
       redirect_to action: "new"
     else
