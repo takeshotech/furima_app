@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
 
   def create
     @product = Product.find(params[:id])
-
+    @parents = Category.where(ancestry: nil)
     # 購入テーブル登録ずみ商品は２重で購入されないようにする
     # (２重で決済されることを防ぐ)
     if @product.order.present?
@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
           )
         end
       #購入テーブルに登録処理
-      @order = Order.create(buyer_id: current_user.id, product_id: params[:id])
+      @order = Order.create(user_id: current_user.id, product_id: params[:id])
       end
     end
   end  

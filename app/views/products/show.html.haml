@@ -74,7 +74,11 @@
           .item-buy_btn
             .item-buy_btn__gray
               この商品を削除する
-      - else
+      - elsif @product.order
+        .item-buy_btn
+          .item-buy_btn__blue
+            = link_to "SOLD OUT","#",class:"disabled-button bold"
+      - else 
         .item-buy_btn
           .item-buy_btn__blue
             = link_to "購入手続きへ", order_path 
