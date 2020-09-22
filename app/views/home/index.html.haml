@@ -93,7 +93,7 @@
           - @products.each do |product|
             = link_to product_path(id: product.id) do
               - product.product_images.each do |image|
-                = image_tag image.image_url, class: "item-image"
+                = image_tag image.image_url.url, class: "item-image"
                   - if product.order.present?
                   .sold__box
                     .sold__box--text
@@ -116,7 +116,7 @@
           - @products.each do |product|
             = link_to product_path(id: product.id) do
               - product.product_images.each do |image|
-                = image_tag image.image_url, class: "item-image"
+                = image_tag image.image_url.url, class: "item-image"
                   - if product.order.present?
                   .sold__box
                     .sold__box--text

@@ -95,7 +95,7 @@
         a:link{color: #3CCACE;}
         a:visited{color: #3CCACE;}
         a:hover{
-          color: #7ccbce;
+          color: #ffb340;
           text-decoration: underline;
         }
         a:active{color: #3CCACE;}
@@ -110,10 +110,10 @@
         a:link{color: #3CCACE;}
         a:visited{color: #3CCACE;}
         a:hover{
-          color: #7ccbce;
+          color: #ffb340;
           text-decoration: underline;
         }
-        a:active{color: #7ccbce;}
+        a:active{color: #3CCACE;}
         .title{
           display: flex;
           justify-content: space-between;
@@ -141,7 +141,7 @@
         .buy-btn{
           color: white;
         }
-        .purchase-btn:hover{background-color: #7ccbce;}
+        .purchase-btn:hover{background-color: #ffb340;}
       }
     }
   }
