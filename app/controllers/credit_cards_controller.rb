@@ -1,6 +1,8 @@
 class CreditCardsController < ApplicationController
   require "payjp" 
   before_action :find_card, only:[:new, :show, :destroy]
+  before_action :category, only:[:create,:show]
+
 
   def new
     redirect_to credit_card_path(current_user.id) unless @card.blank?
@@ -8,7 +10,6 @@ class CreditCardsController < ApplicationController
 
   def create
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
-    @parents = Category.where(ancestry: nil)
 
     if params["payjp_token"].blank?
       redirect_to action: "new", alert: "クレジットカードを登録できませんでした。"
@@ -27,7 +28,6 @@ class CreditCardsController < ApplicationController
   end
 
   def show
-    @parents = Category.where(ancestry: nil)
     if @card.blank?
       redirect_to action: "new"
     else
@@ -74,6 +74,10 @@ class CreditCardsController < ApplicationController
 
   def find_card
     @card = CreditCard.find_by(user_id: current_user.id)
+  end
+
+  def category
+    @parents = Category.where(ancestry: nil)
   end
 end
 
