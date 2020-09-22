@@ -116,6 +116,10 @@
 
     }
 
+      &__gray{
+        background-color: #aaaaaa;
+      }
+    }
     .item-description__inner {
       padding-top: 32px;
     } 
@@ -212,4 +216,3 @@
       }
     }
   }
-}

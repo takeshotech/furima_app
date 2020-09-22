@@ -17,6 +17,7 @@
 - has_many :products
 - has_many :orders
 - has_one :delivery_address
+- has_one :credit_card
 
 ## productsテーブル
 |Column|Type|Options|
@@ -98,3 +99,12 @@
 |handling_time|integer|null: false|
 ### Association
 - has_one :product
+
+## credit_cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|customer_id|string|null: false, foreign_key: true|
+|card_id|string|null: false|
+### Association
+- belongs_to :user
