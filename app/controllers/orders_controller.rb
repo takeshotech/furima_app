@@ -41,6 +41,7 @@ class OrdersController < ApplicationController
   end  
 
   def show
+    if user_signed_in?
       # クレジットカードが登録されているか確認
       if current_user.credit_card.present?
         Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
