@@ -59,13 +59,15 @@ margin-bottom: 200px;
 
 .field-name {
 
-  width: 600px;
   font-size: 20px;
   font-family: monospace;
   background-color:#EEE;
   text-align: center;
+  width: 550px;
   padding: 30px;
   margin: auto;
+  display: flex;
+  margin-left: 90px;
 
 }
 
@@ -75,9 +77,10 @@ margin-bottom: 200px;
   font-family: monospace;
   background-color:#EEE;
   text-align: center;
-  width: 550px;
+  width: 600px;
   padding: 30px;
   margin: auto;
+  display: flex;
 }
 
 .field-email {
@@ -134,11 +137,11 @@ margin-bottom: 200px;
   text-align: center;
   cursor: pointer;
   padding: 13px 100px;
-  background: #ff0000;
+  background: #3CCACE;
   color: #ffffff;
   line-height: 1em; 
   transition: .3s;
-  border: 2px solid #ff0000;
+  border: 2px solid #3CCACE;
   margin-bottom: 100px;
 
  
