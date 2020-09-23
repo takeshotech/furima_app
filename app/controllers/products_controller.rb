@@ -46,10 +46,10 @@ class ProductsController < ApplicationController
 
   def create
     @category_parent = Category.where(ancestry: nil)
-    @product = Product.new(product_params)         
+    @product = Product.new(product_params)
     if @product.save
       flash[:alert] = '出品が完了しました'
-      redirect_to new_product_path 
+      redirect_to root_path 
    
     else
       flash[:alert] = '出品に失敗しました'
@@ -74,4 +74,3 @@ class ProductsController < ApplicationController
 
 
   end
-  

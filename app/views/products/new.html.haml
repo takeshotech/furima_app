@@ -23,7 +23,7 @@
                   =icon('fas', 'camera fa-2x')
                   = i.file_field :image_url, class:'file'
                   %p.text
-                    ドラックアンドドロップ
+                    ドラッグアンドドロップ
                     %br
                     またはクリックしてファイルをアップロード   
       .from_section.section_line
@@ -107,15 +107,15 @@
               ¥
             = f.text_field :price, class: "input_style input_size_45", placeholder:"0"
         .calculation_box.mb_30
-          %p
+          %p.tax
             販売手数料（10%）
-          %p
+          %p.tax-yen
             ¥50
         %hr.mb_30   
         .calculation_box
           %p
             販売利益
-          %p
+          %p.result
             ￥450
       .from_section
         .buttons.mb_30
