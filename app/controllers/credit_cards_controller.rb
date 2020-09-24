@@ -1,6 +1,8 @@
 class CreditCardsController < ApplicationController
   require "payjp" 
   before_action :find_card, only:[:new, :show, :destroy]
+  before_action :set_parent, only:[:create,:show]
+
 
   def new
     redirect_to credit_card_path(current_user.id) unless @card.blank?
@@ -72,6 +74,10 @@ class CreditCardsController < ApplicationController
 
   def find_card
     @card = CreditCard.find_by(user_id: current_user.id)
+  end
+
+  def set_parent
+    @parents = Category.where(ancestry: nil)
   end
 end
 
