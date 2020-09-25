@@ -23,3 +23,9 @@ $(document).on('turbolinks:load', ()=> {
     if ($('.file').length == 0) $('.image_upload').append(buildFileField(fileIndex[0]));
   });
 });
+
+$(document).on( 'change', '.input_style-price', function(){
+  var s = $(this).val();
+  var result = s / 10;
+  $('.tax-yen').append(result);
+});
