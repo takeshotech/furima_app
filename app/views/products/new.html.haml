@@ -95,7 +95,7 @@
           = s.select :shipping_type, [["らくらくフリマ便", "0"], ["ゆうゆうフリマ便", "1"], ["未定","2"]]
       .from_section
         .label--gray.mb_30
-          価格（¥300〜9,999,999）
+          価格（¥300〜¥9,999,999）
         .input_price.mb_30
           .labels
             %p.label
@@ -116,7 +116,7 @@
           %p
             販売利益
           %p.result
-            ￥450
+            ¥
       .from_section
         .buttons.mb_30
           = f.submit value: "出品する", class: "btn listing mb_15", "data-disable-with": "出品する"
