@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', ()=> {
+$(function()  {
   const buildFileField =(index)=> {
     const html = `<label class="image_upload__btn" for="product_product_images_attributes_${index}_image_url">
                     <div class="btn_contents">
@@ -22,10 +22,21 @@ $(document).on('turbolinks:load', ()=> {
     $(this).parents('.image_upload__btn').remove();
     if ($('.file').length == 0) $('.image_upload').append(buildFileField(fileIndex[0]));
   });
+
+  // 価格入力時に手数料、利益計算
+  $('.input_style-price').on('keyup', function(){
+    let input = $(this).val();
+    if (input >= 300 && input <= 9999999){
+      let fee = Math.floor(input * 0.1);
+      let profit = "¥" +(input - fee).toLocaleString();
+      $('.tax-yen').html("¥" + fee.toLocaleString());
+      $('.result').html(profit);
+    } else {
+      let fee = '-';
+      let profit = '-';
+      $('.tax-yen').html(fee);
+      $('.result').html(profit);
+    }
+  });
 });
 
-$(document).on( 'change', '.input_style-price', function(){
-  var s = $(this).val();
-  var result = s / 10;
-  $('.tax-yen').append(result);
-});
