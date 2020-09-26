@@ -62,12 +62,7 @@
             %tr
               %th 発送元地域
               %td
-                - if @product.shipping.area == "hokkaido" 
-                  %p 北海道
-                - if @product.shipping.area == "aomori"
-                  %p 青森
-                - if @product.shipping.area == "iwate"
-                  %p 岩手
+                = @product.shipping.area 
             %tr
               %th 発送日数
               %td
