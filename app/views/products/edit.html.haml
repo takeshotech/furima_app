@@ -1,15 +1,15 @@
 .new__page__header
   = link_to image_tag("logo/logo.png", alt: "logo"), root_path
-= form_for @item do |f|
-  = render 'layouts/error_messages', model: f.object
+= form_for @product do |f|
+  = render 'layouts/notifications', model: f.object
   .name__field#1
     .form__label
       .lavel__name
         出品画像
       .lavel__Required
         [必須]
-  #image-box-1{class:"#{@images.last.id}"}
-    - @images.each do |img|
+  #image-box-1{class:"#{@product.product_images[0].image_url}"}
+    - @product_images.each do |img|
       .item-image{id:img.id}
         = image_tag(img.image.url,{width:"188",height:"180"})
         .item-image__operetion

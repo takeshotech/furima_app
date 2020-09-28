@@ -32,12 +32,12 @@
             %tr 
               %th カテゴリー
               %td
-                %p
-                = link_to "#{@product.category.parent.parent.name}","#"
-                %p
-                = link_to "＞#{@product.category.parent.name}","#"
-                %p
-                = link_to "＞#{@product.category.name}","#"         
+                -# %p
+                -# = link_to "#{@product.category.parent.parent.name}","#"
+                -# %p
+                -# = link_to "＞#{@product.category.parent.name}","#"
+                -# %p
+                -# = link_to "＞#{@product.category.name}","#"         
           %table
             %tr
               %th ブランド
@@ -103,7 +103,8 @@
       - if user_signed_in? && current_user.id == @product.user_id 
         .item-buy_btn
           .item-buy_btn__blue
-            商品の編集
+            = link_to "/products/#{@product.id}/edit" do
+              商品の編集
         .item-buy_btn
           .item-buy_btn__gray       
             この商品を削除する
@@ -134,12 +135,7 @@
           %button{type: "submit",class: "btn"}
             = icon('fa', 'comment',class: 'icon')
             コメントする
-    .edittBox
-      - if user_signet_in? && current_user.id == product.user_id
-        %li
-          = link_to '編集', "/products/#{product.id}/edit", method :get
-        %li
-          = link_to '削除',"/products/#{product.id}", method :delete
+    
     %ul.links 
       %li
         = link_to "#" do
