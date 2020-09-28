@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', ()=> {
+$(function()  {
   const buildFileField =(index)=> {
     const html = `<label class="image_upload__btn" for="product_product_images_attributes_${index}_image_url">
                     <div class="btn_contents">
