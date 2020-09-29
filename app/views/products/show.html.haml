@@ -107,7 +107,7 @@
               商品の編集
         .item-buy_btn
           .item-buy_btn__gray       
-            この商品を削除する
+            = link_to 'この商品を削除する', "/products/#{@product.user_id}", method: :delete
       - elsif @product.order
         .item-buy_btn
           .item-buy_btn__blue

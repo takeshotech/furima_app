@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', to: 'products#get_category_grandchildren', defaults: { format: 'json' }
       
       resources :orders, only: [:show, :create]
+    end
   end
 
 
@@ -31,4 +32,5 @@ Rails.application.routes.draw do
   resources :credit_cards, only: [:new, :create, :show, :destroy] 
   delete 'products/:id' => 'products#destroy'
   # upstream/product-viewes
+
 end
